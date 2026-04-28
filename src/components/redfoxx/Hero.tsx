@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, CheckCircle2, Phone, Sparkles } from "lucide-react";
+import { useRef } from "react";
 import foxEmblem from "@/assets/redfoxx-3d.png";
+import { HeroGrid } from "./HeroGrid";
 
 export const Hero = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   return (
-    <section className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-grid mask-radial opacity-40" />
-      <div className="absolute inset-x-0 top-0 h-[800px] bg-gradient-ember" />
-      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]" />
+    <section ref={sectionRef} className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
+      {/* Animated grid backdrop (hero only) */}
+      <HeroGrid sectionRef={sectionRef} />
+      <div className="absolute inset-x-0 top-0 h-[800px] bg-gradient-ember pointer-events-none" />
+      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
 
       <div className="container relative">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
