@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, CheckCircle2, Phone, Sparkles } from "lucide-react";
-import foxEmblem from "@/assets/fox-emblem.png";
+import foxEmblem from "@/assets/redfoxx-3d.png";
 
 export const Hero = () => {
   return (

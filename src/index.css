@@ -6,48 +6,48 @@
 
 @layer base {
   :root {
-    /* REDFOXX — Predator Precision design system */
-    --background: 222 45% 6%;
-    --foreground: 210 40% 98%;
+    /* REDFOXX — Brand: Red #cb0303, Dark Blue #0E2841, Wit #f5f5f0 */
+    --background: 212 64% 10%;
+    --foreground: 60 14% 95%;
 
-    --card: 222 40% 9%;
-    --card-foreground: 210 40% 98%;
+    --card: 212 60% 13%;
+    --card-foreground: 60 14% 95%;
 
-    --popover: 222 40% 9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 212 60% 13%;
+    --popover-foreground: 60 14% 95%;
 
-    --primary: 358 82% 55%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 14 100% 60%;
+    --primary: 0 96% 41%;
+    --primary-foreground: 60 14% 95%;
+    --primary-glow: 0 96% 55%;
 
-    --secondary: 222 30% 14%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 212 55% 17%;
+    --secondary-foreground: 60 14% 95%;
 
-    --muted: 222 30% 12%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 212 50% 15%;
+    --muted-foreground: 212 20% 70%;
 
-    --accent: 14 100% 60%;
-    --accent-foreground: 222 45% 6%;
+    --accent: 0 96% 41%;
+    --accent-foreground: 60 14% 95%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 96% 41%;
+    --destructive-foreground: 60 14% 95%;
 
-    --border: 222 30% 16%;
-    --input: 222 30% 14%;
-    --ring: 358 82% 55%;
+    --border: 212 45% 22%;
+    --input: 212 50% 17%;
+    --ring: 0 96% 41%;
 
     --radius: 0.875rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(358 82% 55%), hsl(14 100% 60%));
-    --gradient-ember: radial-gradient(60% 80% at 50% 0%, hsl(358 82% 55% / 0.35), transparent 70%);
-    --gradient-card: linear-gradient(180deg, hsl(222 40% 10% / 0.9), hsl(222 45% 6% / 0.6));
-    --gradient-border: linear-gradient(135deg, hsl(358 82% 55% / 0.6), hsl(14 100% 60% / 0.2), transparent);
+    --gradient-primary: linear-gradient(135deg, hsl(0 96% 41%), hsl(0 96% 55%));
+    --gradient-ember: radial-gradient(60% 80% at 50% 0%, hsl(0 96% 41% / 0.35), transparent 70%);
+    --gradient-card: linear-gradient(180deg, hsl(212 60% 14% / 0.9), hsl(212 64% 10% / 0.6));
+    --gradient-border: linear-gradient(135deg, hsl(0 96% 41% / 0.6), hsl(0 96% 55% / 0.2), transparent);
 
     /* Shadows */
-    --shadow-ember: 0 20px 80px -20px hsl(358 82% 55% / 0.5);
-    --shadow-glow: 0 0 60px hsl(14 100% 60% / 0.3);
-    --shadow-card: 0 20px 50px -20px hsl(222 80% 2% / 0.6);
+    --shadow-ember: 0 20px 80px -20px hsl(0 96% 41% / 0.55);
+    --shadow-glow: 0 0 60px hsl(0 96% 55% / 0.35);
+    --shadow-card: 0 20px 50px -20px hsl(212 80% 3% / 0.6);
 
     /* Motion */
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
