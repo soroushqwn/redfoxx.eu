@@ -7,24 +7,24 @@
 @layer base {
   :root {
     /* REDFOXX — Brand: Red #cb0303, Dark Blue #0E2841, Wit #f5f5f0 */
-    --background: 212 64% 10%;
-    --foreground: 60 14% 95%;
+    --background: 60 14% 95%;
+    --foreground: 212 64% 15%;
 
-    --card: 212 60% 13%;
-    --card-foreground: 60 14% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 212 64% 15%;
 
-    --popover: 212 60% 13%;
-    --popover-foreground: 60 14% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 212 64% 15%;
 
     --primary: 0 96% 41%;
     --primary-foreground: 60 14% 95%;
-    --primary-glow: 0 96% 55%;
+    --primary-glow: 0 96% 48%;
 
-    --secondary: 212 55% 17%;
-    --secondary-foreground: 60 14% 95%;
+    --secondary: 60 10% 92%;
+    --secondary-foreground: 212 64% 15%;
 
-    --muted: 212 50% 15%;
-    --muted-foreground: 212 20% 70%;
+    --muted: 60 10% 92%;
+    --muted-foreground: 212 25% 40%;
 
     --accent: 0 96% 41%;
     --accent-foreground: 60 14% 95%;
@@ -32,8 +32,8 @@
     --destructive: 0 96% 41%;
     --destructive-foreground: 60 14% 95%;
 
-    --border: 212 45% 22%;
-    --input: 212 50% 17%;
+    --border: 212 20% 85%;
+    --input: 212 20% 88%;
     --ring: 0 96% 41%;
 
     --radius: 0.875rem;
