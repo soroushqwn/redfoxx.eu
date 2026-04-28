@@ -1,16 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from "@/components/redfoxx/Navbar";
+import { Hero } from "@/components/redfoxx/Hero";
+import { LogoMarquee } from "@/components/redfoxx/LogoMarquee";
+import { Problem } from "@/components/redfoxx/Problem";
+import { HowItWorks } from "@/components/redfoxx/HowItWorks";
+import { ForWhom } from "@/components/redfoxx/ForWhom";
+import { Services } from "@/components/redfoxx/Services";
+import { System } from "@/components/redfoxx/System";
+import { Stats } from "@/components/redfoxx/Stats";
+import { CTA, Footer } from "@/components/redfoxx/CTA";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <LogoMarquee />
+      <Problem />
+      <HowItWorks />
+      <ForWhom />
+      <Services />
+      <System />
+      <Stats />
+      <CTA />
+      <Footer />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
