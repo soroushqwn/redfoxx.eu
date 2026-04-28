@@ -41,13 +41,13 @@
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(0 96% 41%), hsl(0 96% 55%));
     --gradient-ember: radial-gradient(60% 80% at 50% 0%, hsl(0 96% 41% / 0.35), transparent 70%);
-    --gradient-card: linear-gradient(180deg, hsl(212 60% 14% / 0.9), hsl(212 64% 10% / 0.6));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100% / 0.9), hsl(60 14% 95% / 0.6));
     --gradient-border: linear-gradient(135deg, hsl(0 96% 41% / 0.6), hsl(0 96% 55% / 0.2), transparent);
 
     /* Shadows */
-    --shadow-ember: 0 20px 80px -20px hsl(0 96% 41% / 0.55);
-    --shadow-glow: 0 0 60px hsl(0 96% 55% / 0.35);
-    --shadow-card: 0 20px 50px -20px hsl(212 80% 3% / 0.6);
+    --shadow-ember: 0 20px 80px -20px hsl(0 96% 41% / 0.35);
+    --shadow-glow: 0 0 60px hsl(0 96% 55% / 0.25);
+    --shadow-card: 0 20px 50px -20px hsl(212 64% 15% / 0.15);
 
     /* Motion */
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
