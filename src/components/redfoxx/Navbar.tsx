@@ -32,7 +32,7 @@ export const Navbar = () => {
       <div className="container flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
           <img src={logoMark} alt="REDFOXX" className="h-9 w-9 object-contain" />
-          <span className="font-display font-semibold tracking-tight">REDFOXX</span>
+          <span className="font-semibold tracking-[0.02em] text-primary text-lg" style={{ fontFamily: "'Montserrat', 'Gotham', sans-serif" }}>REDFOXX</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-1 rounded-full border border-border bg-card/40 backdrop-blur px-1.5 py-1.5">
