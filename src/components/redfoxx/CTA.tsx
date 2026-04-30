@@ -67,7 +67,7 @@ export const Footer = () => {
     <footer className="border-t border-border py-10">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center">
-          <img src={logoLockup} alt="REDFOXX Sales Solutions" className="h-20 w-auto object-contain" />
+          <img src={logoLockup} alt="REDFOXX Sales Solutions" className="h-40 w-auto object-contain" />
         </div>
         <p className="text-sm text-muted-foreground">
           © {new Date().getFullYear()} REDFOXX — Outbound sales for technical B2B.
