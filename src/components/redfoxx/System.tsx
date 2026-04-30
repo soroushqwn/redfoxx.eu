@@ -1,13 +1,61 @@
 import { motion } from "framer-motion";
+import aircall from "@/assets/logos/aircall.png";
+import airtable from "@/assets/logos/airtable.png";
+import apify from "@/assets/logos/apify.png";
+import apollo from "@/assets/logos/apollo.png";
+import calendly from "@/assets/logos/calendly.png";
+import claude from "@/assets/logos/claude.png";
+import clay from "@/assets/logos/clay.png";
+import fathom from "@/assets/logos/fathom.png";
+import findymail from "@/assets/logos/findymail.png";
+import googleMeet from "@/assets/logos/google-meet.png";
+import hubspot from "@/assets/logos/hubspot.png";
+import instantly from "@/assets/logos/instantly.png";
+import lemlist from "@/assets/logos/lemlist.png";
+import n8n from "@/assets/logos/n8n.png";
+import notion from "@/assets/logos/notion.png";
+import phantombuster from "@/assets/logos/phantombuster.webp";
+import prospeo from "@/assets/logos/prospeo.png";
+import salesNav from "@/assets/logos/sales-nav.png";
+import smartlead from "@/assets/logos/smartlead.png";
+import teams from "@/assets/logos/teams.png";
+import zapier from "@/assets/logos/zapier.png";
 
-const steps = [
-  { step: "STEP 01", title: "ICP & Account List", desc: "Define your Ideal Client Profile by sector, size, and deal value. Build targeted account lists with data.", tools: ["LinkedIn Sales Nav", "Apollo", "Phantombuster", "Clay", "Findymail", "Prospeo"] },
-  { step: "STEP 02", title: "Waterfall Enrichment", desc: "Emails and phone numbers enriched via waterfall. If one source misses, the next fills the gap automatically.", tools: ["Apollo", "Clay", "Prospeo", "Apify", "Findymail", "Lemlist"] },
-  { step: "STEP 03", title: "Signals & Personalization", desc: "Detect buying signals — hiring, news, funding, tech-stack changes. Generate personalized openers per contact.", tools: ["Clay", "Claude AI", "Phantombuster", "n8n", "Apollo AI"] },
-  { step: "STEP 04", title: "CRM & Data Management", desc: "Pipeline organized, activity tracked, integrated with your stack. Start simple, scale later.", tools: ["HubSpot", "Airtable", "Notion"] },
-  { step: "STEP 05", title: "Multichannel Outreach", desc: "Cold emails, LinkedIn messages, and calls from one platform. Email + LinkedIn + phone = higher response.", tools: ["Lemlist", "Instantly", "Smartlead", "Aircall", "LinkedIn"] },
-  { step: "STEP 06", title: "Scheduling & Recordings", desc: "Meetings planned, recorded, transcribed. Every call becomes documented info that flows back to your CRM.", tools: ["Calendly", "Fathom", "Google Meet", "Microsoft Teams"] },
-  { step: "STEP 07", title: "Automation", desc: "Data sync, automatic follow-ups, repetitive tasks eliminated. Layered on once the core stack runs.", tools: ["n8n", "Zapier", "Claude"] },
+type Tool = { name: string; src: string };
+
+const T = {
+  salesNav: { name: "LinkedIn Sales Navigator", src: salesNav },
+  apollo: { name: "Apollo.io", src: apollo },
+  phantombuster: { name: "PhantomBuster", src: phantombuster },
+  clay: { name: "Clay", src: clay },
+  findymail: { name: "Findymail", src: findymail },
+  prospeo: { name: "Prospeo", src: prospeo },
+  apify: { name: "Apify", src: apify },
+  lemlist: { name: "Lemlist", src: lemlist },
+  claude: { name: "Claude", src: claude },
+  n8n: { name: "n8n", src: n8n },
+  hubspot: { name: "HubSpot", src: hubspot },
+  airtable: { name: "Airtable", src: airtable },
+  notion: { name: "Notion", src: notion },
+  instantly: { name: "Instantly", src: instantly },
+  smartlead: { name: "Smartlead", src: smartlead },
+  aircall: { name: "Aircall", src: aircall },
+  linkedin: { name: "LinkedIn Sales Navigator", src: salesNav },
+  calendly: { name: "Calendly", src: calendly },
+  fathom: { name: "Fathom", src: fathom },
+  googleMeet: { name: "Google Meet", src: googleMeet },
+  teams: { name: "Microsoft Teams", src: teams },
+  zapier: { name: "Zapier", src: zapier },
+} satisfies Record<string, Tool>;
+
+const steps: { step: string; title: string; desc: string; tools: Tool[] }[] = [
+  { step: "STEP 01", title: "ICP & Account List", desc: "Define your Ideal Client Profile by sector, size, and deal value. Build targeted account lists with data.", tools: [T.salesNav, T.apollo, T.phantombuster, T.clay, T.findymail, T.prospeo] },
+  { step: "STEP 02", title: "Waterfall Enrichment", desc: "Emails and phone numbers enriched via waterfall. If one source misses, the next fills the gap automatically.", tools: [T.apollo, T.clay, T.prospeo, T.apify, T.findymail, T.lemlist] },
+  { step: "STEP 03", title: "Signals & Personalization", desc: "Detect buying signals — hiring, news, funding, tech-stack changes. Generate personalized openers per contact.", tools: [T.clay, T.claude, T.phantombuster, T.n8n, T.apollo] },
+  { step: "STEP 04", title: "CRM & Data Management", desc: "Pipeline organized, activity tracked, integrated with your stack. Start simple, scale later.", tools: [T.hubspot, T.airtable, T.notion] },
+  { step: "STEP 05", title: "Multichannel Outreach", desc: "Cold emails, LinkedIn messages, and calls from one platform. Email + LinkedIn + phone = higher response.", tools: [T.lemlist, T.instantly, T.smartlead, T.aircall, T.linkedin] },
+  { step: "STEP 06", title: "Scheduling & Recordings", desc: "Meetings planned, recorded, transcribed. Every call becomes documented info that flows back to your CRM.", tools: [T.calendly, T.fathom, T.googleMeet, T.teams] },
+  { step: "STEP 07", title: "Automation", desc: "Data sync, automatic follow-ups, repetitive tasks eliminated. Layered on once the core stack runs.", tools: [T.n8n, T.zapier, T.claude] },
 ];
 
 export const System = () => {
@@ -55,15 +103,20 @@ export const System = () => {
                 <div className="pl-10 md:pl-10">
                   <h3 className="text-xl md:text-2xl font-display font-semibold">{s.title}</h3>
                   <p className="mt-2 text-muted-foreground max-w-2xl">{s.desc}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {s.tools.map((t) => (
-                      <span
-                        key={t}
-                        className="inline-flex items-center gap-1.5 text-[12px] font-mono px-3 py-1.5 rounded-full bg-card border border-border hover:border-primary/40 transition-colors"
+                  <div className="mt-5 flex flex-wrap gap-2.5">
+                    {s.tools.map((t, idx) => (
+                      <div
+                        key={`${t.name}-${idx}`}
+                        title={t.name}
+                        className="inline-flex items-center h-10 px-3.5 rounded-xl bg-card border border-border hover:border-primary/40 transition-colors"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary-glow/70" />
-                        {t}
-                      </span>
+                        <img
+                          src={t.src}
+                          alt={t.name}
+                          loading="lazy"
+                          className="h-5 md:h-6 w-auto max-w-[120px] object-contain"
+                        />
+                      </div>
                     ))}
                   </div>
                 </div>
