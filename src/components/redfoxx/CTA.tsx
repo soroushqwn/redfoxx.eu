@@ -66,7 +66,7 @@ export const Footer = () => {
     <footer className="border-t border-border py-10">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2.5">
-          <img src={logoMark} alt="REDFOXX" className="h-8 w-8 rounded-lg" />
+          <img src={logoMark} alt="REDFOXX" className="h-8 w-8 object-contain" />
           <span className="font-display font-semibold tracking-tight">REDFOXX</span>
         </div>
         <p className="text-sm text-muted-foreground">

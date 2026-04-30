@@ -31,7 +31,7 @@ export const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
-          <img src={logoMark} alt="REDFOXX" className="h-9 w-9 rounded-lg shadow-ember" />
+          <img src={logoMark} alt="REDFOXX" className="h-9 w-9 object-contain" />
           <span className="font-display font-semibold tracking-tight">REDFOXX</span>
         </a>
 
