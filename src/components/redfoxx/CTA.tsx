@@ -1,11 +1,23 @@
 import { ArrowRight, Mail, Phone } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import logoMark from "@/assets/redfoxx-mark.png";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import { HeroGrid } from "./HeroGrid";
 
+const CALENDLY_URL = "https://calendly.com/soroush-redfoxx/30min";
+
 export const CTA = () => {
   const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const id = "calendly-widget-script";
+    if (document.getElementById(id)) return;
+    const script = document.createElement("script");
+    script.id = id;
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
   return (
     <section ref={sectionRef} id="contact" className="relative py-24 md:py-32 overflow-hidden">
       <HeroGrid sectionRef={sectionRef} />
