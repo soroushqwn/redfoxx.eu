@@ -11,6 +11,7 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const intensityRef = useRef(0);
   const rafRef = useRef<number | null>(null);
+  const mouseRef = useRef<{ x: number; y: number; active: number }>({ x: -9999, y: -9999, active: 0 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -29,8 +30,8 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
       y: number;
       cx: number;
       cy: number;
-      distFromCenter: number; // 0..1
-      ux: number; // unit vector toward center (from cell)
+      distFromCenter: number;
+      ux: number;
       uy: number;
       phase: number;
       phase2: number;
@@ -71,10 +72,6 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
           const dist = Math.min(1, d / maxDist);
           const ux = d > 0.0001 ? dx / d : 0;
           const uy = d > 0.0001 ? dy / d : 0;
-          // Note: pseudocode uses offset = -unitVectorX * pull, with unitVector
-          // pointing FROM cell to center, which would push outward. To make
-          // cells drift INWARD as specified, we use the toward-center vector
-          // directly (ux, uy) without negation.
           cells.push({
             x,
             y,
@@ -92,12 +89,10 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
 
     const updateIntensity = () => {
       const rect = section.getBoundingClientRect();
-      // How far the user has scrolled INTO the hero, normalized 0..1
-      // 0 when hero top is at viewport top; 1 when hero bottom reaches viewport top.
       const scrolled = Math.max(0, -rect.top);
       const denom = Math.max(1, rect.height);
       const progress = Math.min(1, scrolled / denom);
-      intensityRef.current = Math.min(0.43, progress);
+      intensityRef.current = Math.min(0.6, progress + 0.15);
     };
 
     const drawStatic = () => {
@@ -112,26 +107,49 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
     };
 
     const draw = () => {
-      const t = performance.now() * 0.0008;
+      const t = performance.now() * 0.0018;
       const intensity = intensityRef.current;
+      const mouse = mouseRef.current;
+      // Smoothly fade mouse influence
+      mouse.active *= 0.96;
+
+      const influenceRadius = 160;
+      const influenceRadiusSq = influenceRadius * influenceRadius;
 
       ctx.clearRect(0, 0, width, height);
       ctx.lineWidth = 0.5;
 
       for (const cell of cells) {
-        const pullWave = (Math.sin(t * 0.6 + cell.phase) + 1) / 2;
+        const pullWave = (Math.sin(t * 1.4 + cell.phase) + 1) / 2;
         const pull = pullWave * cell.distFromCenter * intensity * 14;
-        const offsetX = cell.ux * pull;
-        const offsetY = cell.uy * pull;
+        let offsetX = cell.ux * pull;
+        let offsetY = cell.uy * pull;
 
-        const lightWave = (Math.sin(t + cell.phase2) + 1) / 2;
+        // Mouse interaction: cells within radius get pushed away from cursor
+        let mouseBoost = 0;
+        if (mouse.active > 0.01) {
+          const mdx = cell.cx - mouse.x;
+          const mdy = cell.cy - mouse.y;
+          const mDistSq = mdx * mdx + mdy * mdy;
+          if (mDistSq < influenceRadiusSq) {
+            const mDist = Math.sqrt(mDistSq) || 1;
+            const falloff = (1 - mDist / influenceRadius) * mouse.active;
+            const push = falloff * 18;
+            offsetX += (mdx / mDist) * push;
+            offsetY += (mdy / mDist) * push;
+            mouseBoost = falloff * 0.55;
+          }
+        }
+
+        const lightWave = (Math.sin(t * 1.6 + cell.phase2) + 1) / 2;
         const edgeWeight = Math.pow(cell.distFromCenter, 1.4);
         const alpha =
           0.05 +
           intensity * edgeWeight * 0.22 +
-          lightWave * edgeWeight * intensity * 0.12;
+          lightWave * edgeWeight * intensity * 0.12 +
+          mouseBoost;
 
-        const isRed = cell.distFromCenter > 0.55 && lightWave > 0.85;
+        const isRed = (cell.distFromCenter > 0.55 && lightWave > 0.85) || mouseBoost > 0.25;
         ctx.strokeStyle = isRed
           ? `rgba(203, 3, 3, ${alpha})`
           : `rgba(14, 40, 65, ${alpha})`;
@@ -146,6 +164,15 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
       build();
       if (reduceMotion) drawStatic();
     };
+    const onMouseMove = (e: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      mouseRef.current.x = e.clientX - rect.left;
+      mouseRef.current.y = e.clientY - rect.top;
+      mouseRef.current.active = 1;
+    };
+    const onMouseLeave = () => {
+      mouseRef.current.active = 0;
+    };
 
     build();
     updateIntensity();
@@ -158,11 +185,15 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
+    section.addEventListener("mousemove", onMouseMove);
+    section.addEventListener("mouseleave", onMouseLeave);
 
     return () => {
       if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
+      section.removeEventListener("mousemove", onMouseMove);
+      section.removeEventListener("mouseleave", onMouseLeave);
     };
   }, [sectionRef]);
 
@@ -170,7 +201,7 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="absolute inset-0 h-full w-full pointer-events-none"
+      className="absolute inset-0 h-full w-full"
     />
   );
 };
