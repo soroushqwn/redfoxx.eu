@@ -1,11 +1,23 @@
 import { ArrowRight, Mail, Phone } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import logoMark from "@/assets/redfoxx-mark.png";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import { HeroGrid } from "./HeroGrid";
 
+const CALENDLY_URL = "https://calendly.com/soroush-redfoxx/30min";
+
 export const CTA = () => {
   const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const id = "calendly-widget-script";
+    if (document.getElementById(id)) return;
+    const script = document.createElement("script");
+    script.id = id;
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
   return (
     <section ref={sectionRef} id="contact" className="relative py-24 md:py-32 overflow-hidden">
       <HeroGrid sectionRef={sectionRef} />
@@ -26,13 +38,21 @@ export const CTA = () => {
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="https://calendly.com"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-4 text-base font-medium text-primary-foreground shadow-ember hover:scale-[1.02] transition-transform"
             >
               Book on Calendly
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
+
+          <div
+            className="calendly-inline-widget mt-10 mx-auto rounded-2xl overflow-hidden border border-border bg-card/40 backdrop-blur"
+            data-url={CALENDLY_URL}
+            style={{ minWidth: "320px", height: "700px" }}
+          />
 
           <div className="mt-12 grid sm:grid-cols-2 gap-3 max-w-xl mx-auto">
             <a
