@@ -1,12 +1,16 @@
 import { ArrowRight, Mail, Phone } from "lucide-react";
+import { useRef } from "react";
 import logoMark from "@/assets/redfoxx-mark.png";
 import logoLockup from "@/assets/redfoxx-lockup.png";
+import { HeroGrid } from "./HeroGrid";
 
 export const CTA = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   return (
-    <section id="contact" className="relative py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-ember opacity-70" />
-      <div className="absolute inset-0 bg-grid opacity-[0.07] mask-radial" />
+    <section ref={sectionRef} id="contact" className="relative py-24 md:py-32 overflow-hidden">
+      <HeroGrid sectionRef={sectionRef} />
+      <div className="absolute inset-0 bg-gradient-ember opacity-70 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid opacity-[0.07] mask-radial pointer-events-none" />
       <div className="container relative">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-5">
