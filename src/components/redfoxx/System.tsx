@@ -108,13 +108,13 @@ export const System = () => {
                       <div
                         key={`${t.name}-${idx}`}
                         title={t.name}
-                        className="inline-flex items-center h-10 px-3.5 rounded-xl bg-card border border-border hover:border-primary/40 transition-colors"
+                        className="inline-flex items-center justify-center h-12 w-28 md:w-32 px-3 rounded-xl bg-card border border-border hover:border-primary/40 transition-colors"
                       >
                         <img
                           src={t.src}
                           alt={t.name}
                           loading="lazy"
-                          className="h-5 md:h-6 w-auto max-w-[120px] object-contain"
+                          className="max-h-7 md:max-h-8 max-w-full w-auto object-contain"
                         />
                       </div>
                     ))}
