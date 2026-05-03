@@ -3,19 +3,20 @@ import { ArrowRight, Calendar, CheckCircle2, Phone, Sparkles } from "lucide-reac
 import { useRef } from "react";
 import foxEmblem from "@/assets/redfoxx-3d.png";
 import { HeroGrid } from "./HeroGrid";
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLang();
+  const h = t.hero;
   return (
     <section ref={sectionRef} className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
-      {/* Animated grid backdrop (hero only) */}
       <HeroGrid sectionRef={sectionRef} />
       <div className="absolute inset-x-0 top-0 h-[800px] bg-gradient-ember pointer-events-none" />
       <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
 
       <div className="container relative">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-          {/* Left: Copy */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -27,7 +28,7 @@ export const Hero = () => {
                 <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-primary" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
-              Outbound Sales · Technical B2B
+              {h.badge}
             </motion.div>
 
             <motion.h1
@@ -36,10 +37,10 @@ export const Hero = () => {
               transition={{ duration: 0.7, delay: 0.05 }}
               className="mt-6 text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-balance leading-[0.95]"
             >
-              We book qualified <br className="hidden md:block" />
-              meetings for{" "}
-              <span className="gradient-text">technical B2B</span>{" "}
-              companies.
+              {h.title1} <br className="hidden md:block" />
+              {h.title2}{" "}
+              <span className="gradient-text">{h.titleAccent}</span>{" "}
+              {h.title3}
             </motion.h1>
 
             <motion.p
@@ -48,10 +49,7 @@ export const Hero = () => {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed"
             >
-              REDFOXX is the extension of your sales team. We design a multichannel
-              outbound strategy tailored to your ICP, market, and sales cycle —
-              cold email, cold calling, LinkedIn, or a mix. The result: qualified
-              meetings, straight into your calendar.
+              {h.desc}
             </motion.p>
 
             <motion.div
@@ -65,34 +63,32 @@ export const Hero = () => {
                 className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-ember transition-transform hover:scale-[1.02]"
               >
                 <span className="absolute inset-0 rounded-full animate-shine" />
-                Book a Strategy Call
+                {h.ctaPrimary}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#how"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur px-6 py-3.5 text-sm font-medium hover:bg-card transition-colors"
               >
-                See How It Works
+                {h.ctaSecondary}
               </a>
             </motion.div>
 
-            {/* Trust strip */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-muted-foreground"
             >
-              {["Multichannel SDR team", "AI-powered personalization", "Weekly Notion reports"].map((t) => (
-                <div key={t} className="flex items-center gap-2">
+              {h.trust.map((tr) => (
+                <div key={tr} className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary-glow" />
-                  <span>{t}</span>
+                  <span>{tr}</span>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Right: Fox + floating cards */}
           <div className="relative h-[520px] hidden lg:block">
             <motion.img
               src={foxEmblem}
@@ -105,7 +101,6 @@ export const Hero = () => {
               className="absolute inset-0 m-auto h-[420px] w-[420px] object-contain drop-shadow-[0_30px_80px_rgba(239,43,45,0.45)] animate-float"
             />
 
-            {/* Floating card: Meeting booked */}
             <motion.div
               initial={{ opacity: 0, y: 30, x: -20 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
@@ -118,15 +113,14 @@ export const Hero = () => {
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
-                    <p className="text-sm font-medium">Meeting booked</p>
-                    <span className="text-[10px] font-mono text-primary-glow">NEW</span>
+                    <p className="text-sm font-medium">{h.cards.meetingBooked}</p>
+                    <span className="text-[10px] font-mono text-primary-glow">{h.cards.new}</span>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-0.5 truncate">CTO · Siemens Digital — Thu 14:30</p>
+                  <p className="text-xs text-muted-foreground mt-0.5 truncate">{h.cards.meetingDetail}</p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Floating card: Reply rate */}
             <motion.div
               initial={{ opacity: 0, y: 30, x: 20 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
@@ -134,7 +128,7 @@ export const Hero = () => {
               className="absolute bottom-12 -right-4 card-glass rounded-2xl p-4 w-60 shadow-card"
             >
               <div className="flex items-center justify-between mb-2">
-                <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">Reply rate</p>
+                <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">{h.cards.replyRate}</p>
                 <Sparkles className="h-3.5 w-3.5 text-primary-glow" />
               </div>
               <p className="text-2xl font-display font-semibold">12.4%</p>
@@ -148,7 +142,6 @@ export const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Floating card: Dialing */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -160,8 +153,8 @@ export const Hero = () => {
                 <Phone className="h-4 w-4 text-primary" />
               </div>
               <div>
-                <p className="text-xs font-mono text-muted-foreground">Dialing</p>
-                <p className="text-sm font-medium">+32 · Tier 1 prospect</p>
+                <p className="text-xs font-mono text-muted-foreground">{h.cards.dialing}</p>
+                <p className="text-sm font-medium">{h.cards.dialingDetail}</p>
               </div>
             </motion.div>
           </div>

@@ -46,12 +46,15 @@ const tools = [
   { name: "Claude", src: claude },
 ];
 
+import { useLang } from "@/i18n/LanguageContext";
+
 export const LogoMarquee = () => {
+  const { t } = useLang();
   return (
     <section className="relative py-14 border-y border-border bg-card/30">
       <div className="container mb-10">
         <p className="text-center text-xs font-mono uppercase tracking-[0.25em] text-muted-foreground">
-          Built on the modern outbound stack
+          {t.marquee.label}
         </p>
       </div>
       <div className="relative overflow-hidden">
