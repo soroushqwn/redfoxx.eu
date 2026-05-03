@@ -22,6 +22,7 @@ const Index = () => {
       <Services />
       <System />
       <Stats />
+      <Comparison />
       <CTA />
       <Footer />
     </main>
