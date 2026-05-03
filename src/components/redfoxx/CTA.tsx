@@ -1,13 +1,15 @@
 import { ArrowRight, Mail, Phone } from "lucide-react";
 import { useEffect, useRef } from "react";
-import logoMark from "@/assets/redfoxx-mark.png";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import { HeroGrid } from "./HeroGrid";
+import { useLang } from "@/i18n/LanguageContext";
 
 const CALENDLY_URL = "https://calendly.com/soroush-redfoxx/30min";
 
 export const CTA = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLang();
+  const c = t.cta;
 
   useEffect(() => {
     const id = "calendly-widget-script";
@@ -26,14 +28,14 @@ export const CTA = () => {
       <div className="container relative">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-5">
-            Let's Talk
+            {c.eyebrow}
           </p>
           <h2 className="text-5xl md:text-7xl font-display font-semibold text-balance leading-[1]">
-            Ready to grow <br className="hidden md:block" />
-            <span className="gradient-text">together?</span>
+            {c.title1} <br className="hidden md:block" />
+            <span className="gradient-text">{c.titleAccent}</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
-            Book a free 30-minute intro call. No strings. We'll see if there's a fit and what we can do for you.
+            {c.desc}
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -43,7 +45,7 @@ export const CTA = () => {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-4 text-base font-medium text-primary-foreground shadow-ember hover:scale-[1.02] transition-transform"
             >
-              Book on Calendly
+              {c.button}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
@@ -63,7 +65,7 @@ export const CTA = () => {
                 <Mail className="h-4.5 w-4.5 text-primary-glow" />
               </div>
               <div>
-                <p className="text-xs text-muted-foreground">Email</p>
+                <p className="text-xs text-muted-foreground">{c.email}</p>
                 <p className="text-sm font-medium">info@redfoxx.be</p>
               </div>
             </a>
@@ -75,7 +77,7 @@ export const CTA = () => {
                 <Phone className="h-4.5 w-4.5 text-primary-glow" />
               </div>
               <div>
-                <p className="text-xs text-muted-foreground">Phone</p>
+                <p className="text-xs text-muted-foreground">{c.phone}</p>
                 <p className="text-sm font-medium">+32 456 36 98 48</p>
               </div>
             </a>
@@ -87,6 +89,7 @@ export const CTA = () => {
 };
 
 export const Footer = () => {
+  const { t } = useLang();
   return (
     <footer className="border-t border-border py-10">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
@@ -94,7 +97,7 @@ export const Footer = () => {
           <img src={logoLockup} alt="REDFOXX Sales Solutions" className="h-40 w-auto object-contain" />
         </div>
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} REDFOXX — Outbound sales for technical B2B.
+          © {new Date().getFullYear()} {t.footer.rights}
         </p>
       </div>
     </footer>
