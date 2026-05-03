@@ -1,16 +1,42 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logoLockup from "@/assets/redfoxx-lockup.png";
+import { useLang } from "@/i18n/LanguageContext";
+import type { Lang } from "@/i18n/translations";
 
-const links = [
-  { label: "How it works", href: "#how" },
-  { label: "For whom", href: "#for-whom" },
-  { label: "Services", href: "#services" },
-  { label: "The System", href: "#system" },
-  { label: "Contact", href: "#contact" },
-];
+const LangToggle = ({
+  lang,
+  setLang,
+  className = "",
+}: {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  className?: string;
+}) => (
+  <div
+    role="group"
+    aria-label="Language"
+    className={`inline-flex items-center rounded-full border border-border bg-card/40 backdrop-blur p-0.5 ${className}`}
+  >
+    {(["en", "nl"] as Lang[]).map((l) => (
+      <button
+        key={l}
+        onClick={() => setLang(l)}
+        className={`px-2.5 py-1 text-xs font-mono uppercase tracking-wider rounded-full transition-colors ${
+          lang === l
+            ? "bg-gradient-primary text-primary-foreground shadow-ember"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+        aria-pressed={lang === l}
+      >
+        {l}
+      </button>
+    ))}
+  </div>
+);
 
 export const Navbar = () => {
+  const { lang, setLang, t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -29,13 +55,13 @@ export const Navbar = () => {
           : "py-5 bg-transparent"
       }`}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between gap-3">
         <a href="#" className="flex items-center group">
           <img src={logoLockup} alt="REDFOXX Sales Solutions" className="h-10 md:h-11 w-auto object-contain" />
         </a>
 
-        <nav className="hidden md:flex items-center gap-1 rounded-full border border-border bg-card/40 backdrop-blur px-1.5 py-1.5">
-          {links.map((l) => (
+        <nav className="hidden lg:flex items-center gap-1 rounded-full border border-border bg-card/40 backdrop-blur px-1.5 py-1.5">
+          {t.nav.links.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -46,16 +72,17 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
+          <LangToggle lang={lang} setLang={setLang} className="hidden sm:inline-flex" />
           <a
             href="#contact"
             className="hidden sm:inline-flex items-center rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-ember hover:scale-[1.03] transition-transform"
           >
-            Book a call
+            {t.nav.bookCall}
           </a>
           <button
-            aria-label="Menu"
-            className="md:hidden rounded-lg border border-border p-2"
+            aria-label={t.nav.menuLabel}
+            className="lg:hidden rounded-lg border border-border p-2"
             onClick={() => setOpen(!open)}
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -64,8 +91,8 @@ export const Navbar = () => {
       </div>
 
       {open && (
-        <div className="md:hidden container mt-3 card-glass rounded-2xl p-3 flex flex-col">
-          {links.map((l) => (
+        <div className="lg:hidden container mt-3 card-glass rounded-2xl p-3 flex flex-col">
+          {t.nav.links.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -75,6 +102,10 @@ export const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <div className="px-4 py-3 flex items-center justify-between">
+            <span className="text-xs text-muted-foreground font-mono uppercase tracking-wider">Language</span>
+            <LangToggle lang={lang} setLang={setLang} />
+          </div>
         </div>
       )}
     </header>
