@@ -7,6 +7,7 @@ import { ForWhom } from "@/components/redfoxx/ForWhom";
 import { Services } from "@/components/redfoxx/Services";
 import { System } from "@/components/redfoxx/System";
 import { Stats } from "@/components/redfoxx/Stats";
+import { Comparison } from "@/components/redfoxx/Comparison";
 import { CTA, Footer } from "@/components/redfoxx/CTA";
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
       <Services />
       <System />
       <Stats />
+      <Comparison />
       <CTA />
       <Footer />
     </main>
