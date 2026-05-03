@@ -1,11 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useLang } from "@/i18n/LanguageContext";
 
-const stats = [
-  { value: 340, suffix: "+", label: "Qualified meetings booked" },
-  { value: 12.4, suffix: "%", label: "Average reply rate" },
-  { value: 28, suffix: "%", label: "Show-up-to-close rate" },
-  { value: 5, suffix: "x", label: "Pipeline multiplier" },
+const values = [
+  { value: 340, suffix: "+" },
+  { value: 12.4, suffix: "%" },
+  { value: 28, suffix: "%" },
+  { value: 5, suffix: "x" },
 ];
 
 const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
@@ -33,6 +34,7 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
 };
 
 export const Stats = () => {
+  const { t } = useLang();
   return (
     <section className="relative py-20">
       <div className="container">
@@ -41,9 +43,9 @@ export const Stats = () => {
           <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-primary-glow/10 blur-[120px]" />
 
           <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
-            {stats.map((s, i) => (
+            {values.map((s, i) => (
               <motion.div
-                key={s.label}
+                key={i}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -52,7 +54,7 @@ export const Stats = () => {
                 <p className="text-4xl md:text-6xl font-display font-semibold gradient-text">
                   <Counter value={s.value} suffix={s.suffix} />
                 </p>
-                <p className="mt-3 text-sm text-muted-foreground">{s.label}</p>
+                <p className="mt-3 text-sm text-muted-foreground">{t.stats.items[i].label}</p>
               </motion.div>
             ))}
           </div>
