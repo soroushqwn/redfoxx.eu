@@ -58,44 +58,28 @@ export const CTA = () => {
             style={{ minWidth: "320px", height: "700px" }}
           />
 
-          <div className="mt-12 grid sm:grid-cols-2 gap-3 max-w-xl mx-auto">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
             <a
               href="mailto:info@redfoxx.be"
-              className="flex items-center gap-3 rounded-2xl border border-border bg-card/70 backdrop-blur px-5 py-4 hover:bg-card transition-colors text-left"
+              className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
             >
-              <div className="h-10 w-10 rounded-lg bg-secondary border border-border flex items-center justify-center">
-                <Mail className="h-4.5 w-4.5 text-primary-glow" />
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">{c.email}</p>
-                <p className="text-sm font-medium">info@redfoxx.be</p>
-              </div>
+              <Mail className="h-3.5 w-3.5 text-primary-glow" />
+              info@redfoxx.be
             </a>
             <a
               href="tel:+32456369848"
-              className="flex items-center gap-3 rounded-2xl border border-border bg-card/70 backdrop-blur px-5 py-4 hover:bg-card transition-colors text-left"
+              className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
             >
-              <div className="h-10 w-10 rounded-lg bg-secondary border border-border flex items-center justify-center">
-                <Phone className="h-4.5 w-4.5 text-primary-glow" />
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">{c.phone}</p>
-                <p className="text-sm font-medium">+32 456 36 98 48</p>
-              </div>
+              <Phone className="h-3.5 w-3.5 text-primary-glow" />
+              +32 456 36 98 48
             </a>
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-            <span className="font-mono uppercase tracking-[0.2em] text-xs text-primary-glow">
-              {c.connect}
-            </span>
             <a
               href="https://www.linkedin.com/company/redfoxx/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
             >
-              <Linkedin className="h-3.5 w-3.5" />
+              <Linkedin className="h-3.5 w-3.5 text-primary-glow" />
               {c.connectCompany}
             </a>
             <a
@@ -108,9 +92,9 @@ export const CTA = () => {
                 <img
                   src={soroushPhoto}
                   alt="Soroush"
-                  className="h-7 w-7 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
+                  className="h-6 w-6 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
                 />
-                <Linkedin className="absolute -bottom-1 -right-1 h-3 w-3 p-0.5 rounded-full bg-background text-primary-glow" />
+                <Linkedin className="absolute -bottom-1 -right-1 h-2.5 w-2.5 p-0.5 rounded-full bg-background text-primary-glow" />
               </span>
               {c.connectSoroush}
             </a>
@@ -124,9 +108,9 @@ export const CTA = () => {
                 <img
                   src={helenaPhoto}
                   alt="Helena"
-                  className="h-7 w-7 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
+                  className="h-6 w-6 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
                 />
-                <Linkedin className="absolute -bottom-1 -right-1 h-3 w-3 p-0.5 rounded-full bg-background text-primary-glow" />
+                <Linkedin className="absolute -bottom-1 -right-1 h-2.5 w-2.5 p-0.5 rounded-full bg-background text-primary-glow" />
               </span>
               {c.connectHelena}
             </a>
