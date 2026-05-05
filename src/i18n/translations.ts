@@ -346,7 +346,7 @@ const nl: typeof en = {
     button: "Plan via Calendly",
     email: "E-mail",
     phone: "Telefoon",
-    connect: "Laten we connecteren",
+    connect: "Let's connect",
     connectCompany: "REDFOXX",
     connectSoroush: "Soroush",
     connectHelena: "Helena",
