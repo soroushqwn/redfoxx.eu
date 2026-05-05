@@ -168,6 +168,10 @@ const en = {
     button: "Book on Calendly",
     email: "Email",
     phone: "Phone",
+    connect: "Let's connect",
+    connectCompany: "REDFOXX",
+    connectSoroush: "Soroush",
+    connectHelena: "Helena",
   },
   footer: {
     rights: "REDFOXX — Outbound sales for technical B2B.",
@@ -342,6 +346,10 @@ const nl: typeof en = {
     button: "Plan via Calendly",
     email: "E-mail",
     phone: "Telefoon",
+    connect: "Laten we connecteren",
+    connectCompany: "REDFOXX",
+    connectSoroush: "Soroush",
+    connectHelena: "Helena",
   },
   footer: {
     rights: "REDFOXX — Outbound sales voor technische B2B.",

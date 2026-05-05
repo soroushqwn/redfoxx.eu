@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowRight, Mail, Phone, Linkedin } from "lucide-react";
 import { useEffect, useRef } from "react";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import { HeroGrid } from "./HeroGrid";
@@ -80,6 +80,39 @@ export const CTA = () => {
                 <p className="text-xs text-muted-foreground">{c.phone}</p>
                 <p className="text-sm font-medium">+32 456 36 98 48</p>
               </div>
+            </a>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+            <span className="font-mono uppercase tracking-[0.2em] text-xs text-primary-glow">
+              {c.connect}
+            </span>
+            <a
+              href="https://www.linkedin.com/company/redfoxx/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+              {c.connectCompany}
+            </a>
+            <a
+              href="https://www.linkedin.com/in/soroush-qanawizian/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+              {c.connectSoroush}
+            </a>
+            <a
+              href="https://www.linkedin.com/in/helena-m-a38414103/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+              {c.connectHelena}
             </a>
           </div>
         </div>
