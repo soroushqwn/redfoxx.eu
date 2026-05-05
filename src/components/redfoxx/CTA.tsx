@@ -102,18 +102,32 @@ export const CTA = () => {
               href="https://www.linkedin.com/in/soroush-qanawizian/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+              className="group inline-flex items-center gap-2 hover:text-foreground transition-colors"
             >
-              <Linkedin className="h-3.5 w-3.5" />
+              <span className="relative inline-block">
+                <img
+                  src={soroushPhoto}
+                  alt="Soroush"
+                  className="h-7 w-7 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
+                />
+                <Linkedin className="absolute -bottom-1 -right-1 h-3 w-3 p-0.5 rounded-full bg-background text-primary-glow" />
+              </span>
               {c.connectSoroush}
             </a>
             <a
               href="https://www.linkedin.com/in/helena-m-a38414103/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+              className="group inline-flex items-center gap-2 hover:text-foreground transition-colors"
             >
-              <Linkedin className="h-3.5 w-3.5" />
+              <span className="relative inline-block">
+                <img
+                  src={helenaPhoto}
+                  alt="Helena"
+                  className="h-7 w-7 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
+                />
+                <Linkedin className="absolute -bottom-1 -right-1 h-3 w-3 p-0.5 rounded-full bg-background text-primary-glow" />
+              </span>
               {c.connectHelena}
             </a>
           </div>
