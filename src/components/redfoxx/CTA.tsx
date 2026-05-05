@@ -1,6 +1,8 @@
 import { ArrowRight, Mail, Phone, Linkedin } from "lucide-react";
 import { useEffect, useRef } from "react";
 import logoLockup from "@/assets/redfoxx-lockup.png";
+import soroushPhoto from "@/assets/soroush.jpg";
+import helenaPhoto from "@/assets/helena.jpg";
 import { HeroGrid } from "./HeroGrid";
 import { useLang } from "@/i18n/LanguageContext";
 
