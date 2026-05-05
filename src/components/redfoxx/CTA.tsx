@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowRight, Mail, Phone, Linkedin } from "lucide-react";
 import { useEffect, useRef } from "react";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import { HeroGrid } from "./HeroGrid";
