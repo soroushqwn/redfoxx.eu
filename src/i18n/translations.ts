@@ -168,6 +168,10 @@ const en = {
     button: "Book on Calendly",
     email: "Email",
     phone: "Phone",
+    connect: "Let's connect",
+    connectCompany: "REDFOXX",
+    connectSoroush: "Soroush",
+    connectHelena: "Helena",
   },
   footer: {
     rights: "REDFOXX — Outbound sales for technical B2B.",
