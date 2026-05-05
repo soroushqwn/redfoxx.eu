@@ -58,19 +58,19 @@ export const CTA = () => {
             style={{ minWidth: "320px", height: "700px" }}
           />
 
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-base text-muted-foreground">
             <a
               href="mailto:info@redfoxx.be"
               className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
             >
-              <Mail className="h-3.5 w-3.5 text-primary-glow" />
+              <Mail className="h-4 w-4 text-primary-glow" />
               info@redfoxx.be
             </a>
             <a
               href="tel:+32456369848"
               className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
             >
-              <Phone className="h-3.5 w-3.5 text-primary-glow" />
+              <Phone className="h-4 w-4 text-primary-glow" />
               +32 456 36 98 48
             </a>
             <a
@@ -79,22 +79,25 @@ export const CTA = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
             >
-              <Linkedin className="h-3.5 w-3.5 text-primary-glow" />
+              <Linkedin className="h-4 w-4 text-primary-glow" />
               {c.connectCompany}
             </a>
+          </div>
+
+          <div className="mt-6 flex flex-col items-center gap-3 text-base text-muted-foreground">
             <a
               href="https://www.linkedin.com/in/soroush-qanawizian/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 hover:text-foreground transition-colors"
+              className="group inline-flex items-center gap-3 hover:text-foreground transition-colors"
             >
               <span className="relative inline-block">
                 <img
                   src={soroushPhoto}
-                  alt="Soroush"
-                  className="h-6 w-6 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
+                  alt="Soroush Qanawizian"
+                  className="h-9 w-9 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
                 />
-                <Linkedin className="absolute -bottom-1 -right-1 h-2.5 w-2.5 p-0.5 rounded-full bg-background text-primary-glow" />
+                <Linkedin className="absolute -bottom-1 -right-1 h-3.5 w-3.5 p-0.5 rounded-full bg-background text-primary-glow" />
               </span>
               {c.connectSoroush}
             </a>
@@ -102,15 +105,15 @@ export const CTA = () => {
               href="https://www.linkedin.com/in/helena-m-a38414103/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 hover:text-foreground transition-colors"
+              className="group inline-flex items-center gap-3 hover:text-foreground transition-colors"
             >
               <span className="relative inline-block">
                 <img
                   src={helenaPhoto}
-                  alt="Helena"
-                  className="h-6 w-6 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
+                  alt="Helena Michaux"
+                  className="h-9 w-9 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
                 />
-                <Linkedin className="absolute -bottom-1 -right-1 h-2.5 w-2.5 p-0.5 rounded-full bg-background text-primary-glow" />
+                <Linkedin className="absolute -bottom-1 -right-1 h-3.5 w-3.5 p-0.5 rounded-full bg-background text-primary-glow" />
               </span>
               {c.connectHelena}
             </a>

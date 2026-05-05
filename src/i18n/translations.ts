@@ -170,8 +170,8 @@ const en = {
     phone: "Phone",
     connect: "Let's connect",
     connectCompany: "REDFOXX",
-    connectSoroush: "Soroush",
-    connectHelena: "Helena",
+    connectSoroush: "Soroush Qanawizian",
+    connectHelena: "Helena Michaux",
   },
   footer: {
     rights: "REDFOXX — Outbound sales for technical B2B.",
@@ -348,8 +348,8 @@ const nl: typeof en = {
     phone: "Telefoon",
     connect: "Let's connect",
     connectCompany: "REDFOXX",
-    connectSoroush: "Soroush",
-    connectHelena: "Helena",
+    connectSoroush: "Soroush Qanawizian",
+    connectHelena: "Helena Michaux",
   },
   footer: {
     rights: "REDFOXX — Outbound sales voor technische B2B.",
