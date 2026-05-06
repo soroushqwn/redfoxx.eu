@@ -361,7 +361,7 @@ const nl: typeof en = {
       { criterion: "Pay-per-demo: je betaalt per afspraak", cells: ["check", "cross", "cross", "Vast loon"] },
     ],
     scrollHint: "Scroll",
-    tagline: "Wij winnen. Jij wint nog meer.",
+    tagline: "We win. You win bigger.",
     cta: "Plan een kennismakingsgesprek",
   },
   cta: {
