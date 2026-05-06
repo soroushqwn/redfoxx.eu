@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, CheckCircle2, Phone, Sparkles } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import foxEmblem from "@/assets/redfoxx-3d.png";
 import { HeroGrid } from "./HeroGrid";
 import { useLang } from "@/i18n/LanguageContext";
