@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, CheckCircle2, Phone, Sparkles } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import foxEmblem from "@/assets/redfoxx-3d.png";
 import { HeroGrid } from "./HeroGrid";
 import { useLang } from "@/i18n/LanguageContext";
@@ -9,6 +10,12 @@ export const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const { t } = useLang();
   const h = t.hero;
+  const rotations = h.cards.meetingRotation;
+  const [rIdx, setRIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setRIdx((i) => (i + 1) % rotations.length), 2800);
+    return () => clearInterval(id);
+  }, [rotations.length]);
   return (
     <section ref={sectionRef} className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
       <HeroGrid sectionRef={sectionRef} />
@@ -116,7 +123,20 @@ export const Hero = () => {
                     <p className="text-sm font-medium">{h.cards.meetingBooked}</p>
                     <span className="text-[10px] font-mono text-primary-glow">{h.cards.new}</span>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-0.5 truncate">{h.cards.meetingDetail}</p>
+                  <div className="relative h-4 mt-0.5 overflow-hidden">
+                    <AnimatePresence mode="wait">
+                      <motion.p
+                        key={rIdx}
+                        initial={{ y: 12, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -12, opacity: 0 }}
+                        transition={{ duration: 0.35 }}
+                        className="text-xs text-muted-foreground truncate"
+                      >
+                        {rotations[rIdx]}
+                      </motion.p>
+                    </AnimatePresence>
+                  </div>
                 </div>
               </div>
             </motion.div>
