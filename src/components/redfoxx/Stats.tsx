@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const values = [
-  { value: 340, suffix: "+" },
   { value: 12.4, suffix: "%" },
   { value: 28, suffix: "%" },
   { value: 5, suffix: "x" },
