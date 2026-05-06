@@ -178,7 +178,7 @@ const en = {
     title1: "Ready to grow",
     titleAccent: "together?",
     desc: "Book a free 30-minute intro call. No strings. We'll see if there's a fit and what we can do for you.",
-    button: "Book on Calendly",
+    button: "Book a meeting",
     email: "Email",
     phone: "Phone",
     connect: "Let's connect",
