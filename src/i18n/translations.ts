@@ -158,6 +158,7 @@ const en = {
     headers: ["", "REDFOXX", "Call center", "Lead gen agency", "In-house SDR"],
     rows: [
       { criterion: "Technical B2B expertise", cells: ["check", "cross", "cross", "Depends"] },
+      { criterion: "List building from scratch (ICP + verified data)", cells: ["check", "cross", "Generic lists", "Depends"] },
       { criterion: "Integrated multichannel (call + email + LinkedIn)", cells: ["check", "Call only", "Email only", "Depends"] },
       { criterion: "Founder-led prospecting", cells: ["check", "cross", "cross", "Depends"] },
       { criterion: "Calls recorded, open reporting", cells: ["check", "cross", "cross", "Depends"] },
