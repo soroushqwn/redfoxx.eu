@@ -121,7 +121,20 @@ export const Hero = () => {
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
                     <p className="text-sm font-medium">{h.cards.meetingBooked}</p>
-                    <span className="text-[10px] font-mono text-primary-glow">{h.cards.new}</span>
+                    <AnimatePresence mode="wait">
+                      {rotations[rIdx].isNew && (
+                        <motion.span
+                          key={`new-${rIdx}`}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          transition={{ duration: 0.25 }}
+                          className="text-[10px] font-mono text-primary-glow"
+                        >
+                          {h.cards.new}
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
                   </div>
                   <div className="relative h-4 mt-0.5 overflow-hidden">
                     <AnimatePresence mode="wait">
@@ -133,7 +146,7 @@ export const Hero = () => {
                         transition={{ duration: 0.35 }}
                         className="text-xs text-muted-foreground truncate"
                       >
-                        {rotations[rIdx]}
+                        {rotations[rIdx].detail}
                       </motion.p>
                     </AnimatePresence>
                   </div>

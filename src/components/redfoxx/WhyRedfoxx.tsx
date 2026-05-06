@@ -124,7 +124,7 @@ export const WhyRedfoxx = () => {
           </div>
 
           <div className="text-center mt-12">
-            <p className="italic text-foreground/80 text-lg">{c.tagline}</p>
+            <p className="text-lg md:text-xl font-display font-medium gradient-text">{c.tagline}</p>
             <a
               href="#contact"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-4 text-base font-medium text-primary-foreground shadow-ember hover:scale-[1.02] transition-transform mt-6"

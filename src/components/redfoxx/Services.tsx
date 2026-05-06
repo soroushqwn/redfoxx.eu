@@ -76,9 +76,6 @@ export const Services = () => {
           })}
         </div>
 
-        <p className="mt-10 text-center text-sm text-muted-foreground">
-          {s.footer1} <span className="text-foreground">{s.footer2}</span>
-        </p>
       </div>
     </section>
   );

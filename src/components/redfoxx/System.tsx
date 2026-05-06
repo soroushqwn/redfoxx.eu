@@ -124,6 +124,10 @@ export const System = () => {
             ))}
           </div>
         </div>
+
+        <p className="mt-16 text-center text-sm text-muted-foreground">
+          {t.services.footer1} <span className="text-foreground">{t.services.footer2}</span>
+        </p>
       </div>
     </section>
   );
