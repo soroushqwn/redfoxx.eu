@@ -41,7 +41,7 @@ export const Stats = () => {
           <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-primary/20 blur-[120px]" />
           <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-primary-glow/10 blur-[120px]" />
 
-          <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+          <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
             {values.map((s, i) => (
               <motion.div
                 key={i}
