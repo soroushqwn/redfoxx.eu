@@ -207,10 +207,10 @@ const nl: typeof en = {
     title2: "meetings voor",
     titleAccent: "technische B2B",
     title3: "bedrijven.",
-    desc: "REDFOXX is de verlenging van je sales team. We ontwerpen een multichannel outbound-strategie op maat van je ICP, markt en sales cycle: cold email, cold calling, LinkedIn, of een mix. Het resultaat: gekwalificeerde meetings, rechtstreeks in je agenda.",
+    desc: "REDFOXX is het verlengstuk van je salesteam. We bouwen een multichannel outbound-aanpak op maat van je ICP, markt en verkoopcyclus: cold mail, cold calling, LinkedIn of een mix van alles. Het resultaat? Gekwalificeerde meetings, rechtstreeks in je agenda.",
     ctaPrimary: "Plan een strategiegesprek",
     ctaSecondary: "Bekijk hoe het werkt",
-    trust: ["Multichannel SDR-team", "AI-gestuurde personalisatie", "Wekelijkse Notion-rapporten"],
+    trust: ["Multichannel SDR-team", "Slimme personalisatie met AI", "Wekelijkse rapporten in Notion"],
     cards: {
       meetingBooked: "Meeting geboekt",
       new: "NIEUW",
