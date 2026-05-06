@@ -369,7 +369,7 @@ const nl: typeof en = {
     title1: "Klaar om samen",
     titleAccent: "te groeien?",
     desc: "Plan een vrijblijvend kennismakingsgesprek van 30 minuten. We kijken samen of het klikt en wat we voor je kunnen betekenen.",
-    button: "Plan via Calendly",
+    button: "Plan een meeting",
     email: "E-mail",
     phone: "Telefoon",
     connect: "Let's connect",
