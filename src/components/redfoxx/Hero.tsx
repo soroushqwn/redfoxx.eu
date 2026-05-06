@@ -10,6 +10,12 @@ export const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const { t } = useLang();
   const h = t.hero;
+  const rotations = h.cards.meetingRotation;
+  const [rIdx, setRIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setRIdx((i) => (i + 1) % rotations.length), 2800);
+    return () => clearInterval(id);
+  }, [rotations.length]);
   return (
     <section ref={sectionRef} className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
       <HeroGrid sectionRef={sectionRef} />
