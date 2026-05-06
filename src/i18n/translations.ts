@@ -346,6 +346,7 @@ const nl: typeof en = {
     headers: ["", "REDFOXX", "Call center", "Lead gen agency", "Eigen SDR"],
     rows: [
       { criterion: "Technische B2B-expertise", cells: ["check", "cross", "cross", "Afhankelijk"] },
+      { criterion: "Lijsten bouwen vanaf nul (ICP + geverifieerde data)", cells: ["check", "cross", "Generieke lijsten", "Afhankelijk"] },
       { criterion: "Multichannel geïntegreerd (call + email + LinkedIn)", cells: ["check", "Enkel call", "Enkel email", "Afhankelijk"] },
       { criterion: "Founder-led prospectie", cells: ["check", "cross", "cross", "Afhankelijk"] },
       { criterion: "Calls opgenomen, open rapportage", cells: ["check", "cross", "cross", "Afhankelijk"] },
