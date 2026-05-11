@@ -20,7 +20,6 @@ const Index = () => {
       <ForWhom />
       <Services />
       <System />
-      <Stats />
       <WhyRedfoxx />
       <CTA />
       <Footer />
