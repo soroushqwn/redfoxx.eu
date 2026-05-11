@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, CheckCircle2, Phone, Sparkles } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import foxEmblem from "@/assets/redfoxx-3d.png";
@@ -151,27 +151,6 @@ export const Hero = () => {
                     </AnimatePresence>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30, x: 20 }}
-              animate={{ opacity: 1, y: 0, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="absolute bottom-12 -right-4 card-glass rounded-2xl p-4 w-60 shadow-card"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">{h.cards.replyRate}</p>
-                <Sparkles className="h-3.5 w-3.5 text-primary-glow" />
-              </div>
-              <p className="text-2xl font-display font-semibold">12.4%</p>
-              <div className="mt-2 h-1.5 rounded-full bg-secondary overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: "72%" }}
-                  transition={{ duration: 1.4, delay: 1.1 }}
-                  className="h-full bg-gradient-primary"
-                />
               </div>
             </motion.div>
 
