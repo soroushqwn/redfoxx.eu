@@ -6,7 +6,6 @@ import { HowItWorks } from "@/components/redfoxx/HowItWorks";
 import { ForWhom } from "@/components/redfoxx/ForWhom";
 import { Services } from "@/components/redfoxx/Services";
 import { System } from "@/components/redfoxx/System";
-import { Stats } from "@/components/redfoxx/Stats";
 import { WhyRedfoxx } from "@/components/redfoxx/WhyRedfoxx";
 import { CTA, Footer } from "@/components/redfoxx/CTA";
 
