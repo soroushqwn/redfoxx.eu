@@ -241,11 +241,12 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
 
         const lightWave = (Math.sin(t * 1.6 + piece.phase2) + 1) / 2;
         const edgeWeight = Math.pow(piece.distFromCenter, 1.4);
-        const alpha =
+        const alpha = (
           0.06 +
           intensity * edgeWeight * 0.22 +
           lightWave * edgeWeight * intensity * 0.12 +
-          mouseBoost;
+          mouseBoost
+        ) * 0.9;
 
         const isRed = (piece.distFromCenter > 0.55 && lightWave > 0.85) || mouseBoost > 0.25;
         ctx.strokeStyle = isRed
