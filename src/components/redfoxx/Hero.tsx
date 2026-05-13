@@ -105,7 +105,7 @@ export const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute inset-0 m-auto h-[420px] w-[420px] object-contain drop-shadow-[0_30px_80px_rgba(239,43,45,0.45)] animate-float"
+              className="absolute inset-0 m-auto h-[420px] w-[420px] object-contain drop-shadow-[0_30px_80px_rgba(203,3,3,0.45)] animate-float"
             />
 
             <motion.div
