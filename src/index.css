@@ -16,9 +16,9 @@
     --popover: 0 0% 100%;
     --popover-foreground: 212 64% 15%;
 
-    --primary: 0 96% 41%;
+    --primary: 0 97% 40%;
     --primary-foreground: 60 14% 95%;
-    --primary-glow: 0 96% 48%;
+    --primary-glow: 0 97% 50%;
 
     --secondary: 60 10% 92%;
     --secondary-foreground: 212 64% 15%;
@@ -26,27 +26,27 @@
     --muted: 60 10% 92%;
     --muted-foreground: 212 25% 40%;
 
-    --accent: 0 96% 41%;
+    --accent: 0 97% 40%;
     --accent-foreground: 60 14% 95%;
 
-    --destructive: 0 96% 41%;
+    --destructive: 0 97% 40%;
     --destructive-foreground: 60 14% 95%;
 
     --border: 212 20% 85%;
     --input: 212 20% 88%;
-    --ring: 0 96% 41%;
+    --ring: 0 97% 40%;
 
     --radius: 0.875rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 96% 41%), hsl(0 96% 55%));
-    --gradient-ember: radial-gradient(60% 80% at 50% 0%, hsl(0 96% 41% / 0.35), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(0 97% 40%), hsl(0 97% 50%));
+    --gradient-ember: radial-gradient(60% 80% at 50% 0%, hsl(0 97% 40% / 0.35), transparent 70%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100% / 0.9), hsl(60 14% 95% / 0.6));
-    --gradient-border: linear-gradient(135deg, hsl(0 96% 41% / 0.6), hsl(0 96% 55% / 0.2), transparent);
+    --gradient-border: linear-gradient(135deg, hsl(0 97% 40% / 0.6), hsl(0 97% 50% / 0.2), transparent);
 
     /* Shadows */
-    --shadow-ember: 0 20px 80px -20px hsl(0 96% 41% / 0.35);
-    --shadow-glow: 0 0 60px hsl(0 96% 55% / 0.25);
+    --shadow-ember: 0 20px 80px -20px hsl(0 97% 40% / 0.35);
+    --shadow-glow: 0 0 60px hsl(0 97% 50% / 0.25);
     --shadow-card: 0 20px 50px -20px hsl(212 64% 15% / 0.15);
 
     /* Motion */
