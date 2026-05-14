@@ -1,7 +1,7 @@
 # REDFOXX
 
-> REDFOXX is an outbound sales agency for technical B2B companies. We run multichannel outbound — cold calling, email, and LinkedIn — to book qualified meetings straight into your calendar.
+> REDFOXX is an outbound sales agency for technical B2B companies. We run multichannel outbound - cold calling, email, and LinkedIn - to book qualified meetings straight into your calendar.
 
 ## Pages
 
-- [Home](/): Outbound sales for technical B2B — services, approach, system, and contact.
+- [Home](/): Outbound sales for technical B2B - services, approach, system, and contact.
