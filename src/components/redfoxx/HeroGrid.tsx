@@ -23,7 +23,7 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const CELL = 21;            // piece base size
+    const CELL = 84;            // piece base size
     const TAB = CELL * 0.22;    // tab knob height
 
     type Piece = {
