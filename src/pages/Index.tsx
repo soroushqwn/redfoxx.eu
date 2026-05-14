@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 import { Navbar } from "@/components/redfoxx/Navbar";
 import { Hero } from "@/components/redfoxx/Hero";
 import { LogoMarquee } from "@/components/redfoxx/LogoMarquee";
@@ -13,14 +13,14 @@ import { CTA, Footer } from "@/components/redfoxx/CTA";
 const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Helmet>
+      <Head>
         <title>REDFOXX — Outbound Sales for Technical B2B</title>
         <meta name="description" content="REDFOXX is the extension of your sales team. Multichannel outbound — cold calling, email, LinkedIn — that books qualified meetings for technical B2B companies." />
         <link rel="canonical" href="https://redfoxx.be/" />
         <meta property="og:title" content="REDFOXX — Outbound Sales for Technical B2B" />
         <meta property="og:description" content="Qualified meetings, straight into your calendar. Multichannel outbound built for technical B2B." />
         <meta property="og:url" content="https://redfoxx.be/" />
-      </Helmet>
+      </Head>
       <Navbar />
       <Hero />
       <LogoMarquee />
