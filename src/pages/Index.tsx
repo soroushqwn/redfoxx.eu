@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/redfoxx/Navbar";
 import { Hero } from "@/components/redfoxx/Hero";
 import { LogoMarquee } from "@/components/redfoxx/LogoMarquee";
