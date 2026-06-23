@@ -6,11 +6,11 @@ import saniori from "@/assets/clients/saniori.webp.asset.json";
 import { useLang } from "@/i18n/LanguageContext";
 
 const clients = [
-  { name: "Hyperfox", src: hyperfox.url, scale: 1.3 },
-  { name: "Involv", src: involv.url, scale: 1.3 },
-  { name: "Digimedio", src: digimedio.url, scale: 1.3 },
+  { name: "Hyperfox", src: hyperfox.url, scale: 1 },
+  { name: "Involv", src: involv.url, scale: 1 },
+  { name: "Digimedio", src: digimedio.url, scale: 1 },
   { name: "Fyndera", src: fyndera.url, scale: 1 },
-  { name: "Saniori", src: saniori.url, scale: 0.8 },
+  { name: "Saniori", src: saniori.url, scale: 0.7 },
 ];
 
 export const ClientMarquee = () => {
