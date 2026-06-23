@@ -47,6 +47,9 @@ const en = {
   marquee: {
     label: "Built on the modern outbound stack",
   },
+  clients: {
+    label: "Trusted by ambitious B2B teams",
+  },
   problem: {
     eyebrow: "The Problem",
     title: "Sound familiar?",
