@@ -1,16 +1,11 @@
-import hyperfox from "@/assets/clients/hyperfox.png.asset.json";
-import involv from "@/assets/clients/involv.png.asset.json";
-import digimedio from "@/assets/clients/digimedio.png.asset.json";
-import fyndera from "@/assets/clients/fyndera.png.asset.json";
-import saniori from "@/assets/clients/saniori.webp.asset.json";
 import { useLang } from "@/i18n/LanguageContext";
 
 const clients = [
-  { name: "Hyperfox", src: hyperfox.url, scale: 1 },
-  { name: "Involv", src: involv.url, scale: 1 },
-  { name: "Digimedio", src: digimedio.url, scale: 1 },
-  { name: "Fyndera", src: fyndera.url, scale: 1 },
-  { name: "Saniori", src: saniori.url, scale: 0.7 },
+  { name: "Involv", src: "/clients/involv.png", scale: 1 },
+  { name: "Hyperfox", src: "/clients/hyperfox.png", scale: 1 },
+  { name: "Digimedio", src: "/clients/digimedio.png", scale: 1 },
+  { name: "Fyndera", src: "/clients/fyndera.png", scale: 1 },
+  { name: "Saniori", src: "/clients/saniori.png", scale: 0.7 },
 ];
 
 export const ClientMarquee = () => {
@@ -26,9 +21,9 @@ export const ClientMarquee = () => {
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         <div className="flex marquee gap-8 md:gap-16 whitespace-nowrap items-center">
-          {[...clients, ...clients].map((c, i) => (
+          {clients.map((c) => (
             <div
-              key={i}
+              key={c.name}
               className="shrink-0 flex items-center justify-center h-10 md:h-14"
               title={c.name}
             >
