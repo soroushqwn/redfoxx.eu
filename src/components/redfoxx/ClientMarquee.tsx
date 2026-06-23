@@ -20,11 +20,11 @@ export const ClientMarquee = () => {
       <div className="relative overflow-hidden">
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-        <div className="flex marquee gap-8 md:gap-16 whitespace-nowrap items-center">
+        <div className="flex marquee gap-12 md:gap-20 whitespace-nowrap items-center">
           {clients.map((c) => (
             <div
               key={c.name}
-              className="shrink-0 flex items-center justify-center h-10 md:h-14"
+              className="shrink-0 flex items-center justify-center h-14 md:h-20"
               title={c.name}
             >
               <img
@@ -32,14 +32,14 @@ export const ClientMarquee = () => {
                 alt={c.name}
                 loading="lazy"
                 style={{ transform: `scale(${c.scale})` }}
-                className="h-full w-auto max-w-[120px] md:max-w-[180px] object-contain opacity-70 hover:opacity-100 transition-opacity"
+                className="h-full w-auto max-w-[160px] md:max-w-[240px] object-contain opacity-70 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}
           {clients.map((c) => (
             <div
               key={`${c.name}-dup`}
-              className="shrink-0 flex items-center justify-center h-10 md:h-14"
+              className="shrink-0 flex items-center justify-center h-14 md:h-20"
               title={c.name}
               aria-hidden="true"
             >
@@ -48,7 +48,7 @@ export const ClientMarquee = () => {
                 alt=""
                 loading="lazy"
                 style={{ transform: `scale(${c.scale})` }}
-                className="h-full w-auto max-w-[120px] md:max-w-[180px] object-contain opacity-70 hover:opacity-100 transition-opacity"
+                className="h-full w-auto max-w-[160px] md:max-w-[240px] object-contain opacity-70 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}
