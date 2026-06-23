@@ -24,11 +24,12 @@ const Index = () => {
       </Head>
       <Navbar />
       <Hero />
-      <LogoMarquee />
+      <ClientMarquee />
       <Problem />
       <HowItWorks />
       <ForWhom />
       <Services />
+      <LogoMarquee />
       <System />
       <WhyRedfoxx />
       <CTA />
