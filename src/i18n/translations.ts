@@ -241,6 +241,9 @@ const nl: typeof en = {
   marquee: {
     label: "Gebouwd op de moderne outbound-stack",
   },
+  clients: {
+    label: "Vertrouwd door ambitieuze B2B-teams",
+  },
   problem: {
     eyebrow: "Het probleem",
     title: "Komt dit bekend voor?",
