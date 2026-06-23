@@ -1,6 +1,7 @@
 import { Head } from "vite-react-ssg";
 import { Navbar } from "@/components/redfoxx/Navbar";
 import { Hero } from "@/components/redfoxx/Hero";
+import { ClientMarquee } from "@/components/redfoxx/ClientMarquee";
 import { LogoMarquee } from "@/components/redfoxx/LogoMarquee";
 import { Problem } from "@/components/redfoxx/Problem";
 import { HowItWorks } from "@/components/redfoxx/HowItWorks";
@@ -23,11 +24,12 @@ const Index = () => {
       </Head>
       <Navbar />
       <Hero />
-      <LogoMarquee />
+      <ClientMarquee />
       <Problem />
       <HowItWorks />
       <ForWhom />
       <Services />
+      <LogoMarquee />
       <System />
       <WhyRedfoxx />
       <CTA />

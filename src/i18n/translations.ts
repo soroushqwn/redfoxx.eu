@@ -47,6 +47,9 @@ const en = {
   marquee: {
     label: "Built on the modern outbound stack",
   },
+  clients: {
+    label: "Trusted by ambitious B2B teams",
+  },
   problem: {
     eyebrow: "The Problem",
     title: "Sound familiar?",
@@ -237,6 +240,9 @@ const nl: typeof en = {
   },
   marquee: {
     label: "Gebouwd op de moderne outbound-stack",
+  },
+  clients: {
+    label: "Vertrouwd door ambitieuze B2B-teams",
   },
   problem: {
     eyebrow: "Het probleem",
