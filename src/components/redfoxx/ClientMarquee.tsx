@@ -36,6 +36,22 @@ export const ClientMarquee = () => {
               />
             </div>
           ))}
+          {clients.map((c) => (
+            <div
+              key={`${c.name}-dup`}
+              className="shrink-0 flex items-center justify-center h-10 md:h-14"
+              title={c.name}
+              aria-hidden="true"
+            >
+              <img
+                src={c.src}
+                alt=""
+                loading="lazy"
+                style={{ transform: `scale(${c.scale})` }}
+                className="h-full w-auto max-w-[120px] md:max-w-[180px] object-contain opacity-70 hover:opacity-100 transition-opacity"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
