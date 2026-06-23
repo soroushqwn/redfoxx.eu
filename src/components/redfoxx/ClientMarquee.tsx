@@ -36,6 +36,7 @@ export const ClientMarquee = () => {
                 src={c.src}
                 alt={c.name}
                 loading="lazy"
+                style={{ transform: `scale(${c.scale})` }}
                 className="h-full w-auto max-w-[120px] md:max-w-[180px] object-contain opacity-70 hover:opacity-100 transition-opacity"
               />
             </div>
