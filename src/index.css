@@ -123,12 +123,12 @@
   }
 
   .marquee {
-    animation: marquee 25s linear infinite;
+    animation: marquee 12s linear infinite;
     will-change: transform;
   }
   @media (min-width: 768px) {
     .marquee {
-      animation-duration: 40s;
+      animation-duration: 34s;
     }
   }
 
