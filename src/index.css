@@ -124,13 +124,31 @@
 
   .marquee {
     animation: marquee 12s linear infinite;
+    animation-timing-function: linear;
     will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
   }
   @media (min-width: 768px) {
     .marquee {
       animation-duration: 34s;
     }
   }
+
+  /* Client logo marquee — own timing so tool marquee is untouched */
+  .marquee-clients {
+    animation: marquee 6s linear infinite;
+    animation-timing-function: linear;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  @media (min-width: 768px) {
+    .marquee-clients {
+      animation-duration: 28.9s;
+    }
+  }
+
 
   @keyframes marquee {
     from { transform: translateX(0); }
