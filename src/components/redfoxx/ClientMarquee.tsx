@@ -33,7 +33,7 @@ export const ClientMarquee = () => {
                 alt={c.name}
                 loading="lazy"
                 style={{ transform: `scale(${c.scale})` }}
-                className="h-full w-auto max-w-[160px] md:max-w-[240px] object-contain opacity-70 hover:opacity-100 transition-opacity"
+                className="h-full w-auto max-w-[160px] md:max-w-[240px] object-contain opacity-70"
               />
             </div>
           ))}
@@ -49,7 +49,7 @@ export const ClientMarquee = () => {
                 alt=""
                 loading="lazy"
                 style={{ transform: `scale(${c.scale})` }}
-                className="h-full w-auto max-w-[160px] md:max-w-[240px] object-contain opacity-70 hover:opacity-100 transition-opacity"
+                className="h-full w-auto max-w-[160px] md:max-w-[240px] object-contain opacity-70"
               />
             </div>
           ))}
