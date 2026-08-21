@@ -2,8 +2,9 @@ import { useLang } from "@/i18n/LanguageContext";
 
 const clients = [
   { name: "Involv", src: "/clients/involv.png", scale: 1 },
-  { name: "Hyperfox", src: "/clients/hyperfox.png", scale: 1 },
+  { name: "Dscribe", src: "/clients/compass-large.svg", scale: 1 },
   { name: "Digimedio", src: "/clients/digimedio.png", scale: 1 },
+  { name: "Inku", src: "/clients/inku_tech_cover.jpg", scale: 1 },
   { name: "Fyndera", src: "/clients/fyndera.png", scale: 1 },
   { name: "Saniori", src: "/clients/saniori.png", scale: 0.7 },
 ];
