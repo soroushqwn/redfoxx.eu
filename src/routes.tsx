@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import Index from "./pages/Index";
+import Jobs from "./pages/Jobs";
 import NotFound from "./pages/NotFound";
 import type { RouteRecord } from "vite-react-ssg";
 
@@ -30,6 +31,7 @@ export const routes: RouteRecord[] = [
     element: <Layout />,
     children: [
       { index: true, element: <Index /> },
+      { path: "jobs", element: <Jobs /> },
       { path: "*", element: <NotFound /> },
     ],
   },
