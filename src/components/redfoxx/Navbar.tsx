@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import { useLang } from "@/i18n/LanguageContext";
@@ -70,6 +71,12 @@ export const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <Link
+            to="/jobs"
+            className="px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-secondary transition-colors"
+          >
+            {t.nav.jobs}
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3">
@@ -102,6 +109,13 @@ export const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <Link
+            to="/jobs"
+            onClick={() => setOpen(false)}
+            className="px-4 py-3 text-sm hover:bg-secondary rounded-lg"
+          >
+            {t.nav.jobs}
+          </Link>
           <div className="px-4 py-3 flex items-center justify-between">
             <span className="text-xs text-muted-foreground font-mono uppercase tracking-wider">Language</span>
             <LangToggle lang={lang} setLang={setLang} />
