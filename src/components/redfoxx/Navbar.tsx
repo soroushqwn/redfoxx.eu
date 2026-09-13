@@ -62,7 +62,7 @@ export const Navbar = () => {
       <div className="container flex items-center justify-between gap-3">
         <Link to="/" className="flex items-center group">
           <img src={logoLockup} alt="REDFOXX Sales Solutions" className="h-10 md:h-11 w-auto object-contain" />
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-1 rounded-full border border-border bg-card/40 backdrop-blur px-1.5 py-1.5">
           {t.nav.links.map((l) => (
