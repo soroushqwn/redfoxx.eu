@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import { useLang } from "@/i18n/LanguageContext";
@@ -38,6 +38,9 @@ const LangToggle = ({
 
 export const Navbar = () => {
   const { lang, setLang, t } = useLang();
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+  const homeHref = (href: string) => (isHome ? href : `/${href}`);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
