@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import { useLang } from "@/i18n/LanguageContext";
@@ -38,6 +38,9 @@ const LangToggle = ({
 
 export const Navbar = () => {
   const { lang, setLang, t } = useLang();
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+  const homeHref = (href: string) => (isHome ? href : `/${href}`);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -57,15 +60,15 @@ export const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between gap-3">
-        <a href="#" className="flex items-center group">
+        <Link to="/" className="flex items-center group">
           <img src={logoLockup} alt="REDFOXX Sales Solutions" className="h-10 md:h-11 w-auto object-contain" />
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-1 rounded-full border border-border bg-card/40 backdrop-blur px-1.5 py-1.5">
           {t.nav.links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={homeHref(l.href)}
               className="px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-secondary transition-colors"
             >
               {l.label}
@@ -82,7 +85,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-2 md:gap-3">
           <LangToggle lang={lang} setLang={setLang} className="hidden sm:inline-flex" />
           <a
-            href="#contact"
+            href={homeHref("#contact")}
             className="hidden sm:inline-flex items-center rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-ember hover:scale-[1.03] transition-transform"
           >
             {t.nav.bookCall}
@@ -102,7 +105,7 @@ export const Navbar = () => {
           {t.nav.links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={homeHref(l.href)}
               onClick={() => setOpen(false)}
               className="px-4 py-3 text-sm hover:bg-secondary rounded-lg"
             >
