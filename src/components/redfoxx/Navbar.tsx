@@ -60,7 +60,7 @@ export const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between gap-3">
-        <a href="#" className="flex items-center group">
+        <Link to="/" className="flex items-center group">
           <img src={logoLockup} alt="REDFOXX Sales Solutions" className="h-10 md:h-11 w-auto object-contain" />
         </a>
 
@@ -68,7 +68,7 @@ export const Navbar = () => {
           {t.nav.links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={homeHref(l.href)}
               className="px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-secondary transition-colors"
             >
               {l.label}
@@ -85,7 +85,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-2 md:gap-3">
           <LangToggle lang={lang} setLang={setLang} className="hidden sm:inline-flex" />
           <a
-            href="#contact"
+            href={homeHref("#contact")}
             className="hidden sm:inline-flex items-center rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-ember hover:scale-[1.03] transition-transform"
           >
             {t.nav.bookCall}
@@ -105,7 +105,7 @@ export const Navbar = () => {
           {t.nav.links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={homeHref(l.href)}
               onClick={() => setOpen(false)}
               className="px-4 py-3 text-sm hover:bg-secondary rounded-lg"
             >
