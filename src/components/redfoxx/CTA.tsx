@@ -1,5 +1,5 @@
 import { ArrowRight, Mail, Phone, Linkedin } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import soroushPhoto from "@/assets/soroush.jpg";
 import helenaPhoto from "@/assets/helena.jpg";
@@ -13,15 +13,6 @@ export const CTA = () => {
   const { t } = useLang();
   const c = t.cta;
 
-  useEffect(() => {
-    const id = "calendly-widget-script";
-    if (document.getElementById(id)) return;
-    const script = document.createElement("script");
-    script.id = id;
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
   return (
     <section ref={sectionRef} id="contact" className="relative py-24 md:py-32 overflow-hidden">
       <HeroGrid sectionRef={sectionRef} />
@@ -53,10 +44,19 @@ export const CTA = () => {
           </div>
 
           <div
-            className="calendly-inline-widget mt-10 mx-auto rounded-2xl overflow-hidden border border-border bg-card/40 backdrop-blur"
-            data-url={CALENDLY_URL}
+            className="mt-10 mx-auto rounded-2xl overflow-hidden border border-border bg-card/40 backdrop-blur"
             style={{ minWidth: "320px", height: "700px" }}
-          />
+          >
+            <iframe
+              src={`${CALENDLY_URL}?embed_type=Inline&hide_gdpr_banner=1`}
+              title="Book a meeting with REDFOXX"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              loading="lazy"
+              className="w-full h-full"
+            />
+          </div>
 
           <div className="mt-12 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-base text-muted-foreground">
             <a
