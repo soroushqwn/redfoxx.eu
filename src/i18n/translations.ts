@@ -1,4 +1,5 @@
-export type Lang = "en" | "nl";
+import type { Lang } from "../seo/site";
+export type { Lang };
 
 const en = {
   nav: {
@@ -13,6 +14,7 @@ const en = {
     jobs: "Jobs",
     bookCall: "Book a call",
     menuLabel: "Menu",
+    language: "Language",
   },
   hero: {
     badge: "Outbound Sales · Technical B2B",
@@ -195,7 +197,9 @@ const en = {
   },
 };
 
-const nl: typeof en = {
+export type Translations = typeof en;
+
+const nl: Translations = {
   nav: {
     links: [
       { label: "Hoe het werkt", href: "#how" },
@@ -208,6 +212,7 @@ const nl: typeof en = {
     jobs: "Jobs",
     bookCall: "Plan een gesprek",
     menuLabel: "Menu",
+    language: "Taal",
   },
   hero: {
     badge: "Outbound Sales · Technische B2B",
@@ -390,5 +395,201 @@ const nl: typeof en = {
   },
 };
 
-export type Translations = typeof en;
-export const translations: Record<Lang, Translations> = { en, nl };
+
+const fr: Translations = {
+  nav: {
+    links: [
+      { label: "Comment ça marche", href: "#how" },
+      { label: "Pour qui", href: "#for-whom" },
+      { label: "Services", href: "#services" },
+      { label: "Le système", href: "#system" },
+      { label: "Pourquoi REDFOXX", href: "#why" },
+      { label: "Contact", href: "#contact" },
+    ],
+    jobs: "Jobs",
+    bookCall: "Planifier un appel",
+    menuLabel: "Menu",
+    language: "Langue",
+  },
+  hero: {
+    badge: "Ventes outbound · B2B technique",
+    title1: "Nous décrochons des",
+    title2: "rendez-vous qualifiés pour",
+    titleAccent: "les entreprises B2B",
+    title3: "techniques.",
+    desc: "REDFOXX est le prolongement de votre équipe commerciale. Nous concevons une stratégie outbound multicanale adaptée à votre ICP, à votre marché et à votre cycle de vente : e-mail, appels à froid, LinkedIn ou une combinaison. Le résultat : des rendez-vous qualifiés, directement dans votre agenda.",
+    ctaPrimary: "Planifier un appel stratégique",
+    ctaSecondary: "Voir comment ça marche",
+    trust: ["Équipe SDR multicanale", "Personnalisation assistée par l'IA", "Rapports hebdomadaires dans Notion"],
+    cards: {
+      meetingBooked: "Rendez-vous fixé",
+      new: "NOUVEAU",
+      meetingDetail: "Operations Director · Spuntini — jeu.",
+      meetingRotation: [
+        { detail: "Operations Director · Spuntini — jeu.", isNew: true },
+        { detail: "Supply Chain Director · Poppies Bakeries — mer.", isNew: true },
+        { detail: "Operations Director · La William — ven.", isNew: false },
+        { detail: "General Manager · De Keyser Vleeswaren — mer.", isNew: true },
+        { detail: "COO · Westvlees — mar.", isNew: false },
+        { detail: "Operations Director · BekaertDeslee — mar.", isNew: true },
+        { detail: "ICT Manager · P&V Panels", isNew: true },
+        { detail: "Application Manager · Farys", isNew: false },
+        { detail: "General Manager · Vanhonsebrouck — lun.", isNew: true },
+        { detail: "Operations Manager · Meco — jeu.", isNew: false },
+      ],
+      replyRate: "Taux de réponse",
+      dialing: "Appel en cours",
+      dialingDetail: "+32 · Prospect Tier 1",
+    },
+  },
+  marquee: {
+    label: "Construit sur une stack outbound moderne",
+  },
+  clients: {
+    label: "Ils nous font confiance",
+  },
+  problem: {
+    eyebrow: "Le problème",
+    title: "Cela vous parle ?",
+    desc: "Si vous vous reconnaissez, vous n'êtes pas seul. La plupart des entreprises B2B techniques avec lesquelles nous parlons sont confrontées à au moins trois de ces situations.",
+    items: [
+      { title: "Pas d'outbound structuré", desc: "La croissance dépend du bouche-à-oreille et des recommandations." },
+      { title: "Le cold e-mailing n'a rien donné", desc: "Vous avez essayé une fois, aucune réponse, et vous avez abandonné." },
+      { title: "Pas le temps de prospecter", desc: "Impossible de conclure des deals ET d'en chercher de nouveaux en même temps." },
+      { title: "Mauvaise personne, mauvais message", desc: "Des envois en masse qui abîment la réputation de votre domaine." },
+      { title: "Un commercial recruté qui ne vend pas", desc: "Il fait de l'administratif au lieu de prospecter." },
+      { title: "Aucune visibilité sur le pipeline", desc: "Vous ne savez pas ce qui marche, ce qui ne marche pas, ni ce qui arrive." },
+    ],
+  },
+  how: {
+    eyebrow: "Notre méthode",
+    title1: "Trois étapes. Un pipeline",
+    titleAccent: "qualifié",
+    title2: ".",
+    desc: "Une boucle simple qui se renforce. Chaque semaine, nous affinons le ciblage, le message et le timing.",
+    steps: [
+      {
+        title: "Construire",
+        desc: "Nous construisons votre liste de prospects à partir de zéro, sur la base de votre ICP. E-mails et numéros vérifiés, prêts à être contactés. Vos leads existants deviennent Tier 1.",
+        tags: ["Recherche ICP", "Liste de comptes", "Enrichissement en cascade"],
+      },
+      {
+        title: "Contacter",
+        desc: "Prospection multicanale : e-mail, appels, LinkedIn ou une combinaison. Chaque contact est sollicité plusieurs fois sur différents canaux jusqu'à obtenir une réponse claire.",
+        tags: ["Appels à froid", "Séquences e-mail", "LinkedIn"],
+      },
+      {
+        title: "Planifier",
+        desc: "Les rendez-vous qualifiés arrivent directement dans votre agenda, avec contexte et notes de qualification, pour que vous arriviez parfaitement préparé.",
+        tags: ["Qualifié", "Avec contexte", "Dans votre agenda"],
+      },
+    ],
+  },
+  forWhom: {
+    eyebrow: "Client idéal",
+    title: "REDFOXX est fait pour vous si...",
+    items: [
+      { title: "Vous vendez un produit ou service B2B technique", desc: "SaaS, IT, automatisation, machines, intralogistique ou services d'ingénierie." },
+      { title: "Deal moyen ≥ 5 k€", desc: "Chaque rendez-vous manqué est une opportunité perdue." },
+      { title: "ICP clair, pas le temps de prospecter", desc: "Vous savez qui viser, vous n'avez simplement pas la capacité." },
+      { title: "Des rendez-vous, pas des leads", desc: "Pas de listes de noms. Des conversations qualifiées avec des décideurs." },
+      { title: "Prêt à développer l'outbound", desc: "Il vous faut l'équipe, les outils et la stratégie. Nous devenons votre prolongement." },
+      { title: "Vous préférez conclure plutôt que prospecter", desc: "Faites ce que vous faites le mieux. Nous alimentons le haut de votre entonnoir." },
+    ],
+  },
+  services: {
+    eyebrow: "Services",
+    title: "Ce que nous faisons pour vous.",
+    desc: "Chaque collaboration est sur mesure. Pas de forfaits fixes. Nous élaborons une proposition autour de votre ICP, de votre marché et de vos objectifs.",
+    cta: "Demander une proposition",
+    footer1: "Tous les outils sont pris en charge par REDFOXX.",
+    footer2: "Aucun coût d'outil supplémentaire pour nos clients.",
+    items: [
+      {
+        tag: "Fondation",
+        title: "Constitution de listes & recherche ICP",
+        desc: "Nous cartographions votre marché, définissons votre ICP et constituons une liste de prospects vérifiée avec e-mails et numéros de téléphone.",
+        items: ["Définition de l'ICP & étude de marché", "Constitution de la liste de comptes", "Enrichissement des contacts", "Priorisation par tiers"],
+      },
+      {
+        tag: "Infrastructure",
+        title: "Mise en place du système outbound",
+        desc: "Nous construisons votre moteur outbound à partir de zéro : infrastructure e-mail, séquences, scripts, workflows LinkedIn et routage basé sur les signaux.",
+        items: ["Domaines & boîtes e-mail", "Séquences & rédaction des e-mails", "Scripts d'appel & gestion des objections", "Priorisation sur les signaux d'achat"],
+      },
+      {
+        tag: "Clé en main",
+        title: "Exécution outbound complète",
+        desc: "Nous gérons toute la démarche outbound. Appels comme canal principal, suivi par e-mail, LinkedIn. Rapports hebdomadaires dans Notion + enregistrements.",
+        items: ["Campagnes d'appels à froid", "Suivi personnalisé par e-mail", "Prospection LinkedIn", "Tableau de bord KPI hebdomadaire"],
+      },
+      {
+        tag: "Conseil",
+        title: "Coaching & audit outbound",
+        desc: "Vous avez déjà une équipe commerciale ? Nous auditons votre outbound, identifions ce qui ne fonctionne pas et coachons vos commerciaux sur les appels, la rédaction et les séquences.",
+        items: ["Audit outbound complet", "Revue de l'ICP & du message", "Coaching en direct pendant les appels", "Sessions individuelles avec les SDR"],
+      },
+    ],
+  },
+  system: {
+    eyebrow: "Le système",
+    title1: "Comment nous construisons votre",
+    titleAccent: "machine",
+    title2: " outbound.",
+    desc: "Étape par étape. Outil par outil. Toute la stack que nous assemblons en coulisses.",
+    steps: [
+      { step: "ÉTAPE 01", title: "ICP & liste de comptes", desc: "Définir votre profil client idéal par secteur, taille et valeur de deal. Constituer des listes de comptes ciblées sur la base de données." },
+      { step: "ÉTAPE 02", title: "Enrichissement en cascade", desc: "E-mails et numéros enrichis en cascade. Si une source échoue, la suivante prend automatiquement le relais." },
+      { step: "ÉTAPE 03", title: "Signaux & personnalisation", desc: "Détecter les signaux d'achat : recrutements, actualités, levées de fonds, changements technologiques. Générer des accroches personnalisées par contact." },
+      { step: "ÉTAPE 04", title: "CRM & gestion des données", desc: "Pipeline organisé, activité suivie, intégration à vos outils. Commencer simple, évoluer ensuite." },
+      { step: "ÉTAPE 05", title: "Prospection multicanale", desc: "E-mails, messages LinkedIn et appels depuis une seule plateforme. E-mail + LinkedIn + téléphone = plus de réponses." },
+      { step: "ÉTAPE 06", title: "Planification & enregistrements", desc: "Rendez-vous planifiés, enregistrés, transcrits. Chaque appel devient une information documentée qui alimente votre CRM." },
+      { step: "ÉTAPE 07", title: "Automatisation", desc: "Synchronisation des données, relances automatiques, tâches répétitives supprimées. Ajoutée une fois la stack de base opérationnelle." },
+    ],
+  },
+  stats: {
+    items: [
+      { label: "Rendez-vous qualifiés obtenus" },
+      { label: "Taux de réponse moyen" },
+      { label: "Taux de conversion" },
+      { label: "Multiplicateur de pipeline" },
+    ],
+  },
+  comparison: {
+    eyebrow: "Pourquoi REDFOXX",
+    title: "Toutes les approches outbound ne se valent pas",
+    desc: "Vous pouvez choisir un call center, une agence de génération de leads ou recruter votre propre SDR. Voici ce que vous obtenez réellement.",
+    headers: ["", "REDFOXX", "Call center", "Agence de leads", "SDR interne"],
+    rows: [
+      { criterion: "Expertise B2B technique", cells: ["check", "cross", "cross", "Variable"] },
+      { criterion: "Listes construites à partir de zéro (ICP + données vérifiées)", cells: ["check", "cross", "Listes génériques", "Variable"] },
+      { criterion: "Multicanal intégré (appel + e-mail + LinkedIn)", cells: ["check", "Appels uniquement", "E-mail uniquement", "Variable"] },
+      { criterion: "Prospection pilotée par le fondateur", cells: ["check", "cross", "cross", "Variable"] },
+      { criterion: "Appels enregistrés, reporting transparent", cells: ["check", "cross", "cross", "Variable"] },
+      { criterion: "ROI minimum de 5:1 garanti", cells: ["check", "cross", "cross", "cross"] },
+      { criterion: "Opérationnel en 1 à 2 semaines", cells: ["check", "check", "Variable", "3 à 6 mois de montée en puissance"] },
+      { criterion: "Modèle de paiement par démo", cells: ["check", "cross", "cross", "Salaire fixe"] },
+    ],
+    scrollHint: "Faire défiler",
+    tagline: "We win. You win bigger.",
+    cta: "Planifier un appel découverte",
+  },
+  cta: {
+    eyebrow: "Parlons-en",
+    title1: "Prêt à grandir",
+    titleAccent: "ensemble ?",
+    desc: "Planifiez un appel découverte gratuit de 30 minutes, sans engagement. Nous verrons ensemble s'il y a un fit et ce que nous pouvons faire pour vous.",
+    button: "Planifier un rendez-vous",
+    email: "E-mail",
+    phone: "Téléphone",
+    connect: "Restons en contact",
+    connectCompany: "REDFOXX",
+    connectSoroush: "Soroush Qanawizian",
+    connectHelena: "Helena Michaux",
+  },
+  footer: {
+    rights: "REDFOXX — Ventes outbound pour le B2B technique.",
+  },
+};
+
+export const translations: Record<Lang, Translations> = { en, nl, fr };

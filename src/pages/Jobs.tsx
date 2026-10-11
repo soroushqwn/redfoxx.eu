@@ -1,4 +1,4 @@
-import { Head } from "vite-react-ssg";
+import { Seo } from "@/seo/Seo";
 import { Link } from "react-router-dom";
 import { ArrowRight, Mail, MapPin, Briefcase, Globe, Home } from "lucide-react";
 import { Navbar } from "@/components/redfoxx/Navbar";
@@ -52,20 +52,7 @@ const LANGUAGES = ["Nederlands (Vereist)", "Engels (Vereist)", "Frans (Vereist)"
 const Jobs = () => {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Head>
-        <title>Business Development Representative (BDR) — Jobs bij REDFOXX</title>
-        <meta
-          name="description"
-          content="REDFOXX zoekt een Business Development Representative (BDR) voor B2B outbound sales in Aarschot. Cold calling, e-mail en LinkedIn voor technische B2B-klanten."
-        />
-        <link rel="canonical" href="https://redfoxx.be/jobs" />
-        <meta property="og:title" content="Business Development Representative (BDR) — Jobs bij REDFOXX" />
-        <meta
-          property="og:description"
-          content="Word BDR bij REDFOXX. Cold calling, e-mail en LinkedIn voor technische B2B-klanten. Aarschot, België."
-        />
-        <meta property="og:url" content="https://redfoxx.be/jobs" />
-      </Head>
+      <Seo page="jobs" lang="nl" />
       <Navbar />
 
       {/* Hero */}
