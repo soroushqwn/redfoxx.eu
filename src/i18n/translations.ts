@@ -1,4 +1,5 @@
-export type Lang = "en" | "nl";
+import type { Lang } from "../seo/site";
+export type { Lang };
 
 const en = {
   nav: {
@@ -13,6 +14,7 @@ const en = {
     jobs: "Jobs",
     bookCall: "Book a call",
     menuLabel: "Menu",
+    language: "Language",
   },
   hero: {
     badge: "Outbound Sales · Technical B2B",
@@ -208,6 +210,7 @@ const nl: typeof en = {
     jobs: "Jobs",
     bookCall: "Plan een gesprek",
     menuLabel: "Menu",
+    language: "Taal",
   },
   hero: {
     badge: "Outbound Sales · Technische B2B",
@@ -391,4 +394,4 @@ const nl: typeof en = {
 };
 
 export type Translations = typeof en;
-export const translations: Record<Lang, Translations> = { en, nl };
+export const translations: Record<Lang, Translations> = { en, nl, fr };
