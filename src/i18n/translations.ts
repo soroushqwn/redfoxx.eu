@@ -2,16 +2,80 @@ import type { Lang } from "../seo/site";
 export type { Lang };
 
 const en = {
+  home: {
+    "badge": "Outbound & inbound sales · Technical B2B",
+    "title": "Outbound and inbound sales for technical B2B companies, fully outsourced.",
+    "sub": "We find new prospects and handle every incoming lead fast. The result: more qualified conversations in your sales team's calendar.",
+    "ctaPrimary": "Book a Strategy Call",
+    "tiles": [
+      {
+        "title": "Find new customers",
+        "desc": "We reach your ideal prospects by phone, email and LinkedIn and book meetings."
+      },
+      {
+        "title": "Follow up incoming leads",
+        "desc": "Price requests, downloads and questions: we respond fast, qualify and book demos in your calendar."
+      }
+    ],
+    "servicesEyebrow": "Services",
+    "servicesTitle": "Two services, one sales partner.",
+    "servicesDesc": "Outbound, inbound or both. Every engagement is custom: no fixed packages.",
+    "outboundTag": "Outbound",
+    "outboundTitle": "Outbound sales management",
+    "outboundDesc": "ICP research, list building and multichannel outreach by phone, email and LinkedIn. Qualified meetings, straight into your calendar.",
+    "inboundTag": "Inbound",
+    "inboundTitle": "Inbound lead management",
+    "inboundDesc": "Price requests, downloads, contact forms and questions followed up fast, qualified, and demos booked in your calendar.",
+    "learnMore": "Learn more",
+    "howEyebrow": "How we work",
+    "howTitle": "An extension of your sales team.",
+    "howItems": [
+      {
+        "title": "Part of your team",
+        "desc": "REDFOXX is the extension of your sales team, working in your name and towards your goals."
+      },
+      {
+        "title": "Calls recorded",
+        "desc": "Every conversation is recorded and documented, so nothing gets lost."
+      },
+      {
+        "title": "Open reporting",
+        "desc": "Weekly reports in Notion: you always see what we do and what it delivers."
+      },
+      {
+        "title": "Tools included",
+        "desc": "All tools covered by REDFOXX. Zero extra tool costs for clients."
+      }
+    ],
+    "whyEyebrow": "Why REDFOXX",
+    "whyTitle": "Why companies choose REDFOXX.",
+    "whyItems": [
+      {
+        "title": "Technical B2B expertise",
+        "desc": "We understand technical products and talk to decision-makers in their language."
+      },
+      {
+        "title": "Founder-led",
+        "desc": "Prospecting and follow-up are steered by the founder, not outsourced to a call center."
+      },
+      {
+        "title": "Operational within 1 to 2 weeks",
+        "desc": "No months of ramp-up: we get started quickly after the intro call."
+      }
+    ]
+  },
   nav: {
     links: [
-      { label: "How it works", href: "#how" },
-      { label: "For whom", href: "#for-whom" },
-      { label: "Services", href: "#services" },
-      { label: "The System", href: "#system" },
+      { label: "How we work", href: "#how-we-work" },
       { label: "Why REDFOXX", href: "#why" },
       { label: "Contact", href: "#contact" },
     ],
     jobs: "Jobs",
+    services: "Services",
+    outbound: "Outbound",
+    inbound: "Inbound",
+    outboundDesc: "Find new customers",
+    inboundDesc: "Follow up incoming leads",
     bookCall: "Book a call",
     menuLabel: "Menu",
     language: "Language",
@@ -193,23 +257,87 @@ const en = {
     connectHelena: "Helena Michaux",
   },
   footer: {
-    rights: "REDFOXX — Outbound sales for technical B2B.",
+    rights: "REDFOXX — Outbound & inbound sales for technical B2B.",
   },
 };
 
 export type Translations = typeof en;
 
 const nl: Translations = {
+  home: {
+    "badge": "Outbound & inbound sales · Technische B2B",
+    "title": "Outbound en inbound sales voor technische B2B-bedrijven, volledig uitbesteed.",
+    "sub": "Wij zoeken nieuwe prospects én werken elke binnenkomende lead snel weg. Zo komen er meer gekwalificeerde gesprekken in de agenda van jullie salesteam.",
+    "ctaPrimary": "Plan een strategiegesprek",
+    "tiles": [
+      {
+        "title": "Nieuwe klanten zoeken",
+        "desc": "We benaderen jullie ideale prospects via telefoon, e-mail en LinkedIn en boeken afspraken."
+      },
+      {
+        "title": "Binnenkomende leads opvolgen",
+        "desc": "Prijsaanvragen, downloads en vragen: we reageren snel, kwalificeren en plannen demo's in jullie agenda."
+      }
+    ],
+    "servicesEyebrow": "Diensten",
+    "servicesTitle": "Twee diensten, één salespartner.",
+    "servicesDesc": "Outbound, inbound of allebei. Elk traject is op maat: geen vaste pakketten.",
+    "outboundTag": "Outbound",
+    "outboundTitle": "Outbound sales management",
+    "outboundDesc": "ICP-onderzoek, lijsten opbouwen en multichannel outreach via telefoon, e-mail en LinkedIn. Gekwalificeerde afspraken, rechtstreeks in jullie agenda.",
+    "inboundTag": "Inbound",
+    "inboundTitle": "Inbound lead management",
+    "inboundDesc": "Prijsaanvragen, downloads, contactformulieren en vragen snel opgevolgd, gekwalificeerd en demo's ingepland in jullie agenda.",
+    "learnMore": "Meer info",
+    "howEyebrow": "Hoe we werken",
+    "howTitle": "Een verlengstuk van jullie salesteam.",
+    "howItems": [
+      {
+        "title": "Deel van jullie team",
+        "desc": "REDFOXX is onderdeel van jullie salesteam en werkt in jullie naam, naar jullie doelen."
+      },
+      {
+        "title": "Gesprekken opgenomen",
+        "desc": "Elk gesprek wordt opgenomen en gedocumenteerd, zodat er niets verloren gaat."
+      },
+      {
+        "title": "Open rapportage",
+        "desc": "Wekelijkse rapporten in Notion: jullie zien altijd wat we doen en wat het oplevert."
+      },
+      {
+        "title": "Tools inbegrepen",
+        "desc": "Alle tools zitten bij REDFOXX inbegrepen. Geen extra toolkosten voor klanten."
+      }
+    ],
+    "whyEyebrow": "Waarom REDFOXX",
+    "whyTitle": "Waarom bedrijven voor REDFOXX kiezen.",
+    "whyItems": [
+      {
+        "title": "Technische B2B-expertise",
+        "desc": "We begrijpen technische producten en praten met beslissers in hun taal."
+      },
+      {
+        "title": "Aangestuurd door de oprichter",
+        "desc": "Prospectie en opvolging worden aangestuurd door de oprichter, niet uitbesteed aan een callcenter."
+      },
+      {
+        "title": "Operationeel binnen 1 à 2 weken",
+        "desc": "Geen maandenlange inwerktijd: na het kennismakingsgesprek gaan we snel van start."
+      }
+    ]
+  },
   nav: {
     links: [
-      { label: "Hoe het werkt", href: "#how" },
-      { label: "Voor wie", href: "#for-whom" },
-      { label: "Diensten", href: "#services" },
-      { label: "Het Systeem", href: "#system" },
+      { label: "Hoe we werken", href: "#how-we-work" },
       { label: "Waarom REDFOXX", href: "#why" },
       { label: "Contact", href: "#contact" },
     ],
     jobs: "Jobs",
+    services: "Diensten",
+    outbound: "Outbound",
+    inbound: "Inbound",
+    outboundDesc: "Nieuwe klanten zoeken",
+    inboundDesc: "Binnenkomende leads opvolgen",
     bookCall: "Plan een gesprek",
     menuLabel: "Menu",
     language: "Taal",
@@ -391,22 +519,86 @@ const nl: Translations = {
     connectHelena: "Helena Michaux",
   },
   footer: {
-    rights: "REDFOXX — Outbound sales voor technische B2B.",
+    rights: "REDFOXX — Outbound & inbound sales voor technische B2B.",
   },
 };
 
 
 const fr: Translations = {
+  home: {
+    "badge": "Ventes outbound & inbound · B2B technique",
+    "title": "Ventes outbound et inbound pour les entreprises B2B techniques, entièrement externalisées.",
+    "sub": "Nous trouvons de nouveaux prospects et traitons rapidement chaque lead entrant. Résultat : plus de rendez-vous qualifiés dans l'agenda de votre équipe commerciale.",
+    "ctaPrimary": "Planifier un appel stratégique",
+    "tiles": [
+      {
+        "title": "Trouver de nouveaux clients",
+        "desc": "Nous contactons vos prospects idéaux par téléphone, e-mail et LinkedIn et fixons des rendez-vous."
+      },
+      {
+        "title": "Suivre les leads entrants",
+        "desc": "Demandes de prix, téléchargements et questions : nous réagissons vite, qualifions et planifions des démos dans votre agenda."
+      }
+    ],
+    "servicesEyebrow": "Services",
+    "servicesTitle": "Deux services, un seul partenaire commercial.",
+    "servicesDesc": "Outbound, inbound ou les deux. Chaque collaboration est sur mesure : pas de forfaits fixes.",
+    "outboundTag": "Outbound",
+    "outboundTitle": "Gestion des ventes outbound",
+    "outboundDesc": "Recherche ICP, constitution de listes et prospection multicanale par téléphone, e-mail et LinkedIn. Des rendez-vous qualifiés, directement dans votre agenda.",
+    "inboundTag": "Inbound",
+    "inboundTitle": "Gestion des leads inbound",
+    "inboundDesc": "Demandes de prix, téléchargements, formulaires de contact et questions traités rapidement, qualifiés, et démos planifiées dans votre agenda.",
+    "learnMore": "En savoir plus",
+    "howEyebrow": "Notre méthode",
+    "howTitle": "Le prolongement de votre équipe commerciale.",
+    "howItems": [
+      {
+        "title": "Membre de votre équipe",
+        "desc": "REDFOXX est le prolongement de votre équipe commerciale et travaille en votre nom, selon vos objectifs."
+      },
+      {
+        "title": "Appels enregistrés",
+        "desc": "Chaque conversation est enregistrée et documentée : rien ne se perd."
+      },
+      {
+        "title": "Reporting transparent",
+        "desc": "Des rapports hebdomadaires dans Notion : vous voyez toujours ce que nous faisons et ce que cela rapporte."
+      },
+      {
+        "title": "Outils inclus",
+        "desc": "Tous les outils sont pris en charge par REDFOXX. Aucun coût d'outil supplémentaire."
+      }
+    ],
+    "whyEyebrow": "Pourquoi REDFOXX",
+    "whyTitle": "Pourquoi les entreprises choisissent REDFOXX.",
+    "whyItems": [
+      {
+        "title": "Expertise B2B technique",
+        "desc": "Nous comprenons les produits techniques et parlons aux décideurs dans leur langage."
+      },
+      {
+        "title": "Piloté par le fondateur",
+        "desc": "La prospection et le suivi sont pilotés par le fondateur, pas confiés à un call center."
+      },
+      {
+        "title": "Opérationnel en 1 à 2 semaines",
+        "desc": "Pas de longs mois de montée en puissance : nous démarrons rapidement après l'appel découverte."
+      }
+    ]
+  },
   nav: {
     links: [
-      { label: "Comment ça marche", href: "#how" },
-      { label: "Pour qui", href: "#for-whom" },
-      { label: "Services", href: "#services" },
-      { label: "Le système", href: "#system" },
+      { label: "Notre méthode", href: "#how-we-work" },
       { label: "Pourquoi REDFOXX", href: "#why" },
       { label: "Contact", href: "#contact" },
     ],
     jobs: "Jobs",
+    services: "Services",
+    outbound: "Outbound",
+    inbound: "Inbound",
+    outboundDesc: "Trouver de nouveaux clients",
+    inboundDesc: "Suivre les leads entrants",
     bookCall: "Planifier un appel",
     menuLabel: "Menu",
     language: "Langue",
@@ -588,7 +780,7 @@ const fr: Translations = {
     connectHelena: "Helena Michaux",
   },
   footer: {
-    rights: "REDFOXX — Ventes outbound pour le B2B technique.",
+    rights: "REDFOXX — Ventes outbound & inbound pour le B2B technique.",
   },
 };
 
