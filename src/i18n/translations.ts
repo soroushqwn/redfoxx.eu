@@ -64,6 +64,126 @@ const en = {
       }
     ]
   },
+  inbound: {
+    "badge": "Inbound lead management · Technical B2B",
+    "title": "Inbound lead management: every lead followed up fast",
+    "sub": "At many companies, incoming leads sit for days. REDFOXX follows up every lead fast, qualifies it and books demos in your sales team's calendar, and keeps following up until there is a result.",
+    "ctaPrimary": "Book an intro call",
+    "problem": {
+      "eyebrow": "Sound familiar?",
+      "title": "Leads sit while your marketing keeps paying.",
+      "desc": "At larger companies, account executives sometimes leave incoming leads untouched for days or even weeks.",
+      "items": [
+        {
+          "title": "Price requests sit unanswered",
+          "desc": "Someone is waiting for a quote and only gets an answer days later."
+        },
+        {
+          "title": "Downloads without follow-up",
+          "desc": "Whitepapers and lead magnets generate contacts, but nobody calls them."
+        },
+        {
+          "title": "Questions go unanswered",
+          "desc": "Questions via the contact form or email get lost between other work."
+        },
+        {
+          "title": "No time in the sales team",
+          "desc": "Your sales team is closing deals and has no room to call every new lead quickly."
+        },
+        {
+          "title": "No view on what happens to a lead",
+          "desc": "You can't tell who was followed up, who dropped out and what it delivered."
+        }
+      ]
+    },
+    "steps": {
+      "eyebrow": "What we do",
+      "title": "From incoming lead to qualified conversation.",
+      "items": [
+        {
+          "title": "Respond fast",
+          "desc": "Price requests, downloads, contact forms, questions and demo requests: we get in touch quickly."
+        },
+        {
+          "title": "Qualify",
+          "desc": "We ask the right questions and decide with you which leads are worth pursuing."
+        },
+        {
+          "title": "Book demos",
+          "desc": "Qualified leads go straight into your sales team's calendar."
+        },
+        {
+          "title": "Follow up to a result",
+          "desc": "We keep following up until there is a meeting, a decision or a clear no."
+        }
+      ],
+      "note": "Where possible we work directly in your CRM, and you get open reporting on every lead."
+    },
+    "forWhom": {
+      "eyebrow": "Who it's for",
+      "title": "For technical B2B companies with inbound leads.",
+      "desc": "The same target audience as our outbound approach.",
+      "items": [
+        {
+          "title": "After a campaign, event or webinar",
+          "desc": "Many leads arrive at once and the sales team can't call them all quickly."
+        },
+        {
+          "title": "Steady inbound from website and content",
+          "desc": "Contact forms, downloads and price requests keep coming in."
+        },
+        {
+          "title": "A sales team without time",
+          "desc": "Your account executives focus on running deals while new leads wait."
+        }
+      ]
+    },
+    "start": {
+      "eyebrow": "Getting started",
+      "title": "How we begin.",
+      "items": [
+        {
+          "title": "Intro call",
+          "desc": "We look at your lead sources and your current follow-up."
+        },
+        {
+          "title": "Agree the setup",
+          "desc": "We define lead sources, qualification criteria and access to your CRM and calendar."
+        },
+        {
+          "title": "Go live",
+          "desc": "We start following up and report openly on the results."
+        }
+      ],
+      "note": "No fixed packages: we agree on the collaboration together after an intro call."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Questions about inbound management.",
+      "items": [
+        {
+          "q": "Which leads do you follow up?",
+          "a": "Price requests, downloads of whitepapers and lead magnets, contact forms, questions and demo requests from technical B2B prospects."
+        },
+        {
+          "q": "Do you work in our CRM?",
+          "a": "Where possible, yes. We discuss it in the intro call so everything stays in one place."
+        },
+        {
+          "q": "Who books the demos?",
+          "a": "We book qualified leads directly in your sales team's calendar."
+        },
+        {
+          "q": "Do we stay in control of our leads?",
+          "a": "Yes. They are your leads and your CRM. We follow them up on your behalf."
+        },
+        {
+          "q": "Can we combine inbound and outbound?",
+          "a": "Yes. The two services can run separately or together. We decide that in the intro call."
+        }
+      ]
+    }
+  },
   nav: {
     links: [
       { label: "How we work", href: "#how-we-work" },
@@ -122,7 +242,7 @@ const en = {
     title: "Sound familiar?",
     desc: "If any of these hit home, you're not alone. Most technical B2B companies we talk to are stuck on at least three.",
     items: [
-      { title: "No systematic outbound", desc: "Growth depends on word-of-mouth and inbound luck." },
+      { title: "No systematic outbound", desc: "Growth depends on word-of-mouth and referrals." },
       { title: "Cold email flopped", desc: "You tried it once, got zero replies, gave up." },
       { title: "No time to prospect", desc: "Can't close deals AND hunt new ones at the same time." },
       { title: "Wrong person, wrong message", desc: "Spray-and-pray that burns your domain reputation." },
@@ -233,6 +353,8 @@ const en = {
     ],
   },
   comparison: {
+    yes: "Yes",
+    no: "No",
     eyebrow: "Why REDFOXX",
     title: "Not every outbound approach is the same",
     desc: "You can pick a call center, a lead gen agency, or hire your own SDR. Here's what you actually get in practice.",
@@ -252,10 +374,11 @@ const en = {
     cta: "Book a discovery call",
   },
   cta: {
+    iframeTitle: "Book a meeting with REDFOXX",
     eyebrow: "Let's Talk",
     title1: "Ready to grow",
     titleAccent: "together?",
-    desc: "Book a free 45-minute intro call. No strings. We'll see if there's a fit and what we can do for you.",
+    desc: "Book a free 30-minute intro call. No strings. We'll see if there's a fit and what we can do for you.",
     button: "Book a meeting",
     email: "Email",
     phone: "Phone",
@@ -333,6 +456,126 @@ const nl: Translations = {
         "desc": "Geen maandenlange inwerktijd: na het kennismakingsgesprek gaan we snel van start."
       }
     ]
+  },
+  inbound: {
+    "badge": "Inbound lead management · Technische B2B",
+    "title": "Inbound lead management: elke lead snel opgevolgd",
+    "sub": "Bij veel bedrijven blijven binnenkomende leads dagenlang liggen. REDFOXX volgt elke lead snel op, kwalificeert en plant demo's in de agenda van jullie salesteam, en blijft opvolgen tot er een resultaat is.",
+    "ctaPrimary": "Plan een kennismakingsgesprek",
+    "problem": {
+      "eyebrow": "Komt dit bekend voor?",
+      "title": "Leads blijven liggen terwijl jullie marketing blijft betalen.",
+      "desc": "Bij grotere bedrijven laten account executives binnenkomende leads soms dagen of zelfs weken liggen.",
+      "items": [
+        {
+          "title": "Prijsaanvragen blijven liggen",
+          "desc": "Iemand wacht op een offerte en krijgt pas dagen later antwoord."
+        },
+        {
+          "title": "Downloads zonder opvolging",
+          "desc": "Whitepapers en leadmagnets leveren contacten op, maar niemand belt ze op."
+        },
+        {
+          "title": "Vragen blijven onbeantwoord",
+          "desc": "Vragen via het contactformulier of per e-mail verdwijnen tussen het andere werk."
+        },
+        {
+          "title": "Geen tijd in het salesteam",
+          "desc": "Jullie salesteam sluit deals en heeft geen ruimte om elke nieuwe lead snel te bellen."
+        },
+        {
+          "title": "Geen zicht op wat er met een lead gebeurt",
+          "desc": "Jullie weten niet wie opgevolgd is, wie afgehaakt is en wat het heeft opgeleverd."
+        }
+      ]
+    },
+    "steps": {
+      "eyebrow": "Wat we doen",
+      "title": "Van binnenkomende lead naar gekwalificeerd gesprek.",
+      "items": [
+        {
+          "title": "Snel reageren",
+          "desc": "Prijsaanvragen, downloads, contactformulieren, vragen en demo-aanvragen: we nemen snel contact op."
+        },
+        {
+          "title": "Kwalificeren",
+          "desc": "We stellen de juiste vragen en bepalen samen met jullie welke leads de moeite waard zijn."
+        },
+        {
+          "title": "Demo's plannen",
+          "desc": "Gekwalificeerde leads plannen we rechtstreeks in de agenda van jullie salesteam."
+        },
+        {
+          "title": "Opvolgen tot resultaat",
+          "desc": "We blijven opvolgen tot er een afspraak, een beslissing of een duidelijk nee is."
+        }
+      ],
+      "note": "Waar mogelijk werken we rechtstreeks in jullie CRM, en jullie krijgen open rapportage over elke lead."
+    },
+    "forWhom": {
+      "eyebrow": "Voor wie",
+      "title": "Voor technische B2B-bedrijven met inbound leads.",
+      "desc": "Dezelfde doelgroep als bij onze outbound-aanpak.",
+      "items": [
+        {
+          "title": "Na een campagne, event of webinar",
+          "desc": "Er komen veel leads tegelijk binnen en het salesteam kan ze niet allemaal snel bellen."
+        },
+        {
+          "title": "Constante inbound via website en content",
+          "desc": "Contactformulieren, downloads en prijsaanvragen blijven binnenkomen."
+        },
+        {
+          "title": "Een salesteam zonder tijd",
+          "desc": "Jullie account executives focussen op lopende deals terwijl nieuwe leads wachten."
+        }
+      ]
+    },
+    "start": {
+      "eyebrow": "Starten",
+      "title": "Hoe we beginnen.",
+      "items": [
+        {
+          "title": "Kennismakingsgesprek",
+          "desc": "We bekijken jullie leadbronnen en de huidige opvolging."
+        },
+        {
+          "title": "Afspraken maken",
+          "desc": "We leggen leadbronnen, kwalificatiecriteria en toegang tot jullie CRM en agenda vast."
+        },
+        {
+          "title": "Live gaan",
+          "desc": "We starten met de opvolging en rapporteren open over de resultaten."
+        }
+      ],
+      "note": "Geen vaste pakketten: we bepalen de samenwerking samen na een kennismakingsgesprek."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Vragen over inbound management.",
+      "items": [
+        {
+          "q": "Welke leads volgen jullie op?",
+          "a": "Prijsaanvragen, downloads van whitepapers en leadmagnets, contactformulieren, vragen en demo-aanvragen van technische B2B-prospects."
+        },
+        {
+          "q": "Werken jullie in ons CRM?",
+          "a": "Waar mogelijk wel. We bespreken dat tijdens het kennismakingsgesprek, zodat alles op één plek blijft staan."
+        },
+        {
+          "q": "Wie plant de demo's?",
+          "a": "Wij plannen gekwalificeerde leads rechtstreeks in de agenda van jullie salesteam."
+        },
+        {
+          "q": "Blijven wij eigenaar van onze leads?",
+          "a": "Ja. Het zijn jullie leads en jullie CRM. Wij volgen ze op in jullie naam."
+        },
+        {
+          "q": "Kunnen we inbound en outbound combineren?",
+          "a": "Ja. De twee diensten kunnen los of samen draaien. Dat bepalen we in het kennismakingsgesprek."
+        }
+      ]
+    }
   },
   nav: {
     links: [
@@ -503,6 +746,8 @@ const nl: Translations = {
     ],
   },
   comparison: {
+    yes: "Ja",
+    no: "Nee",
     eyebrow: "Waarom REDFOXX",
     title: "Niet elke outbound-aanpak is hetzelfde",
     desc: "Je kan kiezen voor een callcenter, een leadgen-bureau, of zelf een SDR aannemen. Dit is wat je er in de praktijk van mag verwachten.",
@@ -522,10 +767,11 @@ const nl: Translations = {
     cta: "Plan een kennismakingsgesprek",
   },
   cta: {
+    iframeTitle: "Plan een afspraak met REDFOXX",
     eyebrow: "Laten we praten",
     title1: "Klaar om samen",
     titleAccent: "te groeien?",
-    desc: "Plan een vrijblijvend kennismakingsgesprek van 45 minuten. We kijken samen of het klikt en wat we voor jullie kunnen betekenen.",
+    desc: "Plan een vrijblijvend kennismakingsgesprek van 30 minuten. We kijken samen of het klikt en wat we voor jullie kunnen betekenen.",
     button: "Plan een gesprek",
     email: "E-mail",
     phone: "Telefoon",
@@ -602,6 +848,126 @@ const fr: Translations = {
         "desc": "Pas de longs mois de montée en puissance : nous démarrons rapidement après l'appel découverte."
       }
     ]
+  },
+  inbound: {
+    "badge": "Gestion des leads inbound · B2B technique",
+    "title": "Gestion des leads inbound : chaque lead suivi rapidement",
+    "sub": "Dans beaucoup d'entreprises, les leads entrants restent sans réponse pendant des jours. REDFOXX suit chaque lead rapidement, le qualifie et planifie des démos dans l'agenda de votre équipe commerciale, jusqu'à obtenir un résultat.",
+    "ctaPrimary": "Planifier un appel de découverte",
+    "problem": {
+      "eyebrow": "Ça vous parle ?",
+      "title": "Les leads attendent pendant que votre marketing continue de payer.",
+      "desc": "Dans les grandes entreprises, les account executives laissent parfois des leads entrants sans suite pendant des jours, voire des semaines.",
+      "items": [
+        {
+          "title": "Demandes de prix sans réponse",
+          "desc": "Quelqu'un attend une offre et ne reçoit une réponse que quelques jours plus tard."
+        },
+        {
+          "title": "Téléchargements sans suivi",
+          "desc": "Les whitepapers et lead magnets génèrent des contacts, mais personne ne les appelle."
+        },
+        {
+          "title": "Questions sans réponse",
+          "desc": "Les questions envoyées via le formulaire ou par e-mail se perdent parmi le reste du travail."
+        },
+        {
+          "title": "Pas de temps dans l'équipe commerciale",
+          "desc": "Votre équipe conclut des deals et n'a pas la place d'appeler rapidement chaque nouveau lead."
+        },
+        {
+          "title": "Aucune visibilité sur le sort d'un lead",
+          "desc": "Vous ne savez pas qui a été suivi, qui a décroché et ce que cela a rapporté."
+        }
+      ]
+    },
+    "steps": {
+      "eyebrow": "Ce que nous faisons",
+      "title": "Du lead entrant à la conversation qualifiée.",
+      "items": [
+        {
+          "title": "Répondre vite",
+          "desc": "Demandes de prix, téléchargements, formulaires de contact, questions et demandes de démo : nous prenons rapidement contact."
+        },
+        {
+          "title": "Qualifier",
+          "desc": "Nous posons les bonnes questions et décidons avec vous quels leads méritent un suivi."
+        },
+        {
+          "title": "Planifier des démos",
+          "desc": "Les leads qualifiés sont planifiés directement dans l'agenda de votre équipe commerciale."
+        },
+        {
+          "title": "Suivre jusqu'au résultat",
+          "desc": "Nous relançons jusqu'à obtenir un rendez-vous, une décision ou un non clair."
+        }
+      ],
+      "note": "Lorsque c'est possible, nous travaillons directement dans votre CRM, et vous recevez un reporting transparent sur chaque lead."
+    },
+    "forWhom": {
+      "eyebrow": "Pour qui",
+      "title": "Pour les entreprises B2B techniques qui reçoivent des leads inbound.",
+      "desc": "La même cible que notre approche outbound.",
+      "items": [
+        {
+          "title": "Après une campagne, un événement ou un webinaire",
+          "desc": "Beaucoup de leads arrivent en même temps et l'équipe commerciale ne peut pas tous les appeler rapidement."
+        },
+        {
+          "title": "Un flux inbound constant via le site et le contenu",
+          "desc": "Formulaires de contact, téléchargements et demandes de prix arrivent en continu."
+        },
+        {
+          "title": "Une équipe commerciale sans temps",
+          "desc": "Vos account executives se concentrent sur les deals en cours pendant que les nouveaux leads attendent."
+        }
+      ]
+    },
+    "start": {
+      "eyebrow": "Démarrer",
+      "title": "Comment nous commençons.",
+      "items": [
+        {
+          "title": "Appel de découverte",
+          "desc": "Nous examinons vos sources de leads et votre suivi actuel."
+        },
+        {
+          "title": "Définir le cadre",
+          "desc": "Nous fixons les sources de leads, les critères de qualification et l'accès à votre CRM et à votre agenda."
+        },
+        {
+          "title": "Mise en route",
+          "desc": "Nous démarrons le suivi et rapportons les résultats de façon transparente."
+        }
+      ],
+      "note": "Pas de packs fixes : nous définissons la collaboration ensemble après un appel de découverte."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Questions sur la gestion des leads inbound.",
+      "items": [
+        {
+          "q": "Quels leads suivez-vous ?",
+          "a": "Demandes de prix, téléchargements de whitepapers et de lead magnets, formulaires de contact, questions et demandes de démo de prospects B2B techniques."
+        },
+        {
+          "q": "Travaillez-vous dans notre CRM ?",
+          "a": "Lorsque c'est possible, oui. Nous en discutons lors de l'appel de découverte afin que tout reste au même endroit."
+        },
+        {
+          "q": "Qui planifie les démos ?",
+          "a": "Nous planifions les leads qualifiés directement dans l'agenda de votre équipe commerciale."
+        },
+        {
+          "q": "Restons-nous maîtres de nos leads ?",
+          "a": "Oui. Ce sont vos leads et votre CRM. Nous les suivons en votre nom."
+        },
+        {
+          "q": "Peut-on combiner inbound et outbound ?",
+          "a": "Oui. Les deux services peuvent fonctionner séparément ou ensemble. Nous en décidons lors de l'appel de découverte."
+        }
+      ]
+    }
   },
   nav: {
     links: [
@@ -772,6 +1138,8 @@ const fr: Translations = {
     ],
   },
   comparison: {
+    yes: "Oui",
+    no: "Non",
     eyebrow: "Pourquoi REDFOXX",
     title: "Toutes les approches outbound ne se valent pas",
     desc: "Vous pouvez choisir un call center, une agence de génération de leads ou recruter votre propre SDR. Voici ce que vous obtenez réellement.",
@@ -791,6 +1159,7 @@ const fr: Translations = {
     cta: "Planifier un appel découverte",
   },
   cta: {
+    iframeTitle: "Prenez rendez-vous avec REDFOXX",
     eyebrow: "Parlons-en",
     title1: "Prêt à grandir",
     titleAccent: "ensemble ?",

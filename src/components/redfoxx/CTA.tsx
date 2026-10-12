@@ -49,7 +49,7 @@ export const CTA = () => {
           >
             <iframe
               src={`${CALENDLY_URL}?embed_type=Inline&hide_gdpr_banner=1`}
-              title="Book a meeting with REDFOXX"
+              title={c.iframeTitle}
               width="100%"
               height="100%"
               frameBorder="0"
