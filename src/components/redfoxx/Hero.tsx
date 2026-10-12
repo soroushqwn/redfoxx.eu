@@ -5,11 +5,14 @@ import { AnimatePresence } from "framer-motion";
 import foxEmblem from "@/assets/redfoxx-3d.png";
 import { HeroGrid } from "./HeroGrid";
 import { useLang } from "@/i18n/LanguageContext";
+import { pagePath } from "@/seo/site";
 
-export const Hero = () => {
+export const Hero = ({ variant = "outbound" }: { variant?: "home" | "outbound" }) => {
+  const isHome = variant === "home";
   const sectionRef = useRef<HTMLElement>(null);
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const h = t.hero;
+  const hm = t.home;
   const rotations = h.cards.meetingRotation;
   const [rIdx, setRIdx] = useState(0);
   useEffect(() => {
@@ -35,29 +38,43 @@ export const Hero = () => {
                 <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-primary" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
-              {h.badge}
+              {isHome ? hm.badge : h.badge}
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.05 }}
-              className="mt-6 text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-balance leading-[0.95]"
-            >
-              {h.title1} <br className="hidden md:block" />
-              {h.title2}{" "}
-              <span className="gradient-text">{h.titleAccent}</span>{" "}
-              {h.title3}
-            </motion.h1>
+            {isHome ? (
+              <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-balance leading-[1]">
+                {hm.title}
+              </h1>
+            ) : (
+              <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-balance leading-[0.95]">
+                {h.title1} <br className="hidden md:block" />
+                {h.title2}{" "}
+                <span className="gradient-text">{h.titleAccent}</span>{" "}
+                {h.title3}
+              </h1>
+            )}
 
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed"
-            >
-              {h.desc}
-            </motion.p>
+            <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
+              {isHome ? hm.sub : h.desc}
+            </p>
+
+            {isHome && (
+              <div className="mt-8 grid sm:grid-cols-2 gap-3 max-w-2xl">
+                {hm.tiles.map((tile, i) => (
+                  <a
+                    key={tile.title}
+                    href={pagePath(i === 0 ? "outbound" : "inbound", lang)}
+                    className="group card-glass rounded-2xl p-4 hover:border-primary/40 transition-colors"
+                  >
+                    <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-primary-glow">
+                      {i === 0 ? "Outbound" : "Inbound"}
+                    </p>
+                    <p className="mt-1.5 font-display font-semibold">{tile.title}</p>
+                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{tile.desc}</p>
+                  </a>
+                ))}
+              </div>
+            )}
 
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -70,18 +87,18 @@ export const Hero = () => {
                 className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-ember transition-transform hover:scale-[1.02]"
               >
                 <span className="absolute inset-0 rounded-full animate-shine" />
-                {h.ctaPrimary}
+                {isHome ? hm.ctaPrimary : h.ctaPrimary}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
-              <a
+              {!isHome && <a
                 href="#how"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur px-6 py-3.5 text-sm font-medium hover:bg-card transition-colors"
               >
                 {h.ctaSecondary}
-              </a>
+              </a>}
             </motion.div>
 
-            <motion.div
+            {!isHome && <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -93,7 +110,7 @@ export const Hero = () => {
                   <span>{tr}</span>
                 </div>
               ))}
-            </motion.div>
+            </motion.div>}
           </div>
 
           <div className="relative h-[520px] hidden lg:block">
