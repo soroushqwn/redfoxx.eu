@@ -5,9 +5,6 @@
 export const SITE_URL = "https://redfoxx.be";
 export const OG_IMAGE = `${SITE_URL}/android-chrome-512x512.png`;
 
-/** Date used in the JobPosting structured data. Update it when the vacancy is (re)published. */
-export const JOB_DATE_POSTED = "2026-10-12";
-
 export type Lang = "nl" | "en" | "fr";
 export const LANGS: Lang[] = ["nl", "en", "fr"];
 

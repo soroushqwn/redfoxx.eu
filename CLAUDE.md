@@ -32,7 +32,8 @@ Pages: home, `/outbound`, `/inbound` (all three languages) and `/jobs` (Dutch on
 - Every page: one `<title>`, one description, one self-referencing canonical, hreflang for multilingual pages.
 - `public/.htaccess` is required on Hostinger (clean URLs, 404, HTTPS, www redirect). Keep it.
 - Don't invent facts, numbers, case studies, prices or response-time guarantees in copy. Pricing stays vague ("no fixed packages").
-- Open decisions (ask the owner, don't guess): real prospect names in the hero cards, "guaranteed 5:1 ROI" / "pay-per-demo" claims, French requirement on the Jobs page, `JOB_DATE_POSTED` in `src/seo/site.ts`.
+- Decided by the owner: the real prospect names in the hero cards stay; French is a plus (not required) for the vacancy; the vacancy has no posting date, so there is deliberately no JobPosting structured data (Google requires a date).
+- Still open (ask the owner, don't guess): the "guaranteed 5:1 ROI" / "pay-per-demo" claims.
 
 ## Style
 Match the surrounding code. Dutch copy uses "jullie/jouw" for the company; French uses "vous".

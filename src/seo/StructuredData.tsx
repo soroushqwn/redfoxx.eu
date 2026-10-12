@@ -1,6 +1,6 @@
 import { Head } from "vite-react-ssg";
 import { translations } from "@/i18n/translations";
-import { JOB_DATE_POSTED, META, SITE_URL, pagePath, pageUrl, type Lang, type PageKey } from "./site";
+import { META, SITE_URL, pageUrl, type Lang, type PageKey } from "./site";
 
 const ORG_ID = `${SITE_URL}/#organization`;
 const SITE_ID = `${SITE_URL}/#website`;
@@ -55,7 +55,6 @@ const breadcrumb = (page: PageKey, lang: Lang, name: string) => ({
 const graphFor = (page: PageKey, lang: Lang): object[] => {
   const t = translations[lang];
   const nodes: object[] = [organization(lang), website(lang)];
-  const meta = META[page][lang] ?? META[page].nl!;
 
   if (page === "outbound" || page === "inbound") {
     const name = page === "outbound" ? t.home.outboundTitle : t.home.inboundTitle;
@@ -84,22 +83,6 @@ const graphFor = (page: PageKey, lang: Lang): object[] => {
     });
   }
 
-  if (page === "jobs") {
-    nodes.push({
-      "@type": "JobPosting",
-      title: "Business Development Representative (BDR)",
-      description: meta.description,
-      datePosted: JOB_DATE_POSTED,
-      employmentType: "FULL_TIME",
-      directApply: false,
-      hiringOrganization: { "@type": "Organization", "@id": ORG_ID, name: "REDFOXX", sameAs: `${SITE_URL}/` },
-      jobLocation: {
-        "@type": "Place",
-        address: { "@type": "PostalAddress", addressLocality: "Aarschot", addressCountry: "BE" },
-      },
-      url: `${SITE_URL}${pagePath("jobs", "nl")}`,
-    });
-  }
   return nodes;
 };
 
