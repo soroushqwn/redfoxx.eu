@@ -1,5 +1,4 @@
 import { Navbar } from "@/components/redfoxx/Navbar";
-import { ClientMarquee } from "@/components/redfoxx/ClientMarquee";
 import {
   InboundHero,
   InboundProblem,
@@ -21,7 +20,6 @@ const Inbound = () => {
       <InboundHero />
       <InboundProblem />
       <InboundSteps />
-      <ClientMarquee />
       <InboundForWhom />
       <InboundStart />
       <InboundFaq />

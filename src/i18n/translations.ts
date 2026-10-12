@@ -6,7 +6,7 @@ const en = {
     "badge": "Outbound & inbound sales · Technical B2B",
     "title": "Outbound and inbound sales for technical B2B companies, fully outsourced.",
     "sub": "We find new prospects and handle every incoming lead fast. The result: more qualified conversations in your sales team's calendar.",
-    "ctaPrimary": "Book a Strategy Call",
+    "ctaPrimary": "Book an intro call",
     "tiles": [
       {
         "title": "Find new customers",
@@ -207,7 +207,7 @@ const en = {
     titleAccent: "technical B2B",
     title3: "companies.",
     desc: "REDFOXX is the extension of your sales team. We design a multichannel outbound strategy tailored to your ICP, market, and sales cycle: cold email, cold calling, LinkedIn, or a mix. The result: qualified meetings, straight into your calendar.",
-    ctaPrimary: "Book a Strategy Call",
+    ctaPrimary: "Book an intro call",
     ctaSecondary: "See How It Works",
     trust: ["Multichannel SDR team", "AI-powered personalization", "Weekly Notion reports"],
     cards: {
@@ -228,7 +228,9 @@ const en = {
       ],
       replyRate: "Reply rate",
       dialing: "Dialing",
-      dialingDetail: "+32 · Tier 1 prospect",
+      dialingDetail: "+32 · New prospect",
+      inboundLabel: "Inbound lead",
+      inboundSteps: ["Price request received", "Lead qualified", "Demo booked"],
     },
   },
   marquee: {
@@ -379,7 +381,7 @@ const en = {
     title1: "Ready to grow",
     titleAccent: "together?",
     desc: "Book a free 30-minute intro call. No strings. We'll see if there's a fit and what we can do for you.",
-    button: "Book a meeting",
+    button: "Book an intro call",
     email: "Email",
     phone: "Phone",
     connect: "Let's connect",
@@ -399,7 +401,7 @@ const nl: Translations = {
     "badge": "Outbound & inbound sales · Technische B2B",
     "title": "Outbound en inbound sales voor technische B2B-bedrijven, volledig uitbesteed.",
     "sub": "Wij zoeken nieuwe prospects én werken elke binnenkomende lead snel weg. Zo komen er meer gekwalificeerde gesprekken in de agenda van jullie salesteam.",
-    "ctaPrimary": "Plan een strategiegesprek",
+    "ctaPrimary": "Plan een kennismakingsgesprek",
     "tiles": [
       {
         "title": "Nieuwe klanten zoeken",
@@ -600,7 +602,7 @@ const nl: Translations = {
     titleAccent: "technische B2B",
     title3: "bedrijven.",
     desc: "REDFOXX is onderdeel van jullie salesteam. We bouwen een multichannel outbound-aanpak op maat van jullie ICP en deal-cyclus: cold mail, cold calling, LinkedIn of een mix van alles. Het resultaat? Gekwalificeerde meetings, rechtstreeks in jullie agenda.",
-    ctaPrimary: "Plan een strategiegesprek",
+    ctaPrimary: "Plan een kennismakingsgesprek",
     ctaSecondary: "Bekijk hoe het werkt",
     trust: ["Multichannel SDR-team", "Slimme personalisatie met AI", "Wekelijkse rapporten in Notion"],
     cards: {
@@ -621,7 +623,9 @@ const nl: Translations = {
       ],
       replyRate: "Antwoordratio",
       dialing: "Aan het bellen",
-      dialingDetail: "+32 · Tier 1 prospect",
+      dialingDetail: "+32 · Nieuwe prospect",
+      inboundLabel: "Inbound lead",
+      inboundSteps: ["Prijsaanvraag ontvangen", "Lead gekwalificeerd", "Demo ingepland"],
     },
   },
   marquee: {
@@ -772,7 +776,7 @@ const nl: Translations = {
     title1: "Klaar om samen",
     titleAccent: "te groeien?",
     desc: "Plan een vrijblijvend kennismakingsgesprek van 30 minuten. We kijken samen of het klikt en wat we voor jullie kunnen betekenen.",
-    button: "Plan een gesprek",
+    button: "Plan een kennismakingsgesprek",
     email: "E-mail",
     phone: "Telefoon",
     connect: "Let's connect",
@@ -791,7 +795,7 @@ const fr: Translations = {
     "badge": "Ventes outbound & inbound · B2B technique",
     "title": "Ventes outbound et inbound pour les entreprises B2B techniques, entièrement externalisées.",
     "sub": "Nous trouvons de nouveaux prospects et traitons rapidement chaque lead entrant. Résultat : plus de rendez-vous qualifiés dans l'agenda de votre équipe commerciale.",
-    "ctaPrimary": "Planifier un appel stratégique",
+    "ctaPrimary": "Planifier un appel de découverte",
     "tiles": [
       {
         "title": "Trouver de nouveaux clients",
@@ -992,7 +996,7 @@ const fr: Translations = {
     titleAccent: "les entreprises B2B",
     title3: "techniques.",
     desc: "REDFOXX est le prolongement de votre équipe commerciale. Nous concevons une stratégie outbound multicanale adaptée à votre ICP, à votre marché et à votre cycle de vente : e-mail, appels à froid, LinkedIn ou une combinaison. Le résultat : des rendez-vous qualifiés, directement dans votre agenda.",
-    ctaPrimary: "Planifier un appel stratégique",
+    ctaPrimary: "Planifier un appel de découverte",
     ctaSecondary: "Voir comment ça marche",
     trust: ["Équipe SDR multicanale", "Personnalisation assistée par l'IA", "Rapports hebdomadaires dans Notion"],
     cards: {
@@ -1013,7 +1017,9 @@ const fr: Translations = {
       ],
       replyRate: "Taux de réponse",
       dialing: "Appel en cours",
-      dialingDetail: "+32 · Prospect Tier 1",
+      dialingDetail: "+32 · Nouveau prospect",
+      inboundLabel: "Lead inbound",
+      inboundSteps: ["Demande de prix reçue", "Lead qualifié", "Démo planifiée"],
     },
   },
   marquee: {
@@ -1156,7 +1162,7 @@ const fr: Translations = {
     ],
     scrollHint: "Faire défiler",
     tagline: "We win. You win bigger.",
-    cta: "Planifier un appel découverte",
+    cta: "Planifier un appel de découverte",
   },
   cta: {
     iframeTitle: "Prenez rendez-vous avec REDFOXX",
@@ -1164,7 +1170,7 @@ const fr: Translations = {
     title1: "Prêt à grandir",
     titleAccent: "ensemble ?",
     desc: "Planifiez un appel découverte gratuit de 30 minutes, sans engagement. Nous verrons ensemble s'il y a un fit et ce que nous pouvons faire pour vous.",
-    button: "Planifier un rendez-vous",
+    button: "Planifier un appel de découverte",
     email: "E-mail",
     phone: "Téléphone",
     connect: "Restons en contact",
