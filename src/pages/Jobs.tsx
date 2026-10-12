@@ -68,7 +68,7 @@ const Jobs = () => {
               <Home className="h-3.5 w-3.5" />
               Terug naar home
             </Link>
-            <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-5">
+            <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-5">
               We zoeken · Aarschot
             </p>
             <h1 className="text-4xl md:text-6xl font-display font-semibold text-balance leading-[1.05]">
@@ -199,7 +199,7 @@ const Jobs = () => {
         <div className="container max-w-3xl">
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-border bg-card/40 backdrop-blur p-6">
-              <h3 className="text-sm font-mono uppercase tracking-wider text-primary-glow mb-4">
+              <h3 className="text-sm font-mono uppercase tracking-wider text-primary mb-4">
                 Voordelen
               </h3>
               <ul className="space-y-2">
@@ -211,7 +211,7 @@ const Jobs = () => {
               </ul>
             </div>
             <div className="rounded-2xl border border-border bg-card/40 backdrop-blur p-6">
-              <h3 className="text-sm font-mono uppercase tracking-wider text-primary-glow mb-4">
+              <h3 className="text-sm font-mono uppercase tracking-wider text-primary mb-4">
                 Talen
               </h3>
               <ul className="space-y-2">
@@ -223,7 +223,7 @@ const Jobs = () => {
               </ul>
             </div>
             <div className="rounded-2xl border border-border bg-card/40 backdrop-blur p-6 md:col-span-2">
-              <h3 className="text-sm font-mono uppercase tracking-wider text-primary-glow mb-4">
+              <h3 className="text-sm font-mono uppercase tracking-wider text-primary mb-4">
                 Sollicitatievragen
               </h3>
               <ul className="space-y-2">

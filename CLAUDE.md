@@ -35,5 +35,13 @@ Pages: home, `/outbound`, `/inbound` (all three languages) and `/jobs` (Dutch on
 - Decided by the owner: the real prospect names in the hero cards stay; French is a plus (not required) for the vacancy; the vacancy has no posting date, so there is deliberately no JobPosting structured data (Google requires a date).
 - Still open (ask the owner, don't guess): the "guaranteed 5:1 ROI" / "pay-per-demo" claims.
 
+## Performance and hosting notes
+- Fonts are self-hosted via `@fontsource` (no Google Fonts requests: faster and GDPR-friendly). Don't add Google Fonts links.
+- Pages other than the home page are lazy-loaded route chunks (`src/routes.tsx`); keep the home bundle small. Don't add providers/libraries that the pages don't use.
+- Phones get a static hero grid (no animation loop); keep heavy animation off small screens.
+- `public/assets/.htaccess` gives hashed build output a one-year cache. Never put files with a fixed name in `public/assets/`.
+- Small red labels use `text-primary` (not `text-primary-glow`) to meet colour contrast.
+- The CookieYes script in `index.html` is intentionally loaded synchronously (consent first); changing that is a privacy/legal decision for the owner.
+
 ## Style
 Match the surrounding code. Dutch copy uses "jullie/jouw" for the company; French uses "vous".

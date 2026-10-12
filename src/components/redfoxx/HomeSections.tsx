@@ -4,7 +4,7 @@ import { useLang } from "@/i18n/LanguageContext";
 import { pagePath } from "@/seo/site";
 
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-4">{children}</p>
+  <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-4">{children}</p>
 );
 
 /** "Two services, one sales partner" — equal tiles linking to each service page. */
@@ -39,7 +39,7 @@ export const ServicesOverview = () => {
               <div className="absolute -top-32 -right-32 h-64 w-64 rounded-full bg-primary/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-primary-glow">{tag}</span>
+                  <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-primary">{tag}</span>
                   <div className="h-11 w-11 rounded-xl bg-secondary border border-border flex items-center justify-center">
                     <Icon className="h-5 w-5 text-primary-glow" />
                   </div>

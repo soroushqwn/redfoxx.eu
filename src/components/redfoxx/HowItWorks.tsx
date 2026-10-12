@@ -14,7 +14,7 @@ export const HowItWorks = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-4">
+            <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-4">
               {h.eyebrow}
             </p>
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-balance">

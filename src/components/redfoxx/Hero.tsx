@@ -56,7 +56,8 @@ export const Hero = ({ variant = "outbound" }: { variant?: "home" | "outbound" }
               <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-balance leading-[0.95]">
                 {h.title1} <br className="hidden md:block" />
                 {h.title2}{" "}
-                <span className="gradient-text">{h.titleAccent}</span>{" "}
+                <span className="gradient-text">{h.titleAccent}</span>
+                {h.title3.startsWith("-") ? "" : " "}
                 {h.title3}
               </h1>
             )}
@@ -73,7 +74,7 @@ export const Hero = ({ variant = "outbound" }: { variant?: "home" | "outbound" }
                     href={pagePath(i === 0 ? "outbound" : "inbound", lang)}
                     className="group card-glass rounded-2xl p-4 hover:border-primary/40 transition-colors"
                   >
-                    <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-primary-glow">
+                    <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-primary">
                       {i === 0 ? "Outbound" : "Inbound"}
                     </p>
                     <p className="mt-1.5 font-display font-semibold">{tile.title}</p>
@@ -155,7 +156,7 @@ export const Hero = ({ variant = "outbound" }: { variant?: "home" | "outbound" }
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.8 }}
                           transition={{ duration: 0.25 }}
-                          className="text-[10px] font-mono text-primary-glow"
+                          className="text-[10px] font-mono text-primary"
                         >
                           {h.cards.new}
                         </motion.span>

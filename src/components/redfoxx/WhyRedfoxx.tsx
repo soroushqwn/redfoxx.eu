@@ -39,7 +39,7 @@ export const WhyRedfoxx = () => {
 
       <div className="container relative">
         <div className="max-w-[720px] mx-auto text-center mb-14">
-          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-4">
+          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-4">
             {c.eyebrow}
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-semibold text-balance">
@@ -58,7 +58,7 @@ export const WhyRedfoxx = () => {
             transition={{ duration: 0.6 }}
             className="border-gradient rounded-2xl bg-card/60 backdrop-blur overflow-hidden"
           >
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto" role="region" aria-label={c.title} tabIndex={0}>
               <table className="w-full border-collapse min-w-[800px]" style={{ tableLayout: "fixed" }}>
                 <colgroup>
                   <col style={{ width: "28%" }} />
@@ -83,7 +83,7 @@ export const WhyRedfoxx = () => {
                               : "bg-secondary text-foreground"
                           }`}
                         >
-                          {h}
+                          {h || <span className="sr-only">{c.criteria}</span>}
                         </th>
                       );
                     })}
