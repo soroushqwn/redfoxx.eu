@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import { useLang } from "@/i18n/LanguageContext";
 import type { Lang } from "@/i18n/translations";
@@ -9,10 +9,12 @@ import { HTML_LANG, LANGS, MULTILINGUAL_PAGES, pagePath, parsePath } from "@/seo
 const LangToggle = ({
   lang,
   pathname,
+  label,
   className = "",
 }: {
   lang: Lang;
   pathname: string;
+  label: string;
   className?: string;
 }) => {
   const { page } = parsePath(pathname);
@@ -20,7 +22,7 @@ const LangToggle = ({
   return (
     <div
       role="group"
-      aria-label="Language"
+      aria-label={label}
       className={`inline-flex items-center rounded-full border border-border bg-card/40 backdrop-blur p-0.5 ${className}`}
     >
       {LANGS.map((l) => (
@@ -48,6 +50,10 @@ export const Navbar = () => {
   const home = pagePath("home", lang);
   const isHome = parsePath(pathname).page === "home";
   const homeHref = (href: string) => (isHome ? href : `${home}${href}`);
+  const serviceLinks = [
+    { page: "outbound" as const, label: t.nav.outbound, desc: t.nav.outboundDesc },
+    { page: "inbound" as const, label: t.nav.inbound, desc: t.nav.inboundDesc },
+  ];
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -72,6 +78,26 @@ export const Navbar = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1 rounded-full border border-border bg-card/40 backdrop-blur px-1.5 py-1.5">
+          <div className="group relative">
+            <button
+              type="button"
+              aria-haspopup="true"
+              className="inline-flex items-center gap-1 px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-secondary transition-colors group-focus-within:text-foreground"
+            >
+              {t.nav.services}
+              <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+            </button>
+            <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="card-glass w-72 rounded-2xl p-2">
+                {serviceLinks.map((s) => (
+                  <a key={s.page} href={pagePath(s.page, lang)} className="block rounded-xl px-4 py-3 hover:bg-secondary">
+                    <span className="block text-sm font-medium">{s.label}</span>
+                    <span className="block text-xs text-muted-foreground">{s.desc}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
           {t.nav.links.map((l) => (
             <a
               key={l.href}
@@ -90,7 +116,7 @@ export const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3">
-          <LangToggle lang={lang} pathname={pathname} className="hidden sm:inline-flex" />
+          <LangToggle lang={lang} pathname={pathname} label={t.nav.language} className="hidden sm:inline-flex" />
           <a
             href={homeHref("#contact")}
             className="hidden sm:inline-flex items-center rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-ember hover:scale-[1.03] transition-transform"
@@ -109,6 +135,16 @@ export const Navbar = () => {
 
       {open && (
         <div className="lg:hidden container mt-3 card-glass rounded-2xl p-3 flex flex-col">
+          {serviceLinks.map((s) => (
+            <a
+              key={s.page}
+              href={pagePath(s.page, lang)}
+              onClick={() => setOpen(false)}
+              className="px-4 py-3 text-sm hover:bg-secondary rounded-lg"
+            >
+              {s.label}
+            </a>
+          ))}
           {t.nav.links.map((l) => (
             <a
               key={l.href}
@@ -128,7 +164,7 @@ export const Navbar = () => {
           </Link>
           <div className="px-4 py-3 flex items-center justify-between">
             <span className="text-xs text-muted-foreground font-mono uppercase tracking-wider">{t.nav.language}</span>
-            <LangToggle lang={lang} pathname={pathname} />
+            <LangToggle lang={lang} pathname={pathname} label={t.nav.language} />
           </div>
         </div>
       )}

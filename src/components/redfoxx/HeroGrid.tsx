@@ -280,10 +280,24 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
     build();
     updateIntensity();
 
+    // Only animate while the section is on screen (saves CPU/battery, helps INP).
+    const start = () => {
+      if (rafRef.current == null) rafRef.current = requestAnimationFrame(draw);
+    };
+    const stop = () => {
+      if (rafRef.current != null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+    let observer: IntersectionObserver | null = null;
     if (reduceMotion) {
       drawStatic();
+    } else if (typeof IntersectionObserver === "undefined") {
+      start();
     } else {
-      rafRef.current = requestAnimationFrame(draw);
+      observer = new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()));
+      observer.observe(section);
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -292,7 +306,8 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
     section.addEventListener("mouseleave", onMouseLeave);
 
     return () => {
-      if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
+      observer?.disconnect();
+      stop();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       section.removeEventListener("mousemove", onMouseMove);

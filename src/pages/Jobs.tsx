@@ -47,7 +47,7 @@ const BENEFITS = [
 const PERKS = ["Bedrijfscomputer", "Thuiswerkopties"];
 
 const APPLICATION_QUESTIONS = ["Woon je in of rondom 3200 Aarschot?"];
-const LANGUAGES = ["Nederlands (Vereist)", "Engels (Vereist)", "Frans (Vereist)"];
+const LANGUAGES = ["Nederlands (Vereist)", "Engels (Vereist)", "Frans (Plus)"];
 
 const Jobs = () => {
   return (

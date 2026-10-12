@@ -1,4 +1,5 @@
 import { Head } from "vite-react-ssg";
+import { StructuredData } from "./StructuredData";
 import type { ReactNode } from "react";
 import {
   HTML_LANG,
@@ -18,6 +19,7 @@ export const Seo = ({ page, lang, children }: { page: PageKey; lang: Lang; child
   const url = pageUrl(page, lang);
   const multi = MULTILINGUAL_PAGES.includes(page);
   return (
+    <>
     <Head>
       <html lang={HTML_LANG[lang]} />
       <title>{meta.title}</title>
@@ -38,5 +40,7 @@ export const Seo = ({ page, lang, children }: { page: PageKey; lang: Lang; child
       <meta name="twitter:image" content={OG_IMAGE} />
       {children}
     </Head>
+    <StructuredData page={page} lang={lang} />
+    </>
   );
 };

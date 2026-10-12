@@ -61,15 +61,16 @@ export const LogoMarquee = () => {
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         <div className="flex marquee gap-8 md:gap-16 whitespace-nowrap items-center">
-          {[...tools, ...tools].map((t, i) => (
+          {[...tools, ...tools].map((tool, i) => (
             <div
               key={i}
               className="shrink-0 flex items-center justify-center h-10 md:h-14"
-              title={t.name}
+              title={tool.name}
+              aria-hidden={i >= tools.length ? "true" : undefined}
             >
               <img
-                src={t.src}
-                alt={t.name}
+                src={tool.src}
+                alt={i >= tools.length ? "" : tool.name}
                 loading="lazy"
                 className="h-full w-auto max-w-[120px] md:max-w-[180px] object-contain opacity-70 hover:opacity-100 transition-opacity"
               />

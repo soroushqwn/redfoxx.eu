@@ -9,14 +9,23 @@ export const WhyRedfoxx = () => {
   const renderCell = (val: string, isRedfoxx: boolean) => {
     if (val === "check") {
       return (
-        <Check
-          size={20}
-          className={`mx-auto ${isRedfoxx ? "text-primary" : "text-foreground/70"}`}
-        />
+        <>
+          <Check
+            size={20}
+            aria-hidden="true"
+            className={`mx-auto ${isRedfoxx ? "text-primary" : "text-foreground/70"}`}
+          />
+          <span className="sr-only">{c.yes}</span>
+        </>
       );
     }
     if (val === "cross") {
-      return <X size={20} className="mx-auto text-muted-foreground/70" />;
+      return (
+        <>
+          <X size={20} aria-hidden="true" className="mx-auto text-muted-foreground/70" />
+          <span className="sr-only">{c.no}</span>
+        </>
+      );
     }
     return (
       <span className="text-[13px] text-muted-foreground">{val}</span>
@@ -65,6 +74,7 @@ export const WhyRedfoxx = () => {
                       return (
                         <th
                           key={i}
+                          scope="col"
                           className={`py-4 px-3 text-sm font-medium ${
                             i === 0 ? "text-left pl-6" : "text-center"
                           } ${

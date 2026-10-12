@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calendar, CheckCircle2, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import foxEmblem from "@/assets/redfoxx-3d.png";
+import foxEmblem from "@/assets/redfoxx-3d.webp";
 import { HeroGrid } from "./HeroGrid";
 import { useLang } from "@/i18n/LanguageContext";
 import { pagePath } from "@/seo/site";
@@ -117,8 +117,10 @@ export const Hero = ({ variant = "outbound" }: { variant?: "home" | "outbound" }
             <motion.img
               src={foxEmblem}
               alt="REDFOXX emblem"
-              width={1024}
-              height={1024}
+              width={840}
+              height={840}
+              loading="lazy"
+              decoding="async"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}

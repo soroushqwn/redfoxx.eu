@@ -14,8 +14,7 @@ export const OG_LOCALE: Record<Lang, string> = { nl: "nl_BE", en: "en_GB", fr: "
 export type PageKey = "home" | "outbound" | "inbound" | "jobs";
 
 /** Pages that exist in all three languages (get hreflang alternates). */
-// "inbound" is added once the /inbound page ships (phase 3).
-export const MULTILINGUAL_PAGES: PageKey[] = ["home", "outbound"];
+export const MULTILINGUAL_PAGES: PageKey[] = ["home", "outbound", "inbound"];
 
 const SLUG: Record<PageKey, string> = { home: "", outbound: "outbound", inbound: "inbound", jobs: "jobs" };
 
