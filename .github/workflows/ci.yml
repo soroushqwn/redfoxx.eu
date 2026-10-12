@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npx tsc --noEmit -p tsconfig.app.json
+      - run: npm test
+      - run: npm run build
+      - name: Check pre-rendered output
+        run: |
+          for f in index.html outbound/index.html inbound/index.html jobs/index.html \
+                   en/index.html en/outbound/index.html en/inbound/index.html \
+                   fr/index.html fr/outbound/index.html fr/inbound/index.html \
+                   404.html sitemap.xml robots.txt llms.txt .htaccess; do
+            test -f "dist/$f" || { echo "missing dist/$f"; exit 1; }
+          done
+          # every page must ship exactly one <title> and one canonical
+          for f in $(find dist -name '*.html' ! -name '404.html'); do
+            [ "$(grep -o '<title' "$f" | wc -l)" = "1" ] || { echo "$f: expected exactly one <title>"; exit 1; }
+            [ "$(grep -o 'rel="canonical"' "$f" | wc -l)" = "1" ] || { echo "$f: expected exactly one canonical"; exit 1; }
+          done
