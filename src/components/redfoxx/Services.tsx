@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Compass, Rocket, Settings2, Target } from "lucide-react";
+import { ArrowUpRight, Compass, Inbox, Rocket, Settings2, Target, type LucideIcon } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
-const icons = [Target, Settings2, Rocket, Compass];
-const highlights = [false, false, true, false];
+// Services are fully data-driven from translations (icon name + highlight flag per item).
+const icons: Record<string, LucideIcon> = { target: Target, settings: Settings2, rocket: Rocket, compass: Compass, inbox: Inbox };
 
 export const Services = () => {
   const { t } = useLang();
@@ -27,8 +27,8 @@ export const Services = () => {
 
         <div className="grid md:grid-cols-2 gap-5">
           {s.items.map((item, i) => {
-            const Icon = icons[i];
-            const highlight = highlights[i];
+            const Icon = icons[item.icon] ?? Target;
+            const highlight = item.highlight;
             return (
               <motion.div
                 key={item.tag}
