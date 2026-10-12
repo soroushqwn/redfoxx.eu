@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import fs from "fs";
+import { ALL_ROUTES, buildSitemap } from "./src/seo/site";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, isSsrBuild }) => ({
@@ -13,6 +15,18 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
     },
   },
   plugins: [react(), mode === "development" && !isSsrBuild && componentTagger()].filter(Boolean),
+  ssgOptions: {
+    dirStyle: "nested",
+    includedRoutes: () => [...ALL_ROUTES.map((r) => r.path), "/404"],
+    onFinished: (dir: string) => {
+      const nested = path.join(dir, "404", "index.html");
+      if (fs.existsSync(nested)) {
+        fs.copyFileSync(nested, path.join(dir, "404.html"));
+        fs.rmSync(path.join(dir, "404"), { recursive: true, force: true });
+      }
+      fs.writeFileSync(path.join(dir, "sitemap.xml"), buildSitemap(new Date().toISOString().slice(0, 10)));
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

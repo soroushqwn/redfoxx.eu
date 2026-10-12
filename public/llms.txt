@@ -1,7 +1,24 @@
 # REDFOXX
 
-> REDFOXX is an outbound sales agency for technical B2B companies. We run multichannel outbound - cold calling, email, and LinkedIn - to book qualified meetings straight into your calendar.
+> REDFOXX is a Belgian sales service company for technical B2B companies. We run outbound sales (cold calling, email, LinkedIn) and inbound lead management (fast follow-up, qualification and demo booking) as an extension of your sales team.
+
+## Services
+- Outbound sales management: ICP research, list building, multichannel outreach and qualified meetings booked in your calendar.
+- Inbound lead management: price requests, downloads, contact forms and questions followed up quickly, qualified, and demos booked in your calendar, working in your CRM where possible.
+
+## Audience
+Technical B2B companies (SaaS, IT, automation, machinery, intralogistics, engineering) in Belgium and the Benelux.
+
+## Languages
+Dutch (default), English, French.
 
 ## Pages
+- [Home (NL)](https://redfoxx.be/) · [EN](https://redfoxx.be/en/) · [FR](https://redfoxx.be/fr/)
+- [Outbound (NL)](https://redfoxx.be/outbound) · [EN](https://redfoxx.be/en/outbound) · [FR](https://redfoxx.be/fr/outbound)
+- [Inbound (NL)](https://redfoxx.be/inbound) · [EN](https://redfoxx.be/en/inbound) · [FR](https://redfoxx.be/fr/inbound)
+- [Jobs (NL)](https://redfoxx.be/jobs)
 
-- [Home](/): Outbound sales for technical B2B - services, approach, system, and contact.
+## Contact
+- Email: info@redfoxx.be
+- Phone: +32 456 36 98 48
+- LinkedIn: https://www.linkedin.com/company/redfoxx/
