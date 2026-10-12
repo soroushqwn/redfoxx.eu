@@ -90,7 +90,7 @@ const Jobs = () => {
               </span>
               <span className="inline-flex items-center gap-2">
                 <Globe className="h-4 w-4 text-primary-glow" />
-                Werklocatie: fysiek
+                Werklocatie: hybride
               </span>
             </div>
 
