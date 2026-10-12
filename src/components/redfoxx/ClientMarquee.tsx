@@ -7,6 +7,9 @@ const clients = [
   { name: "Inku", src: "/clients/inku_tech_cover.jpg", scale: 1 },
   { name: "Fyndera", src: "/clients/fyndera.webp", scale: 1 },
   { name: "Saniori", src: "/clients/saniori.webp", scale: 0.7 },
+  { name: "Endoo by Endare", src: "/clients/endoo.webp", scale: 0.85 },
+  { name: "Hyperfox", src: "/clients/hyperfox.webp", scale: 1 },
+  { name: "Amplifino", src: "/clients/amplifino.webp", scale: 0.9 },
 ];
 
 export const ClientMarquee = () => {

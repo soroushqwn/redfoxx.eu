@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, CheckCircle2, Phone } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2, Inbox, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import foxEmblem from "@/assets/redfoxx-3d.webp";
@@ -14,11 +14,18 @@ export const Hero = ({ variant = "outbound" }: { variant?: "home" | "outbound" }
   const h = t.hero;
   const hm = t.home;
   const rotations = h.cards.meetingRotation;
+  const inboundSteps = h.cards.inboundSteps;
   const [rIdx, setRIdx] = useState(0);
+  const [iIdx, setIIdx] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setRIdx((i) => (i + 1) % rotations.length), 2800);
     return () => clearInterval(id);
   }, [rotations.length]);
+  useEffect(() => {
+    if (!isHome) return;
+    const id = setInterval(() => setIIdx((i) => (i + 1) % inboundSteps.length), 2200);
+    return () => clearInterval(id);
+  }, [isHome, inboundSteps.length]);
   return (
     <section ref={sectionRef} className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
       <HeroGrid sectionRef={sectionRef} />
@@ -188,6 +195,37 @@ export const Hero = ({ variant = "outbound" }: { variant?: "home" | "outbound" }
                 <p className="text-sm font-medium">{h.cards.dialingDetail}</p>
               </div>
             </motion.div>
+            {isHome && (
+              <motion.div
+                initial={{ opacity: 0, y: 20, x: 20 }}
+                animate={{ opacity: 1, y: 0, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="absolute bottom-24 -right-4 card-glass rounded-2xl p-4 w-60 shadow-card"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="h-9 w-9 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0">
+                    <Inbox className="h-4 w-4 text-primary-foreground" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium">{h.cards.inboundLabel}</p>
+                    <div className="relative h-4 mt-0.5 overflow-hidden">
+                      <AnimatePresence mode="wait">
+                        <motion.p
+                          key={iIdx}
+                          initial={{ y: 12, opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          exit={{ y: -12, opacity: 0 }}
+                          transition={{ duration: 0.35 }}
+                          className="text-xs text-muted-foreground truncate"
+                        >
+                          {inboundSteps[iIdx]}
+                        </motion.p>
+                      </AnimatePresence>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </div>
