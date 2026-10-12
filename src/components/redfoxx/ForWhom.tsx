@@ -13,7 +13,7 @@ export const ForWhom = () => {
       <div className="absolute inset-0 bg-dots opacity-[0.15]" />
       <div className="container relative">
         <div className="max-w-2xl mb-14">
-          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-4">
+          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-4">
             {f.eyebrow}
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-semibold text-balance">

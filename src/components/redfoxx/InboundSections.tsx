@@ -4,7 +4,7 @@ import { HeroGrid } from "./HeroGrid";
 import { useLang } from "@/i18n/LanguageContext";
 
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-4">{children}</p>
+  <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-4">{children}</p>
 );
 
 const STEP_ICONS = [Reply, Target, CalendarCheck, Repeat];
@@ -48,7 +48,7 @@ export const InboundHero = () => {
                     <Icon className="h-5 w-5 text-primary-foreground" />
                   </span>
                   <span className="font-display font-semibold">
-                    <span className="text-primary-glow font-mono text-xs mr-2">{String(idx + 1).padStart(2, "0")}</span>
+                    <span className="text-primary font-mono text-xs mr-2">{String(idx + 1).padStart(2, "0")}</span>
                     {it.title}
                   </span>
                 </li>
@@ -161,7 +161,7 @@ export const InboundStart = () => {
         <ol className="grid md:grid-cols-3 gap-5">
           {s.items.map((it, idx) => (
             <li key={it.title} className="rounded-2xl border border-border bg-card p-6">
-              <span className="text-xs font-mono text-primary-glow">{String(idx + 1).padStart(2, "0")}</span>
+              <span className="text-xs font-mono text-primary">{String(idx + 1).padStart(2, "0")}</span>
               <h3 className="mt-3 text-lg font-display font-semibold">{it.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{it.desc}</p>
             </li>

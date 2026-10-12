@@ -11,7 +11,7 @@ export const Problem = () => {
     <section className="relative py-24 md:py-32">
       <div className="container">
         <div className="max-w-2xl">
-          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-4">
+          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-4">
             {p.eyebrow}
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-semibold text-balance">

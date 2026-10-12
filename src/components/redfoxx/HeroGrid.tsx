@@ -21,7 +21,11 @@ export const HeroGrid = ({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Phones get a static grid: no mouse to react to, and the endless animation
+    // keeps the main thread busy right when the page is loading.
+    const reduceMotion =
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(max-width: 767px)").matches;
 
     const CELL = 84;            // piece base size
     const TAB = CELL * 0.22;    // tab knob height

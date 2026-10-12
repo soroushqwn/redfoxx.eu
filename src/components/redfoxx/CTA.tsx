@@ -20,7 +20,7 @@ export const CTA = () => {
       <div className="absolute inset-0 bg-grid opacity-[0.07] mask-radial pointer-events-none" />
       <div className="container relative">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-5">
+          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-5">
             {c.eyebrow}
           </p>
           <h2 className="text-5xl md:text-7xl font-display font-semibold text-balance leading-[1]">
@@ -94,7 +94,7 @@ export const CTA = () => {
               <span className="relative inline-block">
                 <img
                   src={soroushPhoto}
-                  alt="Soroush Qanawizian"
+                  alt=""
                   className="h-9 w-9 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
                 />
                 <Linkedin className="absolute -bottom-1 -right-1 h-3.5 w-3.5 p-0.5 rounded-full bg-background text-primary-glow" />
@@ -110,7 +110,7 @@ export const CTA = () => {
               <span className="relative inline-block">
                 <img
                   src={helenaPhoto}
-                  alt="Helena Michaux"
+                  alt=""
                   className="h-9 w-9 rounded-full object-cover ring-1 ring-border group-hover:ring-primary transition-all"
                 />
                 <Linkedin className="absolute -bottom-1 -right-1 h-3.5 w-3.5 p-0.5 rounded-full bg-background text-primary-glow" />

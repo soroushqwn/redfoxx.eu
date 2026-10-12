@@ -67,7 +67,7 @@ export const System = () => {
       <div className="absolute inset-0 bg-grid opacity-[0.08]" />
       <div className="container relative">
         <div className="max-w-2xl mb-16">
-          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary-glow mb-4">
+          <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-4">
             {s.eyebrow}
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-semibold text-balance">
@@ -95,7 +95,7 @@ export const System = () => {
                   <span className="absolute left-0 md:left-auto md:right-[-17px] top-1.5 h-8 w-8 rounded-full bg-background border-2 border-primary/60 flex items-center justify-center">
                     <span className="h-2 w-2 rounded-full bg-primary shadow-ember" />
                   </span>
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary-glow">
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
                     {step.step}
                   </span>
                 </div>
