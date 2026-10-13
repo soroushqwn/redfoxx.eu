@@ -186,16 +186,89 @@ function valid_email(string $e): bool
     return $e !== '' && filter_var($e, FILTER_VALIDATE_EMAIL) !== false && !preg_match('/[\r\n]/', $e);
 }
 
-function send_lead(array $cfg, array $in, string $lang, array $transcript): bool
+$GLOBALS['redfoxx_mail_error'] = '';
+
+function graph_configured(array $cfg): bool
+{
+    return !empty($cfg['graph_tenant_id']) && !empty($cfg['graph_client_id'])
+        && !empty($cfg['graph_client_secret']) && !empty($cfg['graph_sender']);
+}
+
+/** POST helper for the Graph calls. Returns [http status, decoded body|null, raw body]. */
+function http_post(string $url, array $headers, string $body): array
+{
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_TIMEOUT => 15,
+        CURLOPT_HTTPHEADER => $headers,
+        CURLOPT_POSTFIELDS => $body,
+    ]);
+    $raw = curl_exec($ch);
+    $code = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $err = curl_error($ch);
+    curl_close($ch);
+    if ($raw === false) {
+        return [0, null, 'curl: ' . $err];
+    }
+    $decoded = json_decode((string) $raw, true);
+    return [$code, is_array($decoded) ? $decoded : null, (string) $raw];
+}
+
+/**
+ * Send through the owner's own Microsoft 365 mailbox (Microsoft Graph, app-only "Mail.Send").
+ * The mail then leaves via Microsoft with the domain's own SPF/DKIM, so it is not treated as spam.
+ */
+function graph_send(array $cfg, string $to, string $subject, string $body, string $replyEmail, string $replyName): bool
+{
+    $tokenUrl = $cfg['graph_token_url'] ?? 'https://login.microsoftonline.com/' . rawurlencode((string) $cfg['graph_tenant_id']) . '/oauth2/v2.0/token';
+    [$code, $data, $raw] = http_post($tokenUrl, ['Content-Type: application/x-www-form-urlencoded'], http_build_query([
+        'client_id' => $cfg['graph_client_id'],
+        'client_secret' => $cfg['graph_client_secret'],
+        'scope' => 'https://graph.microsoft.com/.default',
+        'grant_type' => 'client_credentials',
+    ]));
+    if ($code !== 200 || empty($data['access_token'])) {
+        $GLOBALS['redfoxx_mail_error'] = "graph token http $code: " . mb_substr($raw, 0, 300);
+        error_log('redfoxx chat: ' . $GLOBALS['redfoxx_mail_error']);
+        return false;
+    }
+    $apiBase = $cfg['graph_api_url'] ?? 'https://graph.microsoft.com/v1.0';
+    $payload = [
+        'message' => [
+            'subject' => $subject,
+            'body' => ['contentType' => 'Text', 'content' => $body],
+            'toRecipients' => [['emailAddress' => ['address' => $to]]],
+            'replyTo' => [['emailAddress' => ['address' => $replyEmail, 'name' => $replyName]]],
+        ],
+        'saveToSentItems' => false,
+    ];
+    [$code, , $raw] = http_post(
+        $apiBase . '/users/' . rawurlencode((string) $cfg['graph_sender']) . '/sendMail',
+        ['Authorization: Bearer ' . $data['access_token'], 'Content-Type: application/json'],
+        (string) json_encode($payload, JSON_UNESCAPED_UNICODE)
+    );
+    if ($code !== 202 && $code !== 200) {
+        $GLOBALS['redfoxx_mail_error'] = "graph sendMail http $code: " . mb_substr($raw, 0, 300);
+        error_log('redfoxx chat: ' . $GLOBALS['redfoxx_mail_error']);
+        return false;
+    }
+    return true;
+}
+
+/** Returns '' on success, otherwise 'invalid' (name/email missing) or 'send_failed'. */
+function send_lead(array $cfg, array $in, string $lang, array $transcript): string
 {
     $name = clean_line($in['name'] ?? '');
     $email = clean_line($in['email'] ?? '', 254);
     if ($name === '' || !valid_email($email)) {
-        return false;
+        return 'invalid';
     }
     $to = $cfg['notify_to'] ?? 'info@redfoxx.be';
     $from = $cfg['mail_from'] ?? 'info@redfoxx.be';
-    $subject = '=?UTF-8?B?' . base64_encode('Nieuwe lead via website-chat: ' . $name) . '?=';
+    $plainSubject = 'Nieuwe lead via website-chat: ' . $name;
     $body = "Nieuwe lead via de chat op redfoxx.be\n\n"
         . "Naam: $name\n"
         . 'Bedrijf: ' . clean_line($in['company'] ?? '') . "\n"
@@ -204,6 +277,12 @@ function send_lead(array $cfg, array $in, string $lang, array $transcript): bool
         . 'Nood: ' . clean_line($in['need'] ?? '', 1000) . "\n"
         . 'Samenvatting: ' . clean_line($in['summary'] ?? '', 1500) . "\n\n"
         . "--- Gesprek ---\n" . implode("\n", $transcript) . "\n";
+
+    if (graph_configured($cfg) && graph_send($cfg, $to, $plainSubject, $body, $email, $name)) {
+        return '';
+    }
+    // Fallback (or no Graph configured): PHP mail() from this server. May land in spam.
+    $subject = '=?UTF-8?B?' . base64_encode($plainSubject) . '?=';
     $headers = [
         'From: REDFOXX website <' . $from . '>',
         'Reply-To: ' . $email,
@@ -211,9 +290,11 @@ function send_lead(array $cfg, array $in, string $lang, array $transcript): bool
         'Content-Type: text/plain; charset=UTF-8',
     ];
     if (!empty($cfg['mail_log'])) { // test hook: write instead of sending
-        return file_put_contents($cfg['mail_log'], $to . "\n" . $subject . "\n" . implode("\n", $headers) . "\n\n" . $body . "\n====\n", FILE_APPEND) !== false;
+        $ok = file_put_contents($cfg['mail_log'], $to . "\n" . $subject . "\n" . implode("\n", $headers) . "\n\n" . $body . "\n====\n", FILE_APPEND) !== false;
+    } else {
+        $ok = @mail($to, $subject, $body, implode("\r\n", $headers), '-f' . $from);
     }
-    return @mail($to, $subject, $body, implode("\r\n", $headers), '-f' . $from);
+    return $ok ? '' : 'send_failed';
 }
 
 /** One call to the Messages API with retry on 429/5xx. Returns decoded body or null. */
@@ -353,11 +434,16 @@ for ($round = 0; $round < MAX_TOOL_ROUNDS; $round++) {
             if ($block['name'] === 'capture_lead') {
                 if ($leadSent) {
                     $out = 'Already sent.';
-                } elseif (send_lead($cfg, $args, $lang, $transcript)) {
-                    $leadSent = true;
-                    $out = 'Lead sent to the REDFOXX team.';
                 } else {
-                    $out = 'Error: name or a valid email is missing. Ask the visitor for it.';
+                    $err = send_lead($cfg, $args, $lang, $transcript);
+                    if ($err === '') {
+                        $leadSent = true;
+                        $out = 'Lead sent to the REDFOXX team.';
+                    } elseif ($err === 'invalid') {
+                        $out = 'Error: name or a valid email is missing. Ask the visitor for it.';
+                    } else {
+                        $out = 'Error: the details could not be sent. Do not say they were sent; tell the visitor to email info@redfoxx.be or book a call with the button.';
+                    }
                 }
             } elseif ($block['name'] === 'show_booking_button') {
                 $a = ['type' => 'booking'];
@@ -400,4 +486,8 @@ if ($reply === '') {
         : 'Sorry, er ging iets mis. Je kan ons bereiken op info@redfoxx.be.');
 }
 
-respond(200, ['reply' => $reply, 'actions' => $actions, 'lead' => $leadSent]);
+$out = ['reply' => $reply, 'actions' => $actions, 'lead' => $leadSent];
+if (!empty($cfg['debug']) && $GLOBALS['redfoxx_mail_error'] !== '') {
+    $out['mail_error'] = $GLOBALS['redfoxx_mail_error'];
+}
+respond(200, $out);
