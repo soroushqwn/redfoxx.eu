@@ -4,6 +4,7 @@ import { MotionConfig } from "framer-motion";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import type { Lang } from "./i18n/translations";
 import Index from "./pages/Index";
+import { ChatWidget } from "./chat/ChatWidget";
 import type { RouteRecord } from "vite-react-ssg";
 // Preload the two fonts used above the fold so the headline is not delayed by a CSS -> font request chain.
 import spaceGroteskUrl from "@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2?url";
@@ -18,6 +19,7 @@ function Layout({ lang }: { lang: Lang }) {
       </Head>
       <MotionConfig reducedMotion="user">
         <Outlet />
+        <ChatWidget />
       </MotionConfig>
     </LanguageProvider>
   );
@@ -51,6 +53,7 @@ export const routes: RouteRecord[] = [
       { path: "outbound", ...page(() => import("./pages/Outbound")) },
       { path: "inbound", ...page(() => import("./pages/Inbound")) },
       { path: "jobs", ...page(() => import("./pages/Jobs")) },
+      { path: "privacy", ...page(() => import("./pages/Privacy")) },
       // Pre-rendered as 404.html (see vite.config.ts onFinished)
       { path: "404", ...page(() => import("./pages/NotFound")) },
       { path: "*", ...page(() => import("./pages/NotFound")) },
