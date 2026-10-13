@@ -5,8 +5,8 @@ import soroushPhoto from "@/assets/soroush.jpg";
 import helenaPhoto from "@/assets/helena.jpg";
 import { HeroGrid } from "./HeroGrid";
 import { useLang } from "@/i18n/LanguageContext";
+import { CALENDLY_URL } from "@/chat/config";
 
-const CALENDLY_URL = "https://calendly.com/soroush-redfoxx/30min";
 
 export const CTA = () => {
   const sectionRef = useRef<HTMLElement>(null);

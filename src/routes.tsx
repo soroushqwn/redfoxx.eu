@@ -4,6 +4,7 @@ import { MotionConfig } from "framer-motion";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import type { Lang } from "./i18n/translations";
 import Index from "./pages/Index";
+import { ChatWidget } from "./chat/ChatWidget";
 import type { RouteRecord } from "vite-react-ssg";
 // Preload the two fonts used above the fold so the headline is not delayed by a CSS -> font request chain.
 import spaceGroteskUrl from "@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2?url";
@@ -18,6 +19,7 @@ function Layout({ lang }: { lang: Lang }) {
       </Head>
       <MotionConfig reducedMotion="user">
         <Outlet />
+        <ChatWidget />
       </MotionConfig>
     </LanguageProvider>
   );

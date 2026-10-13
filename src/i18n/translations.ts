@@ -393,6 +393,22 @@ const en = {
   footer: {
     rights: "REDFOXX — Outbound & inbound sales for technical B2B.",
   },
+  chat: {
+    open: "Chat with us",
+    close: "Close chat",
+    title: "REDFOXX assistant",
+    subtitle: "AI assistant · answers in seconds",
+    welcome: "Hi! I'm the AI assistant of REDFOXX. Ask me anything about outbound or inbound sales, or let me plan an intro call for you.",
+    disclaimer: "You are chatting with an AI assistant. Please don't share sensitive data. Your messages are processed to answer you.",
+    placeholder: "Type your message…",
+    send: "Send",
+    thinking: "Typing…",
+    error: "Sorry, something went wrong. You can reach us at info@redfoxx.be or on WhatsApp.",
+    book: "Pick a time in the calendar",
+    whatsapp: "Continue on WhatsApp",
+    whatsappText: "Hi REDFOXX, I have a question after chatting on your website.",
+    limit: "This conversation has reached its limit. Please email info@redfoxx.be or continue on WhatsApp.",
+  },
 };
 
 export type Translations = typeof en;
@@ -789,6 +805,22 @@ const nl: Translations = {
   footer: {
     rights: "REDFOXX — Outbound & inbound sales voor technische B2B.",
   },
+  chat: {
+    open: "Chat met ons",
+    close: "Chat sluiten",
+    title: "REDFOXX-assistent",
+    subtitle: "AI-assistent · antwoordt binnen enkele seconden",
+    welcome: "Hallo! Ik ben de AI-assistent van REDFOXX. Stel me gerust een vraag over outbound of inbound sales, of laat me een kennismakingsgesprek voor je plannen.",
+    disclaimer: "Je praat met een AI-assistent. Deel geen gevoelige gegevens. Je berichten worden verwerkt om je te antwoorden.",
+    placeholder: "Typ je bericht…",
+    send: "Verstuur",
+    thinking: "Aan het typen…",
+    error: "Sorry, er ging iets mis. Je kan ons bereiken op info@redfoxx.be of via WhatsApp.",
+    book: "Kies een moment in de agenda",
+    whatsapp: "Verder op WhatsApp",
+    whatsappText: "Hallo REDFOXX, ik heb nog een vraag na de chat op jullie website.",
+    limit: "Dit gesprek heeft zijn limiet bereikt. Mail naar info@redfoxx.be of ga verder op WhatsApp.",
+  },
 };
 
 
@@ -1183,6 +1215,22 @@ const fr: Translations = {
   },
   footer: {
     rights: "REDFOXX — Ventes outbound & inbound pour le B2B technique.",
+  },
+  chat: {
+    open: "Discuter avec nous",
+    close: "Fermer le chat",
+    title: "Assistant REDFOXX",
+    subtitle: "Assistant IA · répond en quelques secondes",
+    welcome: "Bonjour ! Je suis l'assistant IA de REDFOXX. Posez-moi vos questions sur la prospection outbound ou inbound, ou laissez-moi planifier un appel de découverte.",
+    disclaimer: "Vous discutez avec un assistant IA. Ne partagez pas de données sensibles. Vos messages sont traités pour vous répondre.",
+    placeholder: "Écrivez votre message…",
+    send: "Envoyer",
+    thinking: "En train d'écrire…",
+    error: "Désolé, une erreur est survenue. Vous pouvez nous joindre à info@redfoxx.be ou via WhatsApp.",
+    book: "Choisir un créneau dans l'agenda",
+    whatsapp: "Continuer sur WhatsApp",
+    whatsappText: "Bonjour REDFOXX, j'ai encore une question après le chat sur votre site.",
+    limit: "Cette conversation a atteint sa limite. Écrivez à info@redfoxx.be ou continuez sur WhatsApp.",
   },
 };
 

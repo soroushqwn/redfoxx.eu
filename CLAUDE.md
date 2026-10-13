@@ -45,3 +45,6 @@ Pages: home, `/outbound`, `/inbound` (all three languages) and `/jobs` (Dutch on
 
 ## Style
 Match the surrounding code. Dutch copy uses "jullie/jouw" for the company; French uses "vous".
+
+## Chatbot
+See `docs/chatbot.md`. Backend `public/api/chat.php` (secrets live outside the repo, never commit keys), widget in `src/chat/`. Hidden until `CHAT_PUBLIC` is true (`?chat=1` previews). Prompt facts must follow the same rules as the copy (no invented prices/ROI/clients).

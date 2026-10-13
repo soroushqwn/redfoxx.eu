@@ -15,6 +15,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: php -l public/api/chat.php
       - run: npm run lint
       - run: npx tsc --noEmit -p tsconfig.app.json
       - run: npm test
