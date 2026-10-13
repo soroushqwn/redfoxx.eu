@@ -1,9 +1,21 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, ReactNode, useEffect, useRef, useState } from "react";
 import { CalendarCheck, Send, X } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { CALENDLY_URL, CHAT_ENDPOINT, MAX_CHARS, MAX_USER_MESSAGES, WHATSAPP_NUMBER } from "./config";
 
 type Msg = { role: "user" | "assistant"; content: string };
+
+/** Turn plain-text URLs in a message into links (React escapes the text, so this is safe). */
+const linkify = (text: string): ReactNode[] =>
+  text.split(/(https?:\/\/[^\s<>"')]+[^\s<>"'),.;:!?])/g).map((part, i) =>
+    /^https?:\/\//.test(part) ? (
+      <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+        {part}
+      </a>
+    ) : (
+      part
+    ),
+  );
 type Booking = { name?: string; email?: string };
 
 const bookingUrl = ({ name, email }: Booking) => {
@@ -108,7 +120,7 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
                 : "mr-8 whitespace-pre-wrap rounded-xl bg-card px-3 py-2 text-foreground"
             }
           >
-            {m.content}
+            {linkify(m.content)}
           </p>
         ))}
         {busy && <p className="text-xs text-muted-foreground">{c.thinking}</p>}
