@@ -54,6 +54,14 @@ function bump(string $key, int $ttl): int
     if (!is_dir($dir)) {
         @mkdir($dir, 0700, true);
     }
+    // Housekeeping: rate-limit files hold only a hashed key and a counter; delete stale ones (~2% of calls).
+    if (random_int(1, 50) === 1) {
+        foreach (glob($dir . '/*') ?: [] as $old) {
+            if (is_file($old) && filemtime($old) < time() - 172800) {
+                @unlink($old);
+            }
+        }
+    }
     $file = $dir . '/' . hash('sha256', $key);
     $fh = @fopen($file, 'c+');
     if (!$fh) {
