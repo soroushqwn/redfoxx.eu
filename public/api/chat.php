@@ -34,12 +34,27 @@ function fail(int $status, string $code): never
 
 function load_config(): array
 {
-    $path = getenv('REDFOXX_SECRETS') ?: dirname($_SERVER['DOCUMENT_ROOT'] ?? __DIR__) . '/redfoxx-secrets.php';
-    if (!is_file($path)) {
-        return [];
+    // The secrets file lives outside the web root. Hosts differ in what "one level above
+    // public_html" is (account home vs. domains/<site>), so look in a few places.
+    $candidates = [];
+    if (getenv('REDFOXX_SECRETS')) {
+        $candidates[] = (string) getenv('REDFOXX_SECRETS');
     }
-    $cfg = require $path;
-    return is_array($cfg) ? $cfg : [];
+    $dir = $_SERVER['DOCUMENT_ROOT'] ?? __DIR__;
+    for ($i = 0; $i < 3; $i++) {
+        $dir = dirname($dir);
+        $candidates[] = $dir . '/redfoxx-secrets.php';
+    }
+    if (getenv('HOME')) {
+        $candidates[] = rtrim((string) getenv('HOME'), '/') . '/redfoxx-secrets.php';
+    }
+    foreach ($candidates as $path) {
+        if (is_file($path)) {
+            $cfg = require $path;
+            return is_array($cfg) ? $cfg : [];
+        }
+    }
+    return [];
 }
 
 function client_ip(): string
