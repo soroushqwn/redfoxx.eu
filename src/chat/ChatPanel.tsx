@@ -22,6 +22,7 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [errorCode, setErrorCode] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -57,13 +58,17 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: next, lang, website: honeypot }),
       });
-      if (!res.ok) throw new Error(String(res.status));
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(`${res.status} ${body?.error ?? ""}`.trim());
+      }
       const data: { reply: string; actions?: { type: string; name?: string; email?: string }[] } = await res.json();
       if (!data.reply) throw new Error("empty");
       setMessages([...next, { role: "assistant", content: data.reply }]);
       const b = data.actions?.find((a) => a.type === "booking");
       if (b) setBooking({ name: b.name, email: b.email });
-    } catch {
+    } catch (err) {
+      setErrorCode(err instanceof Error ? err.message : "");
       setFailed(true);
       // Drop the unanswered question so the history stays user/assistant alternating.
       setMessages(next.slice(0, -1));
@@ -121,6 +126,10 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
         {(failed || limitReached) && (
           <p role="alert" className="rounded-xl border border-border px-3 py-2 text-foreground">
             {limitReached ? c.limit : c.error}
+            {/* Only when previewing with ?chat=1: helps whoever tests it. */}
+            {!limitReached && errorCode && new URLSearchParams(window.location.search).has("chat") && (
+              <span className="mt-1 block text-xs text-muted-foreground">({errorCode})</span>
+            )}
           </p>
         )}
         <div ref={endRef} />
