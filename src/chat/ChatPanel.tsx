@@ -60,7 +60,7 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
       });
       if (!res.ok) {
         const body = await res.json().catch(() => null);
-        throw new Error(`${res.status} ${body?.error ?? ""}`.trim());
+        throw new Error(`${res.status} ${body?.error ?? ""} ${body?.detail ?? ""}`.trim());
       }
       const data: { reply: string; actions?: { type: string; name?: string; email?: string }[] } = await res.json();
       if (!data.reply) throw new Error("empty");
@@ -128,7 +128,7 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
             {limitReached ? c.limit : c.error}
             {/* Only when previewing with ?chat=1: helps whoever tests it. */}
             {!limitReached && errorCode && new URLSearchParams(window.location.search).has("chat") && (
-              <span className="mt-1 block text-xs text-muted-foreground">({errorCode})</span>
+              <span className="mt-1 block break-words text-xs text-muted-foreground">({errorCode})</span>
             )}
           </p>
         )}
