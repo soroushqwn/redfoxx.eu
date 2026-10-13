@@ -28,13 +28,19 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
   const userCount = messages.filter((m) => m.role === "user").length;
   const limitReached = userCount >= MAX_USER_MESSAGES;
 
-  useEffect(() => inputRef.current?.focus(), []);
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    inputRef.current?.focus();
+  }, []);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
-  useEffect(() => endRef.current?.scrollIntoView({ block: "end" }), [messages, busy, booking]);
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ block: "end" });
+  }, [messages, busy, booking]);
 
   const send = async (e: FormEvent) => {
     e.preventDefault();

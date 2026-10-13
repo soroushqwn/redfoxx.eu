@@ -1,10 +1,24 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from "react";
 import { MessageCircle } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { CHAT_PUBLIC } from "./config";
 
 // The panel (and its code) is only downloaded once the visitor opens the chat.
 const ChatPanel = lazy(() => import("./ChatPanel"));
+
+/** A problem inside the chat must never take the whole website down: close the chat instead. */
+class ChatBoundary extends Component<{ onFail: () => void; children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  componentDidCatch() {
+    this.props.onFail();
+  }
+  render() {
+    return this.state.failed ? null : this.props.children;
+  }
+}
 
 export const ChatWidget = () => {
   const { t } = useLang();
@@ -21,9 +35,11 @@ export const ChatWidget = () => {
   return (
     <>
       {open ? (
-        <Suspense fallback={null}>
-          <ChatPanel onClose={() => setOpen(false)} />
-        </Suspense>
+        <ChatBoundary onFail={() => setOpen(false)}>
+          <Suspense fallback={null}>
+            <ChatPanel onClose={() => setOpen(false)} />
+          </Suspense>
+        </ChatBoundary>
       ) : (
         <button
           type="button"
