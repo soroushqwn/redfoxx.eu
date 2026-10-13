@@ -1,5 +1,6 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { ALL_ROUTES, LANGS, META, MULTILINGUAL_PAGES, buildSitemap, pagePath, parsePath } from "@/seo/site";
+import { ALL_ROUTES, LANGS, META, MULTILINGUAL_PAGES, buildSitemap, pagePath, pageUrl, parsePath } from "@/seo/site";
 import { translations } from "@/i18n/translations";
 
 describe("routes and metadata", () => {
@@ -33,10 +34,17 @@ describe("routes and metadata", () => {
   });
 });
 
-describe("hidden privacy draft", () => {
-  it("is not in the sitemap until it is approved", () => {
-    expect(ALL_ROUTES.some((r) => r.page === "privacy")).toBe(false);
-    expect(buildSitemap("2026-01-01")).not.toContain("/privacy");
+describe("privacy statement", () => {
+  it("exists in every language, is in the sitemap and has no draft placeholders", () => {
+    const xml = buildSitemap("2026-01-01");
+    for (const lang of LANGS) {
+      expect(ALL_ROUTES.some((r) => r.page === "privacy" && r.lang === lang)).toBe(true);
+      expect(xml).toContain(pageUrl("privacy", lang));
+      const md = readFileSync(`src/content/privacy.${lang}.md`, "utf8");
+      expect(md, lang).not.toMatch(/\[[^\]]+\]/); // no [to be filled in] placeholders
+      expect(md, lang).not.toMatch(/CONCEPT|DRAFT|BROUILLON|checklist/i);
+      expect(md.length).toBeGreaterThan(5000);
+    }
   });
 });
 

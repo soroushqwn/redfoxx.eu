@@ -38,6 +38,7 @@ const localized = (lang: "en" | "fr"): RouteRecord => ({
     { index: true, element: <Index /> },
     { path: "outbound", ...page(() => import("./pages/Outbound")) },
     { path: "inbound", ...page(() => import("./pages/Inbound")) },
+    { path: "privacy", ...page(() => import("./pages/Privacy")) },
     { path: "*", ...page(() => import("./pages/NotFound")) },
   ],
 });
@@ -52,8 +53,8 @@ export const routes: RouteRecord[] = [
       { index: true, element: <Index /> },
       { path: "outbound", ...page(() => import("./pages/Outbound")) },
       { path: "inbound", ...page(() => import("./pages/Inbound")) },
-      { path: "jobs", ...page(() => import("./pages/Jobs")) },
       { path: "privacy", ...page(() => import("./pages/Privacy")) },
+      { path: "jobs", ...page(() => import("./pages/Jobs")) },
       // Pre-rendered as 404.html (see vite.config.ts onFinished)
       { path: "404", ...page(() => import("./pages/NotFound")) },
       { path: "*", ...page(() => import("./pages/NotFound")) },

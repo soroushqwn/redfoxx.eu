@@ -17,6 +17,7 @@ Dutch (default), English, French.
 - [Outbound (NL)](https://redfoxx.be/outbound) · [EN](https://redfoxx.be/en/outbound) · [FR](https://redfoxx.be/fr/outbound)
 - [Inbound (NL)](https://redfoxx.be/inbound) · [EN](https://redfoxx.be/en/inbound) · [FR](https://redfoxx.be/fr/inbound)
 - [Jobs (NL)](https://redfoxx.be/jobs)
+- [Privacy (NL)](https://redfoxx.be/privacy) · [EN](https://redfoxx.be/en/privacy) · [FR](https://redfoxx.be/fr/privacy)
 
 ## Contact
 - Email: info@redfoxx.be

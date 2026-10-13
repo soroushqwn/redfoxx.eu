@@ -21,7 +21,7 @@ Lovable (lovable.dev, project "Redfoxx Refresh") also commits to `main`.
 
 ## Languages and routes
 Three languages as separate pre-rendered URLs: NL (default, `/`), EN (`/en/`), FR (`/fr/`).
-Pages: home, `/outbound`, `/inbound` (all three languages) and `/jobs` (Dutch only).
+Pages: home, `/outbound`, `/inbound`, `/privacy` (all three languages) and `/jobs` (Dutch only).
 - Language comes from the URL, never from localStorage.
 - All page URLs, titles and descriptions live in `src/seo/site.ts` (single source of truth, also used by the sitemap).
 - All copy lives in `src/i18n/translations.ts`; nl/en/fr must keep identical structure (a test enforces it).
@@ -47,4 +47,7 @@ Pages: home, `/outbound`, `/inbound` (all three languages) and `/jobs` (Dutch on
 Match the surrounding code. Dutch copy uses "jullie/jouw" for the company; French uses "vous".
 
 ## Chatbot
-See `docs/chatbot.md`. Backend `public/api/chat.php` (secrets live outside the repo, never commit keys), widget in `src/chat/`. Hidden until `CHAT_PUBLIC` is true (`?chat=1` previews). Prompt facts must follow the same rules as the copy (no invented prices/ROI/clients).
+See `docs/chatbot.md`. Backend `public/api/chat.php` (secrets live outside the repo in `redfoxx-secrets.php`, never commit keys), widget in `src/chat/`. Live for all visitors (`CHAT_PUBLIC = true` in `src/chat/config.ts`; set it to false to hide the chat, `?chat=1` always previews it). Prompt facts must follow the same rules as the copy (no invented prices/ROI/clients). Lead mails go through the owner's Microsoft 365 mailbox (Graph); keep the Entra client secret reminder in mind (it expires).
+
+## Privacy statement
+Text lives in `src/content/privacy.{nl,en,fr}.md` (rendered by `src/pages/Privacy.tsx`). Keep the three files in sync; a test forbids `[placeholders]` and draft banners. When a tool/processor changes (or the chat/analytics setup changes), update all three files and the date at the top. Legal footer details (VAT number) are still to be added by the owner.

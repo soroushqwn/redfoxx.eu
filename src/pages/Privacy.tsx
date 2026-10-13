@@ -2,20 +2,19 @@ import { Fragment, type ReactNode } from "react";
 import { Seo } from "@/seo/Seo";
 import { Navbar } from "@/components/redfoxx/Navbar";
 import { Footer } from "@/components/redfoxx/CTA";
-import md from "@/content/privacy.nl.md?raw";
+import { useLang } from "@/i18n/LanguageContext";
+import mdNl from "@/content/privacy.nl.md?raw";
+import mdEn from "@/content/privacy.en.md?raw";
+import mdFr from "@/content/privacy.fr.md?raw";
 
-/**
- * HIDDEN DRAFT. The page is noindex, not in the sitemap and not linked anywhere until the lawyer
- * has approved the text. To update: replace src/content/privacy.nl.md (keep it free of internal notes).
- * [Text in square brackets] is highlighted on purpose: it still has to be filled in or verified.
- */
+/** The privacy statement is plain markdown per language in src/content/. A test makes sure no placeholders ([...]) or draft banners ship. */
+const CONTENT = { nl: mdNl, en: mdEn, fr: mdFr };
+const TITLE = { nl: "Privacyverklaring REDFOXX", en: "REDFOXX Privacy Statement", fr: "Déclaration de confidentialité REDFOXX" };
 
 const inline = (text: string): ReactNode[] =>
-  text.split(/(\*\*[^*]+\*\*|\[[^\]]+\])/g).map((part, i) => {
-    if (part.startsWith("**")) return <strong key={i}>{part.slice(2, -2)}</strong>;
-    if (part.startsWith("[")) return <mark key={i} className="rounded bg-primary/15 px-1 text-foreground">{part}</mark>;
-    return <Fragment key={i}>{part}</Fragment>;
-  });
+  text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith("**") ? <strong key={i}>{part.slice(2, -2)}</strong> : <Fragment key={i}>{part}</Fragment>,
+  );
 
 const cells = (line: string) => line.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
 
@@ -61,18 +60,19 @@ const render = (source: string): ReactNode[] => {
   return out;
 };
 
-const Privacy = () => (
-  <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
-    <Seo page="privacy" lang="nl">
-      <meta name="robots" content="noindex, nofollow" />
-    </Seo>
-    <Navbar />
-    <article className="container max-w-3xl pt-32 pb-20 md:pt-40 leading-relaxed text-muted-foreground [&_strong]:text-foreground [&_h2]:text-foreground [&_h3]:text-foreground">
-      <h1 className="font-display text-4xl font-semibold text-foreground md:text-5xl">Privacyverklaring REDFOXX</h1>
-      {render(md)}
-    </article>
-    <Footer />
-  </main>
-);
+const Privacy = () => {
+  const { lang } = useLang();
+  return (
+    <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Seo page="privacy" lang={lang} />
+      <Navbar />
+      <article className="container max-w-3xl pt-32 pb-20 md:pt-40 leading-relaxed text-muted-foreground [&_strong]:text-foreground [&_h2]:text-foreground [&_h3]:text-foreground">
+        <h1 className="font-display text-4xl font-semibold text-foreground md:text-5xl">{TITLE[lang]}</h1>
+        {render(CONTENT[lang])}
+      </article>
+      <Footer />
+    </main>
+  );
+};
 
 export default Privacy;

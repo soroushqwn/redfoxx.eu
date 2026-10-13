@@ -14,7 +14,7 @@ export const OG_LOCALE: Record<Lang, string> = { nl: "nl_BE", en: "en_GB", fr: "
 export type PageKey = "home" | "outbound" | "inbound" | "jobs" | "privacy";
 
 /** Pages that exist in all three languages (get hreflang alternates). */
-export const MULTILINGUAL_PAGES: PageKey[] = ["home", "outbound", "inbound"];
+export const MULTILINGUAL_PAGES: PageKey[] = ["home", "outbound", "inbound", "privacy"];
 
 const SLUG: Record<PageKey, string> = { home: "", outbound: "outbound", inbound: "inbound", jobs: "jobs", privacy: "privacy" };
 
@@ -99,9 +99,10 @@ export const META: Record<PageKey, Partial<Record<Lang, Meta>>> = {
         "REDFOXX zoekt een Business Development Representative (BDR) voor B2B outbound sales in Aarschot. Cold calling, e-mail en LinkedIn voor technische B2B-klanten.",
     },
   },
-  // Hidden draft: not in ALL_ROUTES (no sitemap), noindex, not linked. See src/pages/Privacy.tsx.
   privacy: {
-    nl: { title: "Privacyverklaring | REDFOXX", description: "Hoe REDFOXX omgaat met persoonsgegevens." },
+    nl: { title: "Privacyverklaring | REDFOXX", description: "Hoe REDFOXX omgaat met persoonsgegevens: welke gegevens, waarom, hoe lang en welke rechten je hebt." },
+    en: { title: "Privacy statement | REDFOXX", description: "How REDFOXX handles personal data: which data, why, for how long and what rights you have." },
+    fr: { title: "Déclaration de confidentialité | REDFOXX", description: "Comment REDFOXX traite les données personnelles : quelles données, pourquoi, combien de temps et vos droits." },
   },
 };
 

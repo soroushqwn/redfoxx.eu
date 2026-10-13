@@ -5,10 +5,9 @@ The bot answers questions about REDFOXX, qualifies visitors, shows a Calendly bo
 (prefilled with name/email) and, after explicit consent, emails the lead to info@redfoxx.be.
 There is also a "Verder op WhatsApp" link (`wa.me`). No fixed prices, ROI claims or client names are in the prompt.
 
-## Status: hidden for visitors
-`CHAT_PUBLIC` in `src/chat/config.ts` is `false`. Preview any page with `?chat=1`.
-Do not set it to `true` before: (1) the secrets file below exists on Hostinger, (2) a privacy policy
-(mentioning the AI chat and that messages are processed by Anthropic) is online, (3) the owner agrees.
+## Status: live
+`CHAT_PUBLIC` in `src/chat/config.ts` is `true`: the chat button is visible for every visitor. Set it to `false` to hide it again;
+`?chat=1` on any page always shows it (useful for testing). The privacy statement (`/privacy`, `/en/privacy`, `/fr/privacy`) is linked from the footer and from the chat.
 
 ## Hostinger setup (once)
 1. Create an API key at console.anthropic.com (set a monthly spend limit there).
