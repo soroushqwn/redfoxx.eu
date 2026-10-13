@@ -392,6 +392,7 @@ const en = {
   },
   footer: {
     rights: "REDFOXX — Outbound & inbound sales for technical B2B.",
+    privacy: "Privacy statement",
   },
   chat: {
     open: "Chat with us",
@@ -408,6 +409,7 @@ const en = {
     whatsapp: "Continue on WhatsApp",
     whatsappText: "Hi REDFOXX, I have a question after chatting on your website.",
     limit: "This conversation has reached its limit. Please email info@redfoxx.be or continue on WhatsApp.",
+    privacy: "Privacy statement",
   },
 };
 
@@ -804,6 +806,7 @@ const nl: Translations = {
   },
   footer: {
     rights: "REDFOXX — Outbound & inbound sales voor technische B2B.",
+    privacy: "Privacyverklaring",
   },
   chat: {
     open: "Chat met ons",
@@ -820,6 +823,7 @@ const nl: Translations = {
     whatsapp: "Verder op WhatsApp",
     whatsappText: "Hallo REDFOXX, ik heb nog een vraag na de chat op jullie website.",
     limit: "Dit gesprek heeft zijn limiet bereikt. Mail naar info@redfoxx.be of ga verder op WhatsApp.",
+    privacy: "Privacyverklaring",
   },
 };
 
@@ -1215,6 +1219,7 @@ const fr: Translations = {
   },
   footer: {
     rights: "REDFOXX — Ventes outbound & inbound pour le B2B technique.",
+    privacy: "Déclaration de confidentialité",
   },
   chat: {
     open: "Discuter avec nous",
@@ -1231,6 +1236,7 @@ const fr: Translations = {
     whatsapp: "Continuer sur WhatsApp",
     whatsappText: "Bonjour REDFOXX, j'ai encore une question après le chat sur votre site.",
     limit: "Cette conversation a atteint sa limite. Écrivez à info@redfoxx.be ou continuez sur WhatsApp.",
+    privacy: "Déclaration de confidentialité",
   },
 };
 

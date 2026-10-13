@@ -25,6 +25,7 @@ jobs:
           for f in index.html outbound/index.html inbound/index.html jobs/index.html \
                    en/index.html en/outbound/index.html en/inbound/index.html \
                    fr/index.html fr/outbound/index.html fr/inbound/index.html \
+                   privacy/index.html en/privacy/index.html fr/privacy/index.html \
                    404.html sitemap.xml robots.txt llms.txt .htaccess; do
             test -f "dist/$f" || { echo "missing dist/$f"; exit 1; }
           done

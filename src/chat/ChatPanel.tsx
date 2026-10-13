@@ -1,6 +1,7 @@
 import { FormEvent, ReactNode, useEffect, useRef, useState } from "react";
 import { CalendarCheck, Send, X } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { pagePath } from "@/seo/site";
 import { CALENDLY_URL, CHAT_ENDPOINT, MAX_CHARS, MAX_USER_MESSAGES, WHATSAPP_NUMBER } from "./config";
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -112,7 +113,12 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
 
       <div className="flex-1 space-y-3 overflow-y-auto px-4 py-3 text-sm" role="log" aria-live="polite">
         <p className="rounded-xl bg-card px-3 py-2 text-foreground">{c.welcome}</p>
-        <p className="text-xs text-muted-foreground">{c.disclaimer}</p>
+        <p className="text-xs text-muted-foreground">
+          {c.disclaimer}{" "}
+          <a href={pagePath("privacy", lang)} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+            {c.privacy}
+          </a>
+        </p>
         {messages.map((m, i) => (
           <p
             key={i}

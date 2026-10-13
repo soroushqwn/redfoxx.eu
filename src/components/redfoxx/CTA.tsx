@@ -1,11 +1,13 @@
 import { ArrowRight, Mail, Phone, Linkedin } from "lucide-react";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import logoLockup from "@/assets/redfoxx-lockup.png";
 import soroushPhoto from "@/assets/soroush.jpg";
 import helenaPhoto from "@/assets/helena.jpg";
 import { HeroGrid } from "./HeroGrid";
 import { useLang } from "@/i18n/LanguageContext";
 import { CALENDLY_URL } from "@/chat/config";
+import { pagePath } from "@/seo/site";
 
 
 export const CTA = () => {
@@ -125,16 +127,21 @@ export const CTA = () => {
 };
 
 export const Footer = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <footer className="border-t border-border py-10">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center">
           <img src={logoLockup} alt="REDFOXX Sales Solutions" className="h-40 w-auto object-contain" />
         </div>
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} {t.footer.rights}
-        </p>
+        <div className="flex flex-col items-center gap-2 md:items-end">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} {t.footer.rights}
+          </p>
+          <Link to={pagePath("privacy", lang)} className="text-sm text-muted-foreground underline underline-offset-2 hover:text-foreground">
+            {t.footer.privacy}
+          </Link>
+        </div>
       </div>
     </footer>
   );

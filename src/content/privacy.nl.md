@@ -1,9 +1,6 @@
 # Privacyverklaring REDFOXX
 
-**CONCEPT voor juridisch nazicht. Niet publiceren vóór nazicht.**
-Tekst tussen [vierkante haakjes] moet nog ingevuld of geverifieerd worden.
-
-Laatst bijgewerkt: [datum van publicatie]
+Laatst bijgewerkt: 13 oktober 2026
 
 REDFOXX helpt technische B2B-bedrijven aan nieuwe klanten via outbound prospectie (bellen, e-mail, LinkedIn) en de opvolging van inkomende leads. Daarbij verwerken wij persoonsgegevens. In deze verklaring lees je welke gegevens, waarom, hoe lang en welke rechten je hebt.
 
@@ -20,7 +17,7 @@ Wij zijn verwerkingsverantwoordelijke voor de verwerkingen in deze verklaring, b
 
 ## 2. Korte samenvatting
 
-- Websitebezoekers: wij gebruiken Google Analytics enkel met je toestemming (cookiebanner).
+- Websitebezoekers: wij plaatsen analytische cookies (Google Analytics) enkel met je toestemming via de cookiebanner.
 - De chat op onze website is een AI-assistent, geen mens. Je gegevens gaan enkel naar ons team als je dat in de chat uitdrukkelijk bevestigt.
 - Zakelijke contactpersonen die wij benaderen, vinden hun gegevens via openbare en professionele bronnen. Je kan je op elk moment verzetten en dan contacteren wij je niet meer.
 - Gesprekken met prospects en klanten worden mogelijk opgenomen en getranscribeerd. Wij melden dat bij het begin van het gesprek.
@@ -46,12 +43,13 @@ Op onze website kan je chatten met een AI-assistent. Je praat dus niet met een m
 |---|---|---|
 | De berichten die je typt | Je vragen beantwoorden | Gerechtvaardigd belang: bezoekers snel informeren (art. 6.1.f AVG) |
 | Naam, e-mailadres, bedrijf, je vraag of behoefte en het gesprek, **enkel als je in de chat uitdrukkelijk vraagt om contact** | Je gegevens doorgeven aan ons team zodat wij je contacteren | Toestemming (art. 6.1.a AVG) en precontractuele maatregelen op jouw verzoek (art. 6.1.b AVG) |
-| Een versleutelde (gehashte) vorm van je IP-adres, tijdelijk | Misbruik en overbelasting van de chat voorkomen | Gerechtvaardigd belang (art. 6.1.f AVG) |
+| Een gehashte (niet rechtstreeks leesbare) vorm van je IP-adres, tijdelijk | Misbruik en overbelasting van de chat voorkomen | Gerechtvaardigd belang (art. 6.1.f AVG) |
 
 Hoe het werkt:
 
-- Om een antwoord te maken, worden je berichten doorgestuurd naar het taalmodel van Anthropic (Anthropic Ireland, Limited voor klanten in de EER). Anthropic verwerkt ze als onze verwerker. Volgens Anthropic worden invoer en antwoorden via de API standaard binnen 30 dagen verwijderd, behalve als dat langer nodig is om misbruik tegen te gaan of omwille van een wettelijke verplichting. Anthropic gebruikt deze gegevens niet om zijn modellen te trainen. [Te verifiëren in de verwerkersovereenkomst (DPA) van Anthropic: doorgifte buiten de EER en de waarborgen daarvoor.]
-- Op onze eigen server bewaren wij de chatgesprekken niet. Enkel als je contact vraagt, ontvangen wij het gesprek per e-mail op info@redfoxx.be.
+- Om een antwoord te maken, worden je berichten doorgestuurd naar het taalmodel van Anthropic, dat ze als onze verwerker verwerkt. Volgens zijn voorwaarden bewaart Anthropic invoer en antwoorden via de API tijdelijk (maximaal 30 dagen, of langer als dat nodig is om misbruik tegen te gaan of wettelijk verplicht is) en gebruikt het ze niet om zijn modellen te trainen. De verwerking kan buiten de Europese Economische Ruimte plaatsvinden, met passende waarborgen (zie punt 4.1).
+- Op onze eigen server bewaren wij de chatgesprekken niet. Enkel als je contact vraagt, ontvangen wij het gesprek per e-mail op info@redfoxx.be (via Microsoft 365).
+- Boek je een afspraak via de knop in de chat, dan geven wij de naam en het e-mailadres die je in de chat opgaf door aan Calendly om het formulier alvast in te vullen.
 - Deel in de chat geen gevoelige gegevens (gezondheid, financiële gegevens, wachtwoorden).
 - Liever een mens? Mail naar info@redfoxx.be of bel +32 456 36 98 48.
 - De chat bevat een link om verder te praten via WhatsApp. Klik je die aan, dan geldt het privacybeleid van WhatsApp (Meta) voor dat gesprek.
@@ -78,7 +76,7 @@ Dit is onze kernactiviteit. Wij benaderen bedrijven, voor onszelf of in opdracht
 
 **Doel:** bedrijven contacteren met een zakelijk aanbod dat relevant is voor hun functie, en een kennismakingsgesprek plannen.
 
-**Rechtsgrond:** gerechtvaardigd belang (art. 6.1.f AVG): zakelijke prospectie gericht aan personen in hun professionele rol. Wij hebben een belangenafweging gemaakt [nog op te stellen, zie checklist]. Wij beperken ons tot zakelijke gegevens, benaderen enkel functies waarvoor het aanbod relevant is, en stoppen meteen als je dat vraagt.
+**Rechtsgrond:** gerechtvaardigd belang (art. 6.1.f AVG): zakelijke prospectie gericht aan personen in hun professionele rol. Wij wegen ons belang af tegen jouw rechten en vrijheden. Wij beperken ons tot zakelijke gegevens, benaderen enkel functies waarvoor het aanbod relevant is, en stoppen meteen als je dat vraagt.
 
 **Bezwaar:** je kan je op elk moment, kosteloos en zonder reden verzetten tegen prospectie (art. 21.2 AVG). Antwoord op ons bericht, zeg het tijdens het gesprek of mail naar info@redfoxx.be. Wij bewaren dan enkel je naam en contactgegevens op een uitsluitingslijst, zodat wij je niet opnieuw contacteren.
 
@@ -86,7 +84,7 @@ Dit is onze kernactiviteit. Wij benaderen bedrijven, voor onszelf of in opdracht
 
 | Gegevens | Doel | Rechtsgrond |
 |---|---|---|
-| Geluidsopname en automatische transcriptie van telefoon- en videogesprekken met prospects en klanten | Kwaliteit van onze gesprekken bewaken en verbeteren; verslag en opvolging voor de klant voor wie wij bellen; afspraken correct vastleggen | Gerechtvaardigd belang (art. 6.1.f AVG) [of toestemming: juridisch te bepalen, zie checklist] |
+| Geluidsopname en automatische transcriptie van telefoon- en videogesprekken met prospects en klanten | Kwaliteit van onze gesprekken bewaken en verbeteren; verslag en opvolging voor de klant voor wie wij bellen; afspraken correct vastleggen | Gerechtvaardigd belang (art. 6.1.f AVG) |
 
 Wij melden aan het begin van het gesprek dat het opgenomen wordt. Wil je dat niet, dan zetten wij de opname stop. Voor opnames en transcripties gebruiken wij Fathom en Apollo.io.
 
@@ -103,7 +101,7 @@ Wij melden aan het begin van het gesprek dat het opgenomen wordt. Wil je dat nie
 | Cv, motivatie, contactgegevens, notities van gesprekken | Je sollicitatie beoordelen | Precontractuele maatregelen (art. 6.1.b AVG) |
 | Dezelfde gegevens na afloop van de procedure | Je contacteren bij een nieuwe vacature | Toestemming (art. 6.1.a AVG) |
 
-Solliciteren kan via [het formulier op /jobs of via e-mail naar info@redfoxx.be: in te vullen zodra het kanaal op de website vastligt].
+Solliciteren kan via e-mail, zoals vermeld op de vacaturepagina.
 
 ## 4. Met wie delen wij gegevens?
 
@@ -111,23 +109,22 @@ Wij verkopen geen persoonsgegevens. Wij delen ze enkel met dienstverleners die z
 
 ### 4.1 Onze verwerkers
 
-| Dienstverlener | Wat | Land / waarborg |
-|---|---|---|
-| Hostinger | Hosting van website en e-mail | [entiteit en land te verifiëren] |
-| Anthropic Ireland, Limited | AI-chat op de website | Ierland; [mogelijke doorgifte naar de VS: waarborg te verifiëren in de DPA] |
-| Google Ireland Limited | Google Analytics (enkel met toestemming) | Ierland; doorgifte naar de VS mogelijk [EU-VS Data Privacy Framework te verifiëren] |
-| CookieYes | Cookietoestemming | [entiteit en land te verifiëren] |
-| Calendly | Afsprakenplanning | VS [waarborg te verifiëren] |
-| lemlist (lempire) | Versturen en opvolgen van e-mail- en belcampagnes | [Frankrijk, te verifiëren] |
-| Apollo.io | Zakelijke contactgegevens, e-mail, opnames | VS [waarborg te verifiëren] |
-| Clay | Verrijking van zakelijke contactgegevens | VS [waarborg te verifiëren] |
-| Fathom | Opname en transcriptie van gesprekken | VS [waarborg te verifiëren] |
-| Notion | Gedeelde campagnerapporten en notities | VS [waarborg te verifiëren] |
-| Microsoft | E-mail en bestanden (Microsoft 365, OneDrive) | [Ierland / EER, te verifiëren] |
-| Dexxter | Facturatie en boekhouding | België [te verifiëren] |
-| [andere: telefonie, LinkedIn-tools, Google Workspace?] | | |
+| Dienstverlener | Wat |
+|---|---|
+| Hostinger | Hosting van de website |
+| Microsoft | E-mail en bestanden (Microsoft 365, OneDrive), ook voor het doorsturen van leads uit de chat |
+| Anthropic | AI-chat op de website |
+| Google | Google Analytics (enkel met toestemming) |
+| CookieYes | Cookietoestemming |
+| Calendly | Afsprakenplanning |
+| lemlist | Versturen en opvolgen van e-mail- en belcampagnes |
+| Apollo.io | Zakelijke contactgegevens, e-mail, opnames |
+| Clay | Verrijking van zakelijke contactgegevens |
+| Fathom | Opname en transcriptie van gesprekken |
+| Notion | Gedeelde campagnerapporten en notities |
+| Dexxter | Facturatie en boekhouding |
 
-Met elke verwerker hebben wij een verwerkersovereenkomst [na te kijken per leverancier, zie checklist]. Worden gegevens buiten de Europese Economische Ruimte verwerkt, dan gebeurt dat enkel met passende waarborgen, zoals een adequaatheidsbesluit (bv. het EU-VS Data Privacy Framework) of de standaardcontractbepalingen van de Europese Commissie.
+Deze dienstverleners verwerken gegevens in onze opdracht en volgens onze instructies, op basis van hun verwerkersvoorwaarden. Worden gegevens buiten de Europese Economische Ruimte verwerkt, dan gebeurt dat enkel met passende waarborgen, zoals een adequaatheidsbesluit (bv. het EU-VS Data Privacy Framework) of de standaardcontractbepalingen van de Europese Commissie.
 
 ### 4.2 Medewerkers en partners
 
@@ -141,15 +138,15 @@ Voeren wij een campagne of de opvolging van inkomende leads uit voor een klant, 
 
 | Gegevens | Bewaartermijn |
 |---|---|
-| Serverlogs van de website | [volgens Hostinger, te verifiëren] |
-| Google Analytics | [2 of 14 maanden, volgens de instelling in Google Analytics] |
-| Chatberichten bij Anthropic | Tot 30 dagen (standaard volgens Anthropic) |
-| Gehasht IP-adres voor de chatbeveiliging | [x uur of dagen, volgens de chatbotcode] |
+| Serverlogs van de website | Volgens de instellingen van onze hostingprovider |
+| Google Analytics | Volgens de instelling in Google Analytics (maximaal 14 maanden) |
+| Chatberichten bij Anthropic | Maximaal 30 dagen (volgens de voorwaarden van Anthropic) |
+| Gehasht IP-adres voor de chatbeveiliging | Maximaal 24 uur in gebruik; de bestandjes worden automatisch opgeruimd, doorgaans binnen enkele dagen |
 | Leads uit de chat, Calendly en contactaanvragen | 2 jaar na het laatste contact |
 | Prospects (zakelijke contactpersonen) | 2 jaar na het laatste contact. Bij bezwaar: meteen verwijderd, enkel naam en contactgegevens blijven op de uitsluitingslijst |
 | Opnames en transcripties | 6 maanden na het einde van de campagne, tenzij de klant een kortere termijn vraagt |
 | Gegevens verwerkt in opdracht van een klant | Volgens de overeenkomst met de klant; standaard teruggegeven of verwijderd bij het einde van de opdracht |
-| Klanten en leveranciers | Duur van de samenwerking; facturen en boekhoudstukken volgens de wettelijke termijn [7 of 10 jaar, door boekhouder te bevestigen] |
+| Klanten en leveranciers | Duur van de samenwerking; facturen en boekhoudstukken 7 jaar (wettelijke bewaartermijn) |
 | Sollicitanten | Tot 6 maanden na het einde van de procedure; met je toestemming tot 2 jaar voor toekomstige vacatures |
 
 ## 6. Hoe beveiligen wij je gegevens?
@@ -180,13 +177,12 @@ Wij nemen geen beslissingen over personen die uitsluitend op geautomatiseerde ve
 
 | Cookie | Aanbieder | Doel | Bewaarduur | Toestemming nodig |
 |---|---|---|---|---|
-| cookieyes-consent | CookieYes | Je cookiekeuze onthouden | [1 jaar, te verifiëren in CookieYes] | Nee (noodzakelijk) |
-| _ga | Google Analytics | Bezoekers onderscheiden voor statistieken | [2 jaar, te verifiëren] | Ja |
-| _ga_CMZ9MWK0XW | Google Analytics | Sessie bijhouden voor statistieken | [2 jaar, te verifiëren] | Ja |
-| [Calendly-cookies] | Calendly | Werking van de geïntegreerde agenda | [te verifiëren] | [te verifiëren] |
-| [chat] | REDFOXX | [enkel als de chat iets lokaal opslaat, bv. de taal of het gesprek: te verifiëren in de code] | | |
+| cookieyes-consent | CookieYes | Je cookiekeuze onthouden | Standaard 1 jaar | Nee (noodzakelijk) |
+| _ga | Google Analytics | Bezoekers onderscheiden voor statistieken | Standaard 2 jaar | Ja |
+| _ga_CMZ9MWK0XW | Google Analytics | Sessie bijhouden voor statistieken | Standaard 2 jaar | Ja |
+| Cookies van Calendly | Calendly | Werking van de geïntegreerde agenda | Volgens Calendly | Zie de cookiebanner |
 
-Je kan je keuze op elk moment wijzigen via [de knop "Cookie-instellingen" onderaan de pagina]. De volledige, actuele lijst staat in de cookiebanner van CookieYes, die de cookies op de site automatisch scant.
+De chat zelf slaat niets op in je browser (geen cookies of lokale opslag). Je kan je keuze op elk moment wijzigen via de cookie-instellingen van onze cookiebanner. De volledige, actuele lijst staat in de cookiebanner van CookieYes, die de cookies op de site automatisch scant.
 
 ## 10. Wijzigingen
 
