@@ -382,7 +382,14 @@ for ($round = 0; $round < MAX_TOOL_ROUNDS; $round++) {
         $reply = trim(implode("\n", $texts));
         break;
     }
-    // Echo the assistant turn verbatim, answer all tool calls in ONE user message.
+    // Echo the assistant turn, answer all tool calls in ONE user message.
+    // PHP decodes an empty JSON object {} to [] and would re-encode it as a list, which the API rejects:
+    // tool_use.input must always be an object.
+    foreach ($content as $i => $block) {
+        if (($block['type'] ?? '') === 'tool_use' && (!is_array($block['input'] ?? null) || count($block['input']) === 0)) {
+            $content[$i]['input'] = new stdClass();
+        }
+    }
     $messages[] = ['role' => 'assistant', 'content' => $content];
     $messages[] = ['role' => 'user', 'content' => $results];
 }
