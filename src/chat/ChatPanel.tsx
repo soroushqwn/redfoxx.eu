@@ -35,6 +35,7 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
   const [errorCode, setErrorCode] = useState("");
+  const [mailError, setMailError] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -74,8 +75,9 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
         const body = await res.json().catch(() => null);
         throw new Error(`${res.status} ${body?.error ?? ""} ${body?.detail ?? ""}`.trim());
       }
-      const data: { reply: string; actions?: { type: string; name?: string; email?: string }[] } = await res.json();
+      const data: { reply: string; actions?: { type: string; name?: string; email?: string }[]; mail_error?: string } = await res.json();
       if (!data.reply) throw new Error("empty");
+      setMailError(data.mail_error ?? ""); // only sent by the server when 'debug' is on
       setMessages([...next, { role: "assistant", content: data.reply }]);
       const b = data.actions?.find((a) => a.type === "booking");
       if (b) setBooking({ name: b.name, email: b.email });
@@ -124,6 +126,9 @@ const ChatPanel = ({ onClose }: { onClose: () => void }) => {
           </p>
         ))}
         {busy && <p className="text-xs text-muted-foreground">{c.thinking}</p>}
+        {mailError && new URLSearchParams(window.location.search).has("chat") && (
+          <p className="break-words text-xs text-muted-foreground">(mail: {mailError})</p>
+        )}
         {booking && (
           <a
             href={bookingUrl(booking)}

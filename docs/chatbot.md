@@ -27,7 +27,18 @@ return [
   // 'prompt_caching' => true,
 ];
 ```
-3. Check that PHP has the `curl` extension and `mail()` works (send yourself a test lead).
+3. Lead mail: to make the lead mails land in the inbox (and not in spam), send them through the owner's own Microsoft 365
+   mailbox with Microsoft Graph. Register an app in Entra (Mail.Send, application permission, admin consent), create a client secret and add:
+
+```php
+  'graph_tenant_id'     => '...',   // Directory (tenant) ID
+  'graph_client_id'     => '...',   // Application (client) ID
+  'graph_client_secret' => '...',   // client secret VALUE (expires: put a reminder in the calendar)
+  'graph_sender'        => 'soroush@redfoxx.be', // a real mailbox (not an alias)
+```
+   Without these, or when Graph fails, `chat.php` falls back to PHP `mail()` from the Hostinger server (may be marked as spam).
+   Restrict the app to this one mailbox with an Application Access Policy (Exchange Online PowerShell), otherwise it could send as anyone in the tenant.
+4. Check that PHP has the `curl` extension and `mail()` works (send yourself a test lead).
 
 ## Local test
 `REDFOXX_SECRETS=/path/secrets.php php -S 127.0.0.1:8080 -t dist` with `api_url` pointing to a mock server
