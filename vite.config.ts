@@ -17,7 +17,8 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
   plugins: [react(), mode === "development" && !isSsrBuild && componentTagger()].filter(Boolean),
   ssgOptions: {
     dirStyle: "nested",
-    includedRoutes: () => [...ALL_ROUTES.map((r) => r.path), "/404"],
+    // "/privacy" is a hidden draft: pre-rendered (noindex) but deliberately not in ALL_ROUTES / sitemap.
+    includedRoutes: () => [...ALL_ROUTES.map((r) => r.path), "/privacy", "/404"],
     onFinished: (dir: string) => {
       const nested = path.join(dir, "404", "index.html");
       if (fs.existsSync(nested)) {

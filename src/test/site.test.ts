@@ -33,6 +33,13 @@ describe("routes and metadata", () => {
   });
 });
 
+describe("hidden privacy draft", () => {
+  it("is not in the sitemap until it is approved", () => {
+    expect(ALL_ROUTES.some((r) => r.page === "privacy")).toBe(false);
+    expect(buildSitemap("2026-01-01")).not.toContain("/privacy");
+  });
+});
+
 describe("translations", () => {
   const shape = (v: unknown): unknown =>
     Array.isArray(v) ? v.map(shape) : v && typeof v === "object" ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, shape(x)])) : typeof v;
