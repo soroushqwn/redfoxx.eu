@@ -217,6 +217,8 @@ function send_lead(array $cfg, array $in, string $lang, array $transcript): bool
 }
 
 /** One call to the Messages API with retry on 429/5xx. Returns decoded body or null. */
+$GLOBALS['redfoxx_last_error'] = '';
+
 function call_claude(array $cfg, array $payload): ?array
 {
     $url = $cfg['api_url'] ?? 'https://api.anthropic.com/v1/messages';
@@ -238,11 +240,15 @@ function call_claude(array $cfg, array $payload): ?array
         ]);
         $raw = curl_exec($ch);
         $code = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curlError = curl_error($ch);
         curl_close($ch);
         if ($raw !== false && $code === 200) {
             $data = json_decode((string) $raw, true);
             return is_array($data) ? $data : null;
         }
+        $GLOBALS['redfoxx_last_error'] = $raw === false
+            ? 'curl: ' . $curlError
+            : "http $code: " . mb_substr((string) $raw, 0, 400);
         $retryable = $raw === false || $code === 429 || $code >= 500;
         if (!$retryable || microtime(true) + $delay >= $deadline) {
             error_log("redfoxx chat: anthropic http $code");
@@ -329,7 +335,8 @@ for ($round = 0; $round < MAX_TOOL_ROUNDS; $round++) {
     }
     $res = call_claude($cfg, $payload);
     if ($res === null) {
-        fail(502, 'upstream');
+        // 'debug' => true in the secrets file shows the upstream error (for testing only).
+        respond(502, ['error' => 'upstream'] + (!empty($cfg['debug']) ? ['detail' => $GLOBALS['redfoxx_last_error']] : []));
     }
     if (($res['stop_reason'] ?? '') === 'refusal') {
         respond(200, ['reply' => '', 'actions' => [], 'refused' => true]);
