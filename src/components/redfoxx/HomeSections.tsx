@@ -114,7 +114,7 @@ export const WhyShort = () => {
             );
           })}
         </div>
-        <p className="mt-12 text-2xl md:text-3xl font-display font-semibold gradient-text">{t.comparison.tagline}</p>
+        <p lang="en" className="mt-12 text-2xl md:text-3xl font-display font-semibold gradient-text">{t.comparison.tagline}</p>
       </div>
     </section>
   );
