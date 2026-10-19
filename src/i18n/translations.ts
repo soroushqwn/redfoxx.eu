@@ -787,7 +787,7 @@ const nl: Translations = {
       { criterion: "Pay-per-demo: jullie betalen per afspraak", cells: ["check", "cross", "cross", "Vast loon"] },
     ],
     scrollHint: "Scroll",
-    tagline: "Wij winnen. Jullie winnen meer.",
+    tagline: "We win. You win bigger.", // slogan stays in English in every language
     cta: "Plan een kennismakingsgesprek",
   },
   cta: {
@@ -1200,7 +1200,7 @@ const fr: Translations = {
       { criterion: "Modèle de paiement par démo", cells: ["check", "cross", "cross", "Salaire fixe"] },
     ],
     scrollHint: "Faire défiler",
-    tagline: "Nous gagnons. Vous gagnez davantage.",
+    tagline: "We win. You win bigger.", // slogan stays in English in every language
     cta: "Planifier un appel de découverte",
   },
   cta: {
